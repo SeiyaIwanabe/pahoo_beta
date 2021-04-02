@@ -11,10 +11,10 @@ $(document).ready(function() {
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
-    speed: 1000,
-    autoplay: {
-      delay: 800
-    },
+    speed: 5000,
+    // autoplay: {
+    //   delay: 800
+    // },
     // Optional parameters
     // direction: 'vertical',
   
