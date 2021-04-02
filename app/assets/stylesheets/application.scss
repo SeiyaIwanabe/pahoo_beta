@@ -45,6 +45,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    z-index: 2;
 
     .bottomNavLink {
       display: block;
