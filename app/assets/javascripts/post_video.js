@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const postContent = document.querySelector('post-content');
+  const postContent = document.querySelector('.post-content');
   const video = document.querySelector('.postVideo');
   const mute = document.getElementById('mute');
   const height = $('.post-content').css("height");
