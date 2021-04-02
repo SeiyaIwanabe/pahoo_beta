@@ -1,17 +1,20 @@
 $(document).ready(function() {
   const swiper = new Swiper('.swiper-container', {
     effect: 'coverflow',
-    rotate: 30,
+    grabCursor: true,
     coverflowEffect: {
-      depth: 500,
-      modifire: 20
+      rotate: 20,
+      stretch: 0,
+      depth: 400,
+      modifire: 1,
+      slideShadows: true
     },
     // 一度に表示するスライド数
-    slidesPerView: 2,
+    slidesPerView: 'auto',
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
-    speed: 5000,
+    speed: 100,
     // autoplay: {
     //   delay: 800
     // },
