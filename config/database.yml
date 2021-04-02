@@ -52,3 +52,4 @@ production:
   database: pahoo_beta_production
   username: pahoo_beta
   password: <%= ENV['PAHOO_BETA_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock 
