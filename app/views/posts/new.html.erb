@@ -1,0 +1,16 @@
+<div class="postCreateArea">
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="PostSection">
+      <%= f.label :post_text, "本文入力" %>
+      <%= f.text_area :post_text, class: "postText"%>
+    </div>
+
+    <div class="PostSection">
+      <%= f.label "動画のアップロード" %>
+      <%= f.file_field :post_video, :accept => 'video/*' %>
+    </div>
+
+    <%= f.submit "投稿", class: "submitBtn" %>
+
+  <% end %>
+</div>

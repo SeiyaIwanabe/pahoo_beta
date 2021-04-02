@@ -1,0 +1,54 @@
+.createBannerArea {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+  padding: 50px 10px 50px 10px;
+  display: flex;
+  align-items: center;
+
+  form {
+    background-color: white;
+    width: 70vw;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px gray;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    .bannerSection {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 50px;
+
+      label {
+        color: #65676b;
+        font-weight: bold;
+        font-size: 40px;
+      }
+
+      input {
+        height: 80px;
+        border: none;
+        outline: none;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+    }
+    .submitBtn {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 50px;
+      background-color: #e4e6ea;
+      border-radius: 10px;
+      border: none;
+      color: #65676b;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}

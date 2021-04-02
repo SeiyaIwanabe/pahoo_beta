@@ -1,0 +1,7 @@
+{
+  "name": "pahoo_beta",
+  "private": true,
+  "dependencies": {
+    "swiper": "^6.5.3"
+  }
+}

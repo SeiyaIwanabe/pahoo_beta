@@ -1,0 +1,298 @@
+.header {
+  height: 150px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  p {
+    font-size: 80px;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+
+  i {
+    display: block;
+    font-size: 70px;
+    margin-right: 50px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.post-area {
+  height: 60%;
+  overflow: scroll;
+
+  .post-contents {
+    width: 100%;
+    height: auto;
+    // margin-bottom: 50px;
+    border: 1px solid lightgrey;
+    position: relative;
+    overflow: hidden;
+
+    .post-content {
+      position: relative;
+      .postVideo {
+        width: 100vw;
+        max-height: 800px;
+        background-color: black;
+        object-fit: contain;
+        // min-height: 700px;
+      }
+      .controls {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0, 0.7);
+        transform: translateY(100%) translateY(-20px);
+        transition: all 0.2s;
+  
+        .orange-bar {
+          height: 10px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color:#000;
+  
+          .orange-juice {
+            height: 50px;
+            background-color: orangered;
+          }
+        }
+      }
+  
+      .muteBtn {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        outline: none;
+        border: none;
+  
+        i {
+          font-size: 50px;
+          // outline: none;
+          // border: none;
+        }
+      }
+      .btnLabel {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+  
+        .buttons {
+          // padding: 10px;
+          display: none;
+        }
+    
+    
+        .buttons button{
+          background: none;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+        }
+        .buttons button:before {
+          content: "▶";
+          width: 50px;
+          height: 50px;
+          display: inline-block;
+          font-size: 28px;
+          color: #fff;
+        }
+        .buttons button.play:before {
+          content: "▶";
+        }
+        .buttons button.pause:before {
+          content: "■";
+          width: 50px;
+          height: 50px;
+          display: inline-block;
+          font-size: 28px;
+          color: #fff;
+        }
+      }
+      .menuLink {
+        position: absolute;
+        right: 40px;
+        bottom: 450px;
+        i {
+          color: #fff;
+          font-size: 60px;
+        }
+      }
+      .profileLink {
+        position: absolute;
+        right: 40px;
+        bottom: 350px;
+        i {
+          color: #fff;
+          font-size: 60px;
+        }
+      }
+      .goodLink {
+        position: absolute;
+        right: 40px;
+        bottom: 250px;
+        i {
+          color: #fff;
+          font-size: 60px;
+        }
+      }
+      .commentLink {
+        position: absolute;
+        right: 40px;
+        bottom: 150px;
+        i {
+          color: #fff;
+          font-size: 60px;
+        }
+      }
+      .shareLink {
+        position: absolute;
+        right: 40px;
+        bottom: 50px;
+        i {
+          color: #fff;
+          font-size: 60px;
+        }
+      }
+      .postText {
+        width: 50%;
+        position: absolute;
+        bottom: 20%;
+        left: 5%;
+        color: #FFF;
+        font-size: 20px;
+      }
+      .postDeleteBtn {
+        display: block;
+        width: 400px;
+        height: 50px;
+        background-color: #e4e6ea;
+        border-radius: 10px;
+        border: none;
+        color: #65676b;
+        cursor: pointer;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    
+  }
+  .post-contents:hover .controls {
+    transform: translateY(0);
+  }
+}
+
+.jsCommentModalBg {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  z-index: 10;
+}
+.jsCommentModalContent {
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  width: 65vw;
+  height: 70vh;
+  display: none;
+  background: #fff;
+  padding: 40px;
+  z-index: 15;
+
+  .contentInline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h1 {
+      font-size: 70px;
+      margin-bottom: 100px;
+    }
+    button {
+      margin-top: 500px;
+      display: block;
+      width: 200px;
+      height: 50px;
+      background-color: #e4e6ea;
+      border-radius: 10px;
+      border: none;
+      color: #65676b;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}
+
+.swiper-container {
+  height: 350px;
+  // margin-top: 20px;
+  // padding-top: 50px;
+  // padding-bottom: 80px;
+  background-color: rgba(0,0,0,0.8  );
+  z-index: 2;
+
+  .swiper-wrapper {
+
+    .swiper-slide {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 350px;
+      width: 350px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      // margin: 0 calc(50% - 50vw);
+      // transition: 0.5s;
+
+      .bannerLink {
+        // border-radius: 50%;
+        // width: 500px;
+        // display: block;
+        // height: 500px;
+        // background-color: #FFF5EE;
+        // text-decoration: none;
+        width: 100vw;
+        height: 100%;
+      }
+    }
+    .swiper-slide:not(.swiper-slide-active) {
+      transform: scale(0.5);
+      opacity: 0.3;
+      // width: 100px;
+      // height: 100px;
+      // border-radius: 50%;
+    }
+  }
+
+  .swiper-button-prev {
+    cursor: pointer;
+    z-index: 2;
+    color: #fff;
+    margin-left: 20px;
+  }
+  .swiper-button-next {
+    cursor: pointer;
+    z-index: 2;
+    color: #fff;
+    margin-right: 20px;
+  }
+}
