@@ -11,11 +11,11 @@ $(document).ready(function() {
     video.muted = !video.muted;
   });
 
-  video.autoplay = true;
+  // video.autoplay = true;
 
-  video.addEventListener('ended', () => {
-    alert('video ended!!!!');
-  })
+  // video.addEventListener('ended', () => {
+  //   alert('video ended!!!!');
+  // })
 
   
 

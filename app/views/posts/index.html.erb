@@ -11,7 +11,7 @@
   <ul class="post-contents">
     <% @posts.each do |post|%>
       <li class="post-content">
-        <%= video_tag(post.post_video.to_s, muted: true,  class: "postVideo") %>
+        <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, playsinline: true,  class: "postVideo") %>
         <div class="controls">
           <div class="orange-bar">
             <div class="orange-juice"></div>
@@ -60,8 +60,8 @@
   </div>
 
   <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <%# <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div> %>
 </div>
 
 <label class="jsCommentModalBg"></label>
