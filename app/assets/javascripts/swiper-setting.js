@@ -3,10 +3,10 @@ $(document).ready(function() {
     effect: 'coverflow',
     grabCursor: true,
     coverflowEffect: {
-      rotate: 20,
+      rotate: 0,
       stretch: 0,
-      depth: 400,
-      modifire: 1,
+      depth: 500,
+      modifire: 4,
       slideShadows: true
     },
     // 一度に表示するスライド数
