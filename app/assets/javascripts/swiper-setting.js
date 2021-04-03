@@ -17,6 +17,8 @@ $(document).ready(function() {
     touchRatio: 10,
     shortSwipes: true,
     passiveListeners: true,
+    freeMode: true,
+    freeModeMomentum: true,
     freeModeMomentumRatio: 10,
     freeModeMomentumVelocityRatio: 10, 
     // speed: 100,
