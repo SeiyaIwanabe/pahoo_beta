@@ -14,7 +14,12 @@ $(document).ready(function() {
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
-    speed: 100,
+    touchRatio: 10,
+    shortSwipes: true,
+    passiveListeners: true,
+    freeModeMomentumRatio: 10,
+    freeModeMomentumVelocityRatio: 10, 
+    // speed: 100,
     // autoplay: {
     //   delay: 800
     // },
