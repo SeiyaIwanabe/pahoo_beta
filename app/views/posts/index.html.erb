@@ -52,12 +52,12 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <% @banners.each do |banner| %>
-      <div class="swiper-slide">
-        <p class="bannerOutline"><%= banner.banner_name%></p>
+      <div class="swiper-slide" style="background-image: url(<%= banner.banner_image %>);">
+        <%= link_to banner_path(banner.id), class: "bannerLink" do %>
+        <% end %>
       </div>
     <% end %>
   </div>
-
 
   <!-- If we need navigation buttons -->
   <%# <div class="swiper-button-prev"></div>
