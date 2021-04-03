@@ -10,28 +10,49 @@ Banner.create!(
   [
     {
       banner_name: 'hogehogeナンバー募集',
-      banner_tag: 'hiphop好きな人集合',
-      banner_image: 'aichi.jpg'
     },
     {
       banner_name: 'fooナンバー募集',
-      banner_tag: 'Lock好きな人集合',
-      banner_image: 'jenga.jpg'
     },
     {
       banner_name: '調査団メンバー募集',
-      banner_tag: '自由を求める人集合',
-      banner_image: 'kyoto.jpeg'
     },
     {
       banner_name: 'hogehogeナンバー募集',
-      banner_tag: 'タグのテスト投稿です',
-      banner_image: 'oosaka.jpg'
     },
     {
       banner_name: 'hogehogeナンバー募集',
-      banner_tag: '男だけでワイワイ',
-      banner_image: 'nagano.jpg'
-    }
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
+    {
+      banner_name: 'hogehogeナンバー募集',
+    },
   ]
 )
+
