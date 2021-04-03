@@ -49,7 +49,16 @@
 
 
 <!-- Slider main container -->
-<div class="swiper-container">
+<div class="swiper-container thumbnail">
+  <div class="swiper-wrapper">
+    <% @banners.each do |banner| %>
+      <div class="swiper-slide" style="background-image: url(<%= banner.banner_image %>);"></div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="swiper-container main">
   <div class="swiper-wrapper">
     <% @banners.each do |banner| %>
       <div class="swiper-slide" style="background-image: url(<%= banner.banner_image %>);">
@@ -59,9 +68,11 @@
     <% end %>
   </div>
 
+
+
   <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <%# <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div> %>
 </div>
 
 

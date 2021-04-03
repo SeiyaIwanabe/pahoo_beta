@@ -253,16 +253,37 @@
   }
 }
 
+.thumbnail {
+  width: 100vw;
+  // position: fixed;
+  bottom: 160px;
+  height: 350px;
+  // z-index: 2;
+  .swiper-wrapper {
+    width: 100vw;
+    height: 350px;
+
+    .swiper-slide-active {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 100vw;
+      height: 350px;
+      opacity: 0.7;
+    }
+  }
+}
+
 .swiper-container {
   width: 100%;
   position: fixed;
   bottom: 160px;
   height: 350px;
-  background-color: rgba(0,0,0,0.8);
-  z-index: 3;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 10;
 
   .swiper-wrapper {
-    width:100%; 
+    width: 100%; 
 
     .swiper-slide {
       background-repeat: no-repeat;
@@ -274,6 +295,7 @@
       border: none;
       outline: none;
       position: relative;
+      z-index: 15;
 
       .bannerLink {
         width: 350px;
@@ -287,20 +309,20 @@
     }
     .swiper-slide:not(.swiper-slide-active) {
       transform: scale(0.4);
-      opacity: 0.3;
+      opacity: 0.1;
     }
   }
 
-  .swiper-button-prev {
-    cursor: pointer;
-    z-index: 2;
-    color: #fff;
-    margin-left: 20px;
-  }
-  .swiper-button-next {
-    cursor: pointer;
-    z-index: 2;
-    color: #fff;
-    margin-right: 20px;
-  }
+  // .swiper-button-prev {
+  //   cursor: pointer;
+  //   z-index: 2;
+  //   color: #fff;
+  //   margin-left: 20px;
+  // }
+  // .swiper-button-next {
+  //   cursor: pointer;
+  //   z-index: 2;
+  //   color: #fff;
+  //   margin-right: 20px;
+  // }
 }

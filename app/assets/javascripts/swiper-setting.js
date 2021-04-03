@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const swiper = new Swiper('.swiper-container', {
+  const mainSlider = new Swiper('.main', {
     effect: 'coverflow',
     grabCursor: true,
     coverflowEffect: {
@@ -30,29 +30,35 @@ $(document).ready(function() {
     // freeModeMinimumVelocity: 0.02,
     // 惰性が終わって止まる時に一番近くのスライドにスナップする
     freeModeSticky: true,
+    // スワイプ中にクリックできない
+    preventClicks: true,
+    autoplay: {
+      delay: 2000,
+    },
 
-
-    // speed: 100,
-    // autoplay: {
-    //   delay: 800
-    // },
-    // Optional parameters
-    // direction: 'vertical',
-  
-    // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
-  
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
+  });
+
+  // 背景の画像
+  const Thumbnail = new Swiper('.thumbnail', {
+    slidesPerView: '1',
+    centeredSlides: true,
+    loop:true,
+    setWrapperSize: true
+  });
+
+  // スライド遷移時にイベントが発生する slideChange というAPIを使用
+  // スライダーをスライドした時にサムネイルを移動させる
+  mainSlider.on('slideChange', () => {
+    // realIndex は現在activeになっているスライドの番号が入っている
+    Thumbnail.slideToLoop(mainSlider.realIndex);
+  });
+  // サムネイルをスライドした時にメインスライドを連動させる(上記と逆)
+  Thumbnail.on('slideChange', () => {
+    mainSlider.slideToLoop(Thumbnail.realIndex);
   });
 });
