@@ -10,13 +10,12 @@ $(document).ready(function() {
       slideShadows: true
     },
     // 一度に表示するスライド数
-    slidesPerView: 'auto',
+    slidesPerView: '5',
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
-    shortSwipes: true,
     // どれくらいスワイプすると、次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
-    touchRatio: 2,
+    touchRatio: 3,
     // スマホのパフォーマンスを高める
     passiveListeners: true,
     // スライドした際に特定のスライドにピタッと止まらなくなり、滑るようにスライドする。
@@ -28,7 +27,7 @@ $(document).ready(function() {
     // 数字が大きいほど惰性スクロールのスピードが速くなる
     freeModeMomentumVelocityRatio: 2, 
     // freeModeを開始するトリガー的スワイプの最小速度の設定
-    freeModeMinimumVelocity: 0.02,
+    // freeModeMinimumVelocity: 0.02,
     // 惰性が終わって止まる時に一番近くのスライドにスナップする
     freeModeSticky: true,
 
