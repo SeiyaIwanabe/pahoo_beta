@@ -5,7 +5,7 @@ $(document).ready(function() {
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 500,
+      depth: 300,
       modifire: 4,
       slideShadows: true
     },
@@ -23,9 +23,9 @@ $(document).ready(function() {
     // スライド時に惰性でしばらく動く（freeMode: trueが前提）
     freeModeMomentum: true,
     // 数字が大きいほど惰性スクロールの距離が伸び
-    freeModeMomentumRatio: 2,
+    freeModeMomentumRatio: 1,
     // 数字が大きいほど惰性スクロールのスピードが速くなる
-    freeModeMomentumVelocityRatio: 2, 
+    freeModeMomentumVelocityRatio: 1, 
     // freeModeを開始するトリガー的スワイプの最小速度の設定
     // freeModeMinimumVelocity: 0.02,
     // 惰性が終わって止まる時に一番近くのスライドにスナップする
