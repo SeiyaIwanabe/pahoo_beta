@@ -5,12 +5,12 @@ $(document).ready(function() {
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 300,
+      depth: 500,
       modifire: 4,
       slideShadows: true
     },
     // 一度に表示するスライド数
-    slidesPerView: '5',
+    slidesPerView: '3',
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
