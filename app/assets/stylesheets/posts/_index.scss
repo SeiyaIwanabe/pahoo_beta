@@ -76,15 +76,19 @@
   
       .muteBtn {
         position: absolute;
-        bottom: 30px;
-        left: 30px;
+        bottom: 50px;
+        left: 50px;
         outline: none;
         border: none;
+        width: 50px;
+        height: 50px;
   
         i {
-          font-size: 50px;
-          // outline: none;
-          // border: none;
+          font-size: 80px;
+          outline: none;
+          border: none;
+          // background-color: red;
+          color: orangered;
         }
       }
       .btnLabel {
@@ -257,6 +261,7 @@
   background-color: rgba(0,0,0,0.8);
   // background-color: #FFF;
   z-index: 2;
+  // padding-top: 30px;
 
   .swiper-wrapper {
 
@@ -264,8 +269,8 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      height: 350px;
       width: 350px;
+      height: 350px;
       border-radius: 50%;
       border: none;
       outline: none;
@@ -284,10 +289,10 @@
       }
     }
     .swiper-slide:not(.swiper-slide-active) {
-      transform: scale(0.5);
+      transform: scale(0.4);
       opacity: 0.3;
-      // width: 100px;
-      // height: 100px;
+      // width: 300px;
+      // height: 300px; 
       // border-radius: 50%;
     }
   }

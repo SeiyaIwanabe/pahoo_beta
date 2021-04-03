@@ -3,17 +3,27 @@ $(document).ready(function() {
   // const postVideo = document.getElementById('postVideo');
   let video = postVideos[0];
   const mute = document.getElementById('mute');
-  const height = $('.post-content').css("height");
-  console.log(height)
-  console.log(postVideos);
+  const contentHeight = $('.post-content').css("height");
+  console.log(contentHeight);
   // console.log(postContents);
-  console.log(video);
-
+  const juice = document.querySelector('.orange-juice');
+  
+  // 最初の動画を自動再生
   video.play();
+  
+  // ProgressBarを表示
+  video.addEventListener('timeupdate', function() {
+    const juicePos = video.currentTime / video.duration;
+    juice.style.width = juicePos * 100 + "%";
+    if(video.end) {
+      btn.className = "play";
+    }
+  });
 
   // 最初の動画の再生が終わったら次の動画を再生する
   let index = 0;
   video.addEventListener('ended', function() {
+    scrollTo(0, contentHeight);
     index++;  
     if(index < postVideos.length) {
       let video = postVideos[index];
@@ -21,6 +31,7 @@ $(document).ready(function() {
     } 
   });
   
+  const btn = document.querySelector('#playPause');
 
   // mute.addEventListener('click', function(e) {
   //   video.muted = !video.muted;
@@ -31,8 +42,6 @@ $(document).ready(function() {
   
 
 
-  // const juice = document.querySelector('.orange-juice');
-  // const btn = document.querySelector('#playPause');
 
   // function togglePlayPause() {
   //   if(video.paused) {
@@ -49,12 +58,5 @@ $(document).ready(function() {
   //   togglePlayPause();
   // };
   
-  // video.addEventListener('timeupdate', function() {
-  //   const juicePos = video.currentTime / video.duration;
-  //   juice.style.width = juicePos * 100 + "%";
-  //   if(video.end) {
-  //     btn.className = "play";
-  //   }
-  // });
 });
 

@@ -6,11 +6,11 @@ $(document).ready(function() {
       rotate: 0,
       stretch: 0,
       depth: 500,
-      modifire: 4,
+      modifire: 1,
       slideShadows: true
     },
     // 一度に表示するスライド数
-    slidesPerView: '3',
+    slidesPerView: '2.8',
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
