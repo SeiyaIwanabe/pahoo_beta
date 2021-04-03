@@ -16,7 +16,7 @@ $(document).ready(function() {
     loop: true,
     shortSwipes: true,
     // どれくらいスワイプすると、次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
-    touchRatio: 10,
+    touchRatio: 5,
     // スマホのパフォーマンスを高める
     passiveListeners: true,
     // スライドした際に特定のスライドにピタッと止まらなくなり、滑るようにスライドする。
