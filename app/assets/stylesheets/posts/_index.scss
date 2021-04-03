@@ -56,18 +56,18 @@
         width: 100%;
         flex-wrap: wrap;
         background: rgba(0, 0, 0, 0.7);
-        transform: translateY(100%) translateY(-5px);
+        transform: translateY(100%);
         transition: all 0.2s;
   
         .orange-bar {
-          height: 10px;
+          height: 5px;
           top: 0;
           left: 0;
           width: 100%;
           background-color:#000;
   
           .orange-juice {
-            height: 10px;
+            height: 5px;
             background-color: orangered;
           }
         }
