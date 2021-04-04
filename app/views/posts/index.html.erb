@@ -11,19 +11,19 @@
   <ul class="post-contents">
     <% @posts.each do |post|%>
       <li class="post-content">
-        <%= video_tag(post.post_video.to_s, class: "postVideo") %>
-        <div class="controls">
+        <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "postVideo") %>
+        <%# <div class="controls">
           <div class="orange-bar">
             <div class="orange-juice"></div>
           </div>
         </div>
         <label class="btnLabel" ">
           <div class="buttons">
-            <button id="playPause" onclick="console.log('テスト')"></button>
+            <button id="playPause"></button>
           </div>
-        </label>
+        </label> %>
         
-        <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label>
+        <%# <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label> %>
 
         <%= link_to "#", class: "menuLink" do%>
           <i class="fas fa-ellipsis-h"></i>
@@ -37,9 +37,9 @@
         <%= link_to "#", class: "commentLink" do%>
           <i class="far fa-comment-dots"></i>
         <% end %>
-        <%= link_to "#", class: "shareLink" do%>
-          <i class="fas fa-share-alt"></i>
-        <% end %>
+        <%# <%= link_to "#", class: "shareLink" do%>
+          <%# <i class="fas fa-share-alt"></i> %>
+        <%# <% end %>
         <div class="postText"><%= post.post_text %></div>
         <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
       </li>
