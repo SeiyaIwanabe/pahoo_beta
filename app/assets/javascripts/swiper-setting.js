@@ -14,6 +14,10 @@ $(document).ready(function() {
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
+    // 短い時間のスワイプを有効にする
+    shortSwipes: true,
+    // 長い時間のスワイプを有効にする
+    longSwipes: true,
     // どれくらいスワイプすると次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
     touchRatio: 1.5,
     // スマホのパフォーマンスを高める
