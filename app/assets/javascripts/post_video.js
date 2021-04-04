@@ -1,10 +1,5 @@
 $(document).ready(function() {
-  // const postVideos = document.querySelectorAll('li .postVideo');
-  // const postVideo = document.getElementById('postVideo');
   const video = document.querySelector('.postVideo');
-  // const contentHeight = $('.post-content').css("height");
-  // console.log(contentHeight);
-  console.log(video);
   const btn = document.querySelector('#playPause');
   const mute = document.getElementById('mute');
   const juice = document.querySelector('.orange-juice');
@@ -20,33 +15,25 @@ $(document).ready(function() {
   });
 
   
+  // 動画の再生/停止
+  function togglePlayPause() {
+    if(video.paused) {
+      btn.className = "pause";
+      video.play();
+    }
+    else {
+      btn.className = "play";
+      video.pause();
+    }
+  }
+  btn.onclick = function() {
+    togglePlayPause();
+  };
   
-  // mute.addEventListener('click', function(e) {
-  //     video.muted = !video.muted;
-  //   });
+  mute.addEventListener('click', function(e) {
+    video.muted = !video.muted;
+  });
 
-
-  // function togglePlayPause() {
-    //   if(video.paused) {
-      //     btn.className = "pause";
-      //     video.play();
-      //   }
-      //   else {
-        //     btn.className = "play";
-        //     video.pause();
-        //   }
-        // }
-        
-        // btn.onclick = function() {
-          //   togglePlayPause();
-          // };
-    
-    
-    
-    
-    
-    
-    
   // 最初の動画を自動再生
   // video.play();
 
