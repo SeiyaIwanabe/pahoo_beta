@@ -5,21 +5,21 @@ $(document).ready(function() {
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 550,
+      depth: 500,
       modifire: 1,
       slideShadows: true
     },
     // 一度に表示するスライド数
-    slidesPerView: '2.8',
+    slidesPerView: '3',
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
     // 短い時間のスワイプを有効にする
     shortSwipes: true,
     // 長い時間のスワイプを有効にする
-    longSwipes: true,
+    // longSwipes: true,
     // どれくらいスワイプすると次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
-    touchRatio: 1.5,
+    touchRatio: 2,
     // スマホのパフォーマンスを高める
     passiveListeners: true,
     // スライドした際に特定のスライドにピタッと止まらなくなり、滑るようにスライドする。
@@ -27,13 +27,13 @@ $(document).ready(function() {
     // スライド時に惰性でしばらく動く（freeMode: trueが前提）
     freeModeMomentum: true,
     // 数字が大きいほど惰性スクロールの距離が伸び
-    freeModeMomentumRatio: 1.5,
+    freeModeMomentumRatio: 1,
     // 数字が大きいほど惰性スクロールのスピードが速くなる
-    freeModeMomentumVelocityRatio: 1.5, 
+    freeModeMomentumVelocityRatio: 1, 
     // freeModeを開始するトリガー的スワイプの最小速度の設定
     // freeModeMinimumVelocity: 0.02,
     // 惰性が終わって止まる時に一番近くのスライドにスナップする
-    // freeModeSticky: true,
+    freeModeSticky: true,
     // スワイプ中にクリックできない
     preventClicks: true,
     // autoplay: {
