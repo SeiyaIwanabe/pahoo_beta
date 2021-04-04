@@ -253,86 +253,41 @@
   }
 }
 
-// .thumbnail {
-//   width: 100vw;
-//   // position: fixed;
-//   bottom: 160px;
-//   height: 350px;
-//   // z-index: 2;
-
-//   .swiper-wrapper {
-//     width: 100vw;
-//     height: 350px;
-
-//     .swiper-slide-active {
-//       // background-repeat: no-repeat;
-//       // background-position: center;
-//       // background-size: cover;
-//       // width: 100vw;
-//       // height: 350px;
-//       opacity: 0.8;
-//     }
-//     .bannerName {
-//       position: relative;
-//       z-index: 100;
-//       color: #FFF;
-//       font-size: 100px;
-//     }
-//   }
-// }
-
-.swiper-container {
+.bannerArea {
   width: 100%;
+  // 範囲内に収まらないコンテンツを水平方向に表示
+  overflow-x: auto;
+  // はみ出コンテンツを折り返さないように横並びに指定
+  white-space: nowrap;
+  // スクロールを滑らかにする
+  overflow-scrolling: touch;
+  // スクロールを滑らかにする
+  -webkit-overflow-scrolling: touch;
   position: fixed;
   bottom: 160px;
-  height: 350px;
+  // グラデーションの設定
   background: -moz-linear-gradient(top, transparent, rgba(0,0,0,0.1));
   background: -webkit-linear-gradient(top, transparent, rgba(0,0,0,0.6));
   background: linear-gradient(to bottom, transparent, #000);
 
-  z-index: 10;
+  .bannerContent {
+    //横並びにする指定
+    display: inline-block;  
+    list-style: none;
+    height: 350px;
 
-  .swiper-wrapper {
-    width: 100%; 
-    padding-top: 20px;
+    
+    .bannerLink {
 
-    .swiper-slide {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 400px;
-      height: 300px;
-      border-radius: 50%;
-      position: relative;
-      z-index: 15;
-      padding: 50px;
-      
-      .bannerLink {
+      .bannerImage {
+        display: block;
         width: 350px;
         height: 350px;
-        display: block;
-        position: absolute;
         border-radius: 50%;
-        // z-index: 3;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
       }
-
-    }
-    .swiper-slide:not(.swiper-slide-active) {
-      transform: scale(0.2);
-      // opacity: 0.1;
     }
   }
-
-  // .swiper-button-prev {
-  //   cursor: pointer;
-  //   z-index: 2;
-  //   color: #fff;
-  //   margin-left: 20px;
-  // }
-  // .swiper-button-next {
-  //   cursor: pointer;
-  //   z-index: 2;
-  //   color: #fff;
-  //   margin-right: 20px;
-  // }
 }

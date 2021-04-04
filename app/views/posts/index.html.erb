@@ -48,35 +48,18 @@
 </div>
 
 
-<!-- Slider main container
-<div class="swiper-container thumbnail">
-  <div class="swiper-wrapper">
-    <% @banners.each do |banner| %>
-      <div class="swiper-slide" style="background-image: url(<%= banner.banner_image %>);">
-        <p class="bannerName"><%= banner.banner_name %></p>
-      </div>
-    <% end %>
-  </div>
-</div>
- -->
-
-
-<div class="swiper-container main">
-  <div class="swiper-wrapper">
-    <% @banners.each do |banner| %>
-      <div class="swiper-slide" style="background-image: url(<%= banner.banner_image %>);">
-        <%= link_to banner_path(banner.id), class: "bannerLink" do %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<ul class="bannerArea">
+  <% @banners.each do |banner| %>
+    <li class="bannerContent">
+      <%= link_to banner_path(banner.id), class: "bannerLink" do %>
+        <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
 
 
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</div>
 
 
 <%# <label class="jsCommentModalBg"></label>

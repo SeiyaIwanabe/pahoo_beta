@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(id: "DESC")
-    @banners = Banner.all
+    @banners = Banner.all.order(id: "DESC")
   end
 
   def new
