@@ -17,6 +17,5 @@
 //= require activestorage
 //= require_tree .
 
-//= require swiper/swiper-bundle.min.js
 
 
