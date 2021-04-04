@@ -1,13 +1,13 @@
 $(document).ready(function() {
   const mainSlider = new Swiper('.main', {
     effect: 'coverflow',
-    grabCursor: true,
+    // grabCursor: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
       depth: 500,
-      modifire: 1,
-      slideShadows: true
+      // modifire: 1,
+      // slideShadows: true
     },
     // 一度に表示するスライド数
     slidesPerView: '3',
@@ -48,13 +48,13 @@ $(document).ready(function() {
   });
 
   // 背景の画像
-  const Thumbnail = new Swiper('.thumbnail', {
-    slidesPerView: '1',
-    centeredSlides: true,
-    loop:true,
-    setWrapperSize: true,
-    effect: "fade"
-  });
+  // const Thumbnail = new Swiper('.thumbnail', {
+  //   slidesPerView: '1',
+  //   centeredSlides: true,
+  //   loop:true,
+  //   setWrapperSize: true,
+  //   effect: "fade"
+  // });
 
   // スライド遷移時にイベントが発生する slideChange というAPIを使用
   // スライダーをスライドした時にサムネイルを移動させる
