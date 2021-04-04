@@ -6,7 +6,10 @@ $(document).ready(function() {
     centerMode: true,
     centerPadding: '50px',
     swipe: true,
+    // カクつきを軽減
+    // cssEase: 'linear'
     // arrows: false
+    swipeToSlide: true
   });
 
   // センターのバナーが大きくなる関数
