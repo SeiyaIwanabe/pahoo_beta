@@ -15,21 +15,21 @@ $(document).ready(function() {
     centeredSlides: true,
     loop: true,
     // どれくらいスワイプすると次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
-    touchRatio: 1,
+    touchRatio: 1.5,
     // スマホのパフォーマンスを高める
     passiveListeners: true,
     // スライドした際に特定のスライドにピタッと止まらなくなり、滑るようにスライドする。
     freeMode: true,
     // スライド時に惰性でしばらく動く（freeMode: trueが前提）
-    // freeModeMomentum: true,
+    freeModeMomentum: true,
     // 数字が大きいほど惰性スクロールの距離が伸び
-    freeModeMomentumRatio: 1,
+    freeModeMomentumRatio: 1.5,
     // 数字が大きいほど惰性スクロールのスピードが速くなる
-    freeModeMomentumVelocityRatio: 1, 
+    freeModeMomentumVelocityRatio: 1.5, 
     // freeModeを開始するトリガー的スワイプの最小速度の設定
     // freeModeMinimumVelocity: 0.02,
     // 惰性が終わって止まる時に一番近くのスライドにスナップする
-    freeModeSticky: true,
+    // freeModeSticky: true,
     // スワイプ中にクリックできない
     preventClicks: true,
     // autoplay: {
