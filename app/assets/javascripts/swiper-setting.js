@@ -5,7 +5,7 @@ $(document).ready(function() {
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 500,
+      depth: 550,
       modifire: 1,
       slideShadows: true
     },
@@ -14,8 +14,8 @@ $(document).ready(function() {
     // 現在のスライドを真ん中に
     centeredSlides: true,
     loop: true,
-    // どれくらいスワイプすると、次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
-    touchRatio: 3,
+    // どれくらいスワイプすると次のスライドへ進むかを指定。数字が大きければ少しのスワイプで次のスライドに進む。
+    touchRatio: 2,
     // スマホのパフォーマンスを高める
     passiveListeners: true,
     // スライドした際に特定のスライドにピタッと止まらなくなり、滑るようにスライドする。
@@ -32,9 +32,9 @@ $(document).ready(function() {
     freeModeSticky: true,
     // スワイプ中にクリックできない
     preventClicks: true,
-    autoplay: {
-      delay: 2000,
-    },
+    // autoplay: {
+    //   delay: 2000,
+    // },
 
     // Navigation arrows
     navigation: {
@@ -48,7 +48,8 @@ $(document).ready(function() {
     slidesPerView: '1',
     centeredSlides: true,
     loop:true,
-    setWrapperSize: true
+    setWrapperSize: true,
+    effect: "fade"
   });
 
   // スライド遷移時にイベントが発生する slideChange というAPIを使用
