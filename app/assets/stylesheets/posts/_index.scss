@@ -317,17 +317,6 @@
         // text-overflow: ellipsis;
         // white-space: nowrap;
 
-        // /* ←初期値を変更。透明に。*/
-        // opacity: 0; 
-        // // フェードインアニメーション
-        // animation: 0.2s fadeIn forwards;
-
-        // @keyframes fadeIn { /* ←追加 */
-        //   from { opacity: 0; }
-        //   to { opacity: 1; }
-        // }
-
-
         .bannerTitle {
           text-align: center;
           font-size: 32px;
@@ -366,18 +355,4 @@
   .bannerContent.show {
     transform: scale( 1.4 );
   }
-
-  // .slick-slide {
-  //   -webkit-transition: 0.1s ease-in-out;
-  //   transition: 0.1s ease-in-out;
-  //   transform: scale( .75 );
-  // }
-  // .slick-slide:not(.is--active) {
-  //   .bannerPop {
-  //     display: none;
-  //   }
-  // }
-  // .is--active {
-  //   transform: scale( 1 );
-  // }
 }
