@@ -12,9 +12,11 @@
 
 
   p {
-    margin-left: 42%;
+    width: 550px;
+    margin-left: 25%;
     font-size: 50px;
     font-weight: bold;
+    text-align: center;
   }
 
   i {
@@ -280,6 +282,7 @@
     list-style: none;
     margin-right: 80px;
     margin-left: 40px;
+    transition: 0.3s ease;
 
     .bannerLink {
       text-decoration: none;
@@ -298,7 +301,7 @@
       .bannerPop {
         padding-top: 5px;
         position: absolute;
-        top: -50px;
+        top: -30px;
         left: -20px;
         min-width: 300px;
         color: #555;
@@ -360,6 +363,10 @@
       }
     }
   }
+  .bannerContent.show {
+    transform: scale( 1.4 );
+  }
+
   // .slick-slide {
   //   -webkit-transition: 0.1s ease-in-out;
   //   transition: 0.1s ease-in-out;
