@@ -278,7 +278,8 @@
     //横並びにする指定
     display: inline-block;  
     list-style: none;
-
+    margin-right: 80px;
+    margin-left: 40px;
 
     .bannerLink {
       text-decoration: none;
@@ -287,8 +288,8 @@
 
       .bannerImage {
         display: block;
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
         background-repeat: no-repeat;
         background-position: center;
@@ -297,7 +298,8 @@
       .bannerPop {
         padding-top: 5px;
         position: absolute;
-        top: -15px;
+        top: -50px;
+        left: -20px;
         min-width: 300px;
         color: #555;
         background: #FFF;
@@ -307,15 +309,20 @@
         margin-bottom: 100px;
         overflow: visible;
 
-        /* ←初期値を変更。透明に。*/
-        opacity: 0; 
-        // フェードインアニメーション
-        animation: 0.2s fadeIn forwards;
+        // 長いタイトルは省略
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
 
-        @keyframes fadeIn { /* ←追加 */
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
+        // /* ←初期値を変更。透明に。*/
+        // opacity: 0; 
+        // // フェードインアニメーション
+        // animation: 0.2s fadeIn forwards;
+
+        // @keyframes fadeIn { /* ←追加 */
+        //   from { opacity: 0; }
+        //   to { opacity: 1; }
+        // }
 
 
         .bannerTitle {
@@ -353,17 +360,17 @@
       }
     }
   }
-  .slick-slide {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-    transform: scale( .75 );
-  }
-  .slick-slide:not(.is--active) {
-    .bannerPop {
-      display: none;
-    }
-  }
-  .is--active {
-    transform: scale( 1 );
-  }
+  // .slick-slide {
+  //   -webkit-transition: 0.1s ease-in-out;
+  //   transition: 0.1s ease-in-out;
+  //   transform: scale( .75 );
+  // }
+  // .slick-slide:not(.is--active) {
+  //   .bannerPop {
+  //     display: none;
+  //   }
+  // }
+  // .is--active {
+  //   transform: scale( 1 );
+  // }
 }
