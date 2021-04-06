@@ -1,0 +1,38 @@
+<h1>Pahoo</h1>
+
+<%= form_with model: @user, user_id: @user.id, local: true do |f| %>
+
+  <div class="section">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="section">
+    <%= f.label :id_name %>
+    <%= f.text_field :id_name %>
+  </div>
+
+  <div class="section">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="section">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, include_hidden: false) do |tag| %>
+     <div>
+       <%= tag.label do %>
+         <%= tag.check_box %>
+         <%= tag.text %>
+       <% end %>
+     </div>
+  <% end %>
+
+  <div>
+    <%= f.submit "Sign UP" %>
+  </div>
+
+<% end %>

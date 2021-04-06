@@ -5,4 +5,7 @@ class Post < ApplicationRecord
   # バリデーション
   validates :post_text, presence: true
   validates :post_video, presence: true
+
+  # アソシエーション
+  belongs_to :user
 end
