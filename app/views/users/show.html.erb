@@ -1,2 +1,64 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="notifications">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: key)%>
+  <% end %>
+</div>
+
+<header class="mypage-header">
+
+  <% if current_user %>
+    <h1><%= current_user.id_name %></h1>
+  <% end %>
+
+  <div class="right-header">
+    <%= link_to new_banner_path, class: "CreateBannerLink" do %>
+      <i class="fas fa-plus-square"></i>
+    <% end %>
+    <label class="setting-menu">
+      <i class="fas fa-bars"></i>
+    </label>
+  </div>
+  
+</header>
+
+<div class="profileArea">
+  <div class="profileTop">
+
+    <div class="leftArea">
+      <i class="fas fa-user-circle"></i>
+      <p><%= current_user.nickname %></p>
+      <p>初代内閣総理大臣</p>
+    </div>
+
+    <div class="rightArea">
+      <p>投稿数</p>
+      <p>フォロー(仮)</p>
+      <p>フォロワー(仮)</p>
+    </div>
+  </div>
+
+  <div class="profileMiddle">
+    <%= link_to "プロフィール編集", edit_user_path, class: "userEditLink" %>
+  </div>
+  
+  <div class="tagArea">
+    <h2 class="tagTitle">興味のあるジャンル</h2>
+    <div class="genre">
+      <% @user.tag_maps.each do |genre| %>
+        <p class="genreName">#<%= genre.tag.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="menuNav">
+</div>
+
+<%= render partial: "modules/footer" %>
+
+
+
+<!--<%= link_to "新規登録", new_user_path %>
+<%= link_to "ログイン", login_path %>
+<%= link_to "ログアウト", logout_path, method: :delete %>-->
+

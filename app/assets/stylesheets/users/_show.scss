@@ -1,0 +1,124 @@
+.mypage-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 2;
+  border: 2px solid lightgray;
+
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .right-header {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 100px;
+
+    .CreateBannerLink {
+      text-decoration: none;
+      margin-right: 80px;
+      i {
+        font-size: 50px;
+        color: #000;
+      }
+    }
+    .setting-menu {
+      i {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+.profileArea {
+  height: auto;
+  overflow: scroll;
+  padding-top: 80px;
+
+
+  .profileTop {
+    height: 320px;
+    // background-color: lightgreen;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+
+    .leftArea {
+      width: 30%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      i {
+        font-size: 200px;
+        color: black;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+    .rightArea {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 70%;
+      padding-bottom: 80px;
+
+      p {
+        font-size: 30px;
+        border-right: 2px solid lightgray;
+        padding-right: 40px;
+      }
+    }
+  }
+  .profileMiddle {
+    width: 100%;
+    height: 200px;
+    padding: 40px;
+
+    .userEditLink {
+      text-decoration: none;
+      display: block;
+      width: 200px;
+      height: 50px;
+      border: 1px solid lightgray;
+      text-align: center;
+      color: gray;
+      padding-top: 10px;
+      border-radius: 5px;
+    }
+  }
+  .tagArea {
+    padding: 40px;
+    .tagTitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      .genre {
+        display: flex;
+        .genreName {
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+.menuNav {
+  height: 800px;
+  background-color: gray;
+  width: 75%;
+  margin: 0 auto;
+}

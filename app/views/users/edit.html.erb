@@ -1,0 +1,29 @@
+<div class="outline">
+  <h1>Pahoo</h1>
+
+  <%= form_with model: @user, user_id: @user.id, local: true do |f| %>
+
+    <div class="section">
+      <%= f.label :お名前 %>
+      <%= f.text_field :nickname %>
+    </div>
+
+    <div class="section">
+      <%= f.label :ID %>
+      <%= f.text_field :id_name %>
+    </div>
+
+    <div class="checkArea">
+      <p>興味のあるジャンルを選ぼう（複数選択できるヲ）</p>
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, include_hidden: false, class: "checkBox") do |tag| %>
+        <%= tag.label { tag.check_box + tag.text } %>
+      <% end %>
+    </div>
+
+    <div>
+      <%= f.submit "プロフィールを更新", class: "submitBtn" %>
+    </div>
+
+  <% end %>
+
+</div>

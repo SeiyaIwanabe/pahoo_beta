@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(id_name: params[:id_name])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Pahooへようこそ！"
+      redirect_to root_path, notice: "Welcome to Pahoo!!"
     else
       flash.now[:alert] = "名前、ID、パスワードのどれかが違うぜ"
       render :new
