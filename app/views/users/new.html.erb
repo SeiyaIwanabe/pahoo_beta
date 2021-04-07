@@ -1,7 +1,7 @@
 <div class="outline">
   <h1>Pahoo</h1>
 
-  <%= form_with model: @user, user_id: @user.id, local: true do |f| %>
+  <%= form_with model: @user, user_id: @user.id, local: true, class: "registrationForm" do |f| %>
 
     <div class="section">
       <%= f.label :お名前 %>
