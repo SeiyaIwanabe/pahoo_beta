@@ -1,7 +1,17 @@
-<%# <%= notice %>
+<div class="notifications">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: key)%>
+  <% end %>
+</div>
 
 <header class="header">
   <p id="pahoo">Pahoo</p>
+  <% if current_user %>
+    <%= current_user.nickname %>
+  <% end %>
+  <%= link_to "新規登録", new_user_path %>
+  <%= link_to "ログイン", login_path %>
+  <%= link_to "ログアウト", logout_path, method: :delete %>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
   <% end %>
@@ -61,6 +71,8 @@
     </li>
   <% end %>
 </ul>
+
+<%= render partial: "modules/footer" %>
 
 
 

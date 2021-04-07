@@ -6,53 +6,62 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Banner.create!(
-  [
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'fooナンバー募集',
-    },
-    {
-      banner_name: '調査団メンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-    {
-      banner_name: 'hogehogeナンバー募集',
-    },
-  ]
-)
+Tag.create!([
+  {name: "hiphop"},
+  {name: "pop"},
+  {name: "house"},
+  {name: "break"},
+  {name: "locl"},
+  {name: "enjoyしよう勢"},
+])
+
+# Banner.create!(
+#   [
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'fooナンバー募集',
+#     },
+#     {
+#       banner_name: '調査団メンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#     {
+#       banner_name: 'hogehogeナンバー募集',
+#     },
+#   ]
+# )
 

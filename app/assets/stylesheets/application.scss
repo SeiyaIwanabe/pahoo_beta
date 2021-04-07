@@ -25,6 +25,10 @@
 
 // @import "slick";
 
+@import "registrations/new";
+@import "sessions/new";
+
+
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +40,26 @@ body {
   height: 100vh;
   position: relative;
   // padding-top: 130px;
+
+  .notifications {
+    color: #FFF;
+    text-align: center;  
+    position: fixed;
+    top: 80px;
+    z-index: 5;
+    height: auto  ;
+    width: 100%;
+  
+    .notice {
+      background-color: lightBlue;
+      font-size: 50px;
+    }
+  
+    .alert {
+      background-color: orangered;
+      font-size: 50px;
+    }
+  }
 
   .footer {
     width: 100%;
