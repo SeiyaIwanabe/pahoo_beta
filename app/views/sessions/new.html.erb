@@ -1,22 +1,23 @@
-<h1>Pahoo</h1>
+<div class="outline">
+  <h1>Pahoo</h1>
 
-<%= form_with url: login_path, local: true do |f| %>
+  <%= form_with url: login_path, local: true do |f| %>
 
-  <div class="section">
-    <%= f.label :id_name %>
-    <%= f.text_field :id_name %>
-  </div>
+    <div class="section">
+      <%= f.label :ID %>
+      <%= f.text_field :id_name %>
+    </div>
 
-  <div class="section">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+    <div class="section">
+      <%= f.label :パスワード %>
+      <%= f.password_field :password %>
+    </div>
 
+    <div>
+      <%= f.submit "さぁ、始めよう", class: "submitBtn" %>
+    </div>
 
-  <div>
-    <%= f.submit "ログイン" %>
-  </div>
+    <%= link_to "新規登録はこちらから", new_user_path, class: "toLogin" %>
+  <% end %>
 
-  <%= link_to "Sign Up", new_user_path %>
-
-<% end %>
+</div>
