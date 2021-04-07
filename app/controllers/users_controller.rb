@@ -16,8 +16,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @genres = current_user.tags.ids
-    # @genres = Tag.find(params[:tag_id]).users
   end
 
   def edit
