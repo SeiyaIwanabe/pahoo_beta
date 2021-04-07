@@ -8,14 +8,26 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "逢いたかったぜ。相棒"
+      redirect_to root_path, notice: "Welcome to Pahoo!!"
     else
       render :new
     end
   end
 
-
   def show
+    @user = User.find(params[:id])
+    # @genres = current_user.tags.ids
+    # @genres = Tag.find(params[:tag_id]).users
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to action: :show, notice: "プロフィールを更新しました！"
   end
 
   private
