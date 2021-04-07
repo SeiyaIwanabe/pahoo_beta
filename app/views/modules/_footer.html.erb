@@ -1,0 +1,21 @@
+<footer class="footer">
+  <%= link_to root_path, class: "bottomNavLink" do%>
+    <i class="fas fa-home"></i>
+  <% end %>
+
+  <%= link_to root_path, class: "bottomNavLink" do%>
+    <i class="fas fa-search"></i>
+  <% end %>
+
+  <%= link_to new_post_path, class: "bottomNavLink" do%>
+    <i class="fas fa-plus-circle"></i>
+  <% end %>
+
+  <%= link_to root_path, class: "bottomNavLink" do%>
+    <i class="fas fa-envelope"></i>
+  <% end %>
+  
+  <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>
+    <i class="fas fa-user-circle"></i>
+  <% end %>
+</footer>

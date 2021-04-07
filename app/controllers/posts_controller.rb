@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
+  before_action :move_to_login
 
   def index
     @posts = Post.all.order(id: "DESC")
     @banners = Banner.all.order(id: "DESC")
+    # @user = User.find(params[:id])
   end
 
   def new
@@ -27,6 +29,13 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:post_text, :post_video)
+  end
+
+  def move_to_login
+    if current_user.nil?
+      #サインインしていないユーザーはログインページが表示される
+      redirect_to login_path
+    end
   end
 
 end

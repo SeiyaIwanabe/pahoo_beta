@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to root_path, notice: "逢いたかったぜ。相棒"
     else
       render :new
     end
