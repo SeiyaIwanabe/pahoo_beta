@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Tag.create!([
-  {name: "hiphop"},
-  {name: "pop"},
-  {name: "house"},
-  {name: "break"},
-  {name: "locl"},
-  {name: "enjoyしよう勢"},
+  {name: "Hiphop"},
+  {name: "Pop"},
+  {name: "House"},
+  {name: "Break"},
+  {name: "Lock"},
+  {name: "Enjoyしよう勢"},
 ])
 
 # Banner.create!(

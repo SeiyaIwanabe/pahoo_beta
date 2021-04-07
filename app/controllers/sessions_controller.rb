@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Welcome to Pahoo!!"
     else
-      flash.now[:alert] = "名前、ID、パスワードのどれかが違うぜ"
+      flash.now[:alert] = "入力内容はちゃんと確認しような？"
       render :new
     end
   end

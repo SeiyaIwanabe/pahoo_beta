@@ -9,6 +9,9 @@
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
   <% end %>
+  <% if current_user %>
+    <%= link_to "ログアウト", logout_path, method: :delete %>
+  <% end %>
 </header>
 
 <div class="post-area">
