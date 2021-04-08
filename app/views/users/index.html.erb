@@ -5,13 +5,12 @@
   <% end %>
 </header>
 
-<ul class="tagListArea">
+<div class="tagListArea">
   <% @tag_lists.each do |list| %>
-    <li class="tagList">
-      <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
-    </li>
+    <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
   <% end %>
-</ul>
+</div>
+
 
 <% if params[:tag_id] %>
   <ul class="usersIndex">
@@ -29,6 +28,12 @@
       </li>
     <% end %>
   </ul>
+<% else %>
+  <div class="defaultPostedArea">
+    <% @posts.each do |video| %>
+      <%= video_tag(video.post_video.to_s, controls: true, playsinline: true, class: "defaultContent") %>
+    <% end %>
+  </div>
 <% end %>
 
 <%= render partial: "modules/footer" %>

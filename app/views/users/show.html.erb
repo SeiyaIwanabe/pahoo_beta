@@ -51,11 +51,14 @@
   </div>
 </div>
 
-<div clsss="userPostedArea">
+<div class="userPostedArea">
+  <h1>投稿</h1>
+  <% @posts.each do |video| %>
+    <%= video_tag(video.post_video.to_s, controls: true, playsinline: true, class: "myPostesContent") %>
+  <% end %>
 </div>
 
-<div clsss="test">
-</div>
+
 
  
 
@@ -66,8 +69,3 @@
 
 
 <%= render partial: "modules/footer" %>
-
-
-
-
-

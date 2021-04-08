@@ -5,35 +5,52 @@
   overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
   padding-top: 80px;
   padding-bottom: 10px;
   border: 2px solid lightgray;
-  display: flex;
 
-  .tagList {
+  .listLink {
     display: block;  
-    list-style: none;
-    margin-left: 50px;
-    width: 250px;
-
-    .listLink {
-      text-decoration: none;
-      border: 2px solid lightgray;
-      height: 90px;
-      padding: 10px;
-      border-radius: 10px;
-      color: #000;
-      text-align: center;
-      font-size: 30px;
-      padding-top: 20px;
-    }
-    .listLink:hover {
-      background-color: lightgray;
-      opacity: 0.5;
-    }
+    text-decoration: none;
+    border: 2px solid lightgray;
+    height: 90px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
   }
+  .listLink:hover {
+    background-color: lightgray;
+    opacity: 0.5;
+  }
+  // .tagList {
+  //   list-style: none;
+  //   margin-left: 50px;
+  //   width: 250px;
+  // }
 }
+
+// 初期画面
+.defaultPostedArea {
+  height: 800px;
+  // background-color: lightgray;
+  padding: 10px 10px 10px 10px;
+
+  .defaultContent {
+    width: 315px;
+    height: 315px;
+    // max-height: 315px;
+    // max-width: 315px;
+    object-fit: cover;
+    background-color: #000;
+    // margin-right: 10px;
+  }
+} 
 
 .usersIndex {
   height: auto;
