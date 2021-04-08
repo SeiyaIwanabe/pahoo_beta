@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_114638) do
+ActiveRecord::Schema.define(version: 2021_04_08_082807) do
 
   create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_name", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_04_06_114638) do
     t.datetime "updated_at", null: false
     t.string "banner_tag"
     t.string "banner_image"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_banners_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -25,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_04_06_114638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "post_video"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "tag_maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,6 +56,8 @@ ActiveRecord::Schema.define(version: 2021_04_06_114638) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "banners", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "tag_maps", "users"
 end

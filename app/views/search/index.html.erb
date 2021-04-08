@@ -1,16 +1,15 @@
-<header class="header">
+<!--<header class="header">
   <p id="pahoo">Pahoo</p>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
   <% end %>
 </header>
 
-<!--<div class="tagScrollArea">
-  <% @tags.each do |tag| %>
-    <>  
+<ul class="tagListArea">
+  <% @tag_lists.each do |list| %>
+    <li class="tagList">
+      <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
+    </li>
   <% end %>
-
-</div>-->
-<div class="Area">
-</div>
+</ul>
 <%= render partial: "modules/footer" %>

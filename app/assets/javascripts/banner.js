@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log('test');
 
   // pahooの左端の座標
   const pahoo_left_edge = document.getElementById('pahoo').getBoundingClientRect().left;

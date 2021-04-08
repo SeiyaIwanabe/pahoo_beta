@@ -1,0 +1,34 @@
+<header class="header">
+  <p id="pahoo">Pahoo</p>
+  <%= link_to new_banner_path, class: "CreateBannerLink" do %>
+    <i class="fas fa-plus-square"></i>
+  <% end %>
+</header>
+
+<ul class="tagListArea">
+  <% @tag_lists.each do |list| %>
+    <li class="tagList">
+      <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
+    </li>
+  <% end %>
+</ul>
+
+<% if params[:tag_id] %>
+  <ul class="usersIndex">
+    <% @users.each do |user| %>
+      <li class="userList">
+        <%= link_to user_path(user.id), class: "userShowLink" do %>
+          <div class="left-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="right-name">
+            <p class="user-id"><%= user.id_name %></p>
+            <p class="user-nickname"><%= user.nickname %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render partial: "modules/footer" %>

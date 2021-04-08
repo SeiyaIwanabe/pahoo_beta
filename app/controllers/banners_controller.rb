@@ -22,7 +22,7 @@ class BannersController < ApplicationController
   private
 
   def banner_params
-    params.require(:banner).permit(:banner_name, :banner_tag, :banner_image)
+    params.require(:banner).permit(:banner_name, :banner_tag, :banner_image).merge(user_id: current_user.id)
   end
 
 end
