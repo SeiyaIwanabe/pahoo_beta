@@ -1,5 +1,9 @@
 class User < ApplicationRecord
+  # パスワード暗号化
   has_secure_password
+
+  # Icon設定
+  mount_uploader :icon, UserIconUploader
 
   # アソシエーション
   has_many :posts, dependent: :destroy

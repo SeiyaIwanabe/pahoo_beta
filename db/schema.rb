@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_082807) do
+ActiveRecord::Schema.define(version: 2021_04_08_225542) do
 
   create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_name", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_082807) do
     t.string "id_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icon"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

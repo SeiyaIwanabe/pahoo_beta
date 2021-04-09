@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     if params[:tag_id].present?
       @tag = Tag.find(params[:tag_id])
       @users = @tag.users.order(created_at: "DESC")
+      # @user = User.find(params[:id])
     end
     @tag_lists = Tag.all
     @posts = Post.all.order(created_at: "DESC") 
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id] )
     @posts = @user.posts.order(created_at: "DESC")
   end
 
@@ -45,6 +46,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :id_name, :password, :password_confirmation, { tag_ids: [] })
+    params.require(:user).permit(:nickname, :id_name, :password, :password_confirmation, :icon, { tag_ids: [] })
   end
 end

@@ -4,6 +4,18 @@
   <%= form_with model: @user, user_id: @user.id, local: true do |f| %>
 
     <div class="section">
+      <label class="iconField">
+        <% if @user.icon.present? %>
+          <%= image_tag @user.icon.url, id: "img_prev", class: "setIcon" %>
+        <% else %>
+          <i class="fas fa-user-plus"></i>
+        <% end %>
+        <%= f.label :プロフィール画像を変更, class: "iconLabel" %>
+        <%= f.file_field :icon, class: "iconFile", id: "user_img" %>
+      </label>
+    </div>
+
+    <div class="section">
       <%= f.label :お名前 %>
       <%= f.text_field :nickname %>
     </div>
@@ -27,3 +39,5 @@
   <% end %>
 
 </div>
+
+<%= javascript_include_tag 'icon' %>
