@@ -16,7 +16,7 @@
 
 <div class="post-area">
   <ul class="post-contents">
-    <% @posts.each do |post|%>
+    <% @posts.each do |post| %>
       <li class="post-content">
         <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "postVideo") %>
         <%# <div class="controls">
@@ -32,23 +32,30 @@
         
         <%# <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label> %>
 
-        <%= link_to "#", class: "menuLink" do%>
+        <!--<%= link_to "#", class: "menuLink" do%>
           <i class="fas fa-ellipsis-h"></i>
+        <% end %>-->
+        <% @users.each do |user| %>
+          <%= link_to user_path(user.id), class: "profileLink" do%>
+            <% if post.user.icon? %>
+              <%= image_tag post.user.icon.url, class: "user-icon"%>
+            <% else %>
+              <i class="fas fa-user-circle"></i>
+            <% end %>
+            <p class="user-nickname"><%= post.user.nickname %></p>
+          <% end %>
+          <%= link_to "#", class: "goodLink" do%>
+            <i class="far fa-heart", id="js-good"></i>
+          <% end %>
+          <%= link_to "#", class: "commentLink" do%>
+            <i class="far fa-comment-dots"></i>
+          <% end %>
+          <%= link_to "#", class: "shareLink" do%>
+            <i class="fas fa-share-alt"></i>
+          <% end %>
+          <div class="postText"><%= post.post_text %></div>
+          <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
         <% end %>
-        <%= link_to "#", class: "profileLink" do%>
-          <i class="fas fa-user-circle"></i>
-        <% end %>
-        <%= link_to "#", class: "goodLink" do%>
-          <i class="far fa-heart", id="js-good"></i>
-        <% end %>
-        <%= link_to "#", class: "commentLink" do%>
-          <i class="far fa-comment-dots"></i>
-        <% end %>
-        <%# <%= link_to "#", class: "shareLink" do%>
-          <%# <i class="fas fa-share-alt"></i> %>
-        <%# <% end %>
-        <div class="postText"><%= post.post_text %></div>
-        <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
       </li>
     <% end %>
   </ul>

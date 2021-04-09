@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   before_action :move_to_login
 
   def index
-    @posts = Post.all.order(id: "DESC")
+    @posts = Post.all.includes(:user).order(id: "DESC")
     @banners = Banner.all.order(id: "DESC")
-    # @user = User.find(params[:id])
+    @users = User.all
   end
 
   def new

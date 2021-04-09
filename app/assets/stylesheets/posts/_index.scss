@@ -143,18 +143,37 @@
         }
       }
       .profileLink {
+        text-decoration: none;
+        outline: none;
         position: absolute;
-        right: 40px;
-        bottom: 350px;
+        top: 30px;
+        left: 30px;
+        display: flex;
+        align-items: center;
+
+        .user-icon {
+          display: block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 20px;
+        }
         i {
           color: #fff;
           font-size: 60px;
+          margin-right: 20px;
+        }
+        .user-nickname {
+          color: #fff;
+          font-size: 30px;
+          font-weight: bold;
         }
       }
       .goodLink {
         position: absolute;
         right: 40px;
-        bottom: 250px;
+        bottom: 290px;
         i {
           color: #fff;
           font-size: 60px;
@@ -163,7 +182,7 @@
       .commentLink {
         position: absolute;
         right: 40px;
-        bottom: 150px;
+        bottom: 190px;
         i {
           color: #fff;
           font-size: 60px;
@@ -172,7 +191,7 @@
       .shareLink {
         position: absolute;
         right: 40px;
-        bottom: 50px;
+        bottom: 90px;
         i {
           color: #fff;
           font-size: 60px;

@@ -6,9 +6,8 @@
 
 <header class="mypage-header">
 
-  <% if current_user %>
-    <h1><%= current_user.id_name %></h1>
-  <% end %>
+<h1><%= @user.id_name %></h1>
+  
 
   <div class="right-header">
     <%= link_to new_banner_path, class: "CreateBannerLink" do %>
@@ -30,7 +29,7 @@
       <% else %>
         <i class="fas fa-user-circle"></i>
       <% end %>
-      <p><%= current_user.nickname %></p>
+      <p><%= @user.nickname %></p>
       <p>自己紹介文...</p>
     </div>
 
