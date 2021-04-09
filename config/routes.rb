@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   #ホーム画面
-  root to: 'posts#index'
+  root to: 'home#index'
+  get 'home/index'
   
   # ログイン関連
   get 'login', to: "sessions#new"

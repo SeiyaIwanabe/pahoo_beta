@@ -19,7 +19,7 @@
       </div>
       <% if params[:tag_id] %>
         <ul class="usersIndex">
-          <% @users.each do |user| %>
+          <% @connect_users.each do |user| %>
             <li class="userList">
               <%= link_to user_path(id: user.id), class: "userShowLink" do %>
                 <div class="left-icon">
@@ -53,16 +53,16 @@
     </div>
     <div class="search-tab-contents-item" data-content="1">
       <div class="tagListArea">
-        <% @posts_tag_lists.each do |list| %>
-          <%= link_to list.post_tag_name, posts_path(post_tag_id: list.id), class: "listLink" %>
+        <% @posts_tag_lists.each do |post_list| %>
+          <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "listLink" %>
         <% end %>
       </div>
       <% if params[:post_tag_id] %>
         <ul class="PostsIndex">
-          <% @posts.each do |post| %>
+          <% @connect_posts.each do |post| %>
             <li class="postList">
               <%= link_to post_path(id: post.id), class: "userShowLink" do %>
-                <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "defaultContent") %>
+                <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
               <% end %>
             </li>
           <% end %>
@@ -70,7 +70,7 @@
       <% else %>
         <div class="defaultPostedArea">
           <% @posts.each do |post| %>
-            <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "defaultContent") %>
+            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
           <% end %>
         </div>
       <% end %>

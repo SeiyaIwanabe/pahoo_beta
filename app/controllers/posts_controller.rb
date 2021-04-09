@@ -2,9 +2,14 @@ class PostsController < ApplicationController
   before_action :move_to_login
 
   def index
-    @posts = Post.all.includes(:user).order(id: "DESC")
-    @banners = Banner.all.order(id: "DESC")
-    @users = User.all
+    if params[:post_tag_id].present?
+      @post_tag = PostTag.find(params[:post_tag_id])
+      @connect_posts = @post_tag.posts.order(created_at: "DESC")
+    end
+      @tag_lists = Tag.all
+      @posts_tag_lists = PostTag.all
+      @users = User.all.order(created_at: "DESC") 
+      @posts = Post.all.order(created_at: "DESC") 
   end
 
   def new

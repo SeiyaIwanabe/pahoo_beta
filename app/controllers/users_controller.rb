@@ -3,11 +3,10 @@ class UsersController < ApplicationController
   def index
     if params[:tag_id].present?
       @tag = Tag.find(params[:tag_id])
-      @users = @tag.users.order(created_at: "DESC")
-      # @user = User.find(params[:id])
+      @connect_users = @tag.users.order(created_at: "DESC")
     elsif params[:post_tag_id].present?
       @post_tag = PostTag.find(params[:post_tag_id])
-      @posts = @post_tag.posts.order(created_at: "DESC")
+      @connect_posts = @post_tag.posts.order(created_at: "DESC")
     end
       @tag_lists = Tag.all
       @posts_tag_lists = PostTag.all

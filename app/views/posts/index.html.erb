@@ -1,82 +1,79 @@
-<div class="notifications">
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: key)%>
-  <% end %>
-</div>
-
 <header class="header">
   <p id="pahoo">Pahoo</p>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
   <% end %>
-  <% if current_user %>
-    <%= link_to "ログアウト", logout_path, method: :delete %>
-  <% end %>
 </header>
 
-<div class="post-area">
-  <ul class="post-contents">
-    <% @posts.each do |post| %>
-      <li class="post-content">
-        <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "postVideo") %>
-        <%# <div class="controls">
-          <div class="orange-bar">
-            <div class="orange-juice"></div>
-          </div>
-        </div>
-        <label class="btnLabel" ">
-          <div class="buttons">
-            <button id="playPause"></button>
-          </div>
-        </label> %>
-        
-        <%# <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label> %>
-
-        <!--<%= link_to "#", class: "menuLink" do%>
-          <i class="fas fa-ellipsis-h"></i>
-        <% end %>-->
-        <% @users.each do |user| %>
-          <%= link_to user_path(user.id), class: "profileLink" do%>
-            <% if post.user.icon? %>
-              <%= image_tag post.user.icon.url, class: "user-icon"%>
-            <% else %>
-              <i class="fas fa-user-circle"></i>
-            <% end %>
-            <p class="user-nickname"><%= post.user.nickname %></p>
-          <% end %>
-          <%= link_to "#", class: "goodLink" do%>
-            <i class="far fa-heart", id="js-good"></i>
-          <% end %>
-          <%= link_to "#", class: "commentLink" do%>
-            <i class="far fa-comment-dots"></i>
-          <% end %>
-          <%= link_to "#", class: "shareLink" do%>
-            <i class="fas fa-share-alt"></i>
-          <% end %>
-          <div class="postText"><%= post.post_text %></div>
-          <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
+<div class="search-tab" id="js-tab">
+  <div class="search-tab-nav">
+    <%= link_to "アカウント", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
+    <%= link_to "投稿", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
+  </div>
+  <div class="search-tab-contens">
+    <div class="search-tab-contents-item" data-content="0">
+      <div class="tagListArea">
+        <% @tag_lists.each do |list| %>
+          <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-
-<ul class="bannerArea">
-  <% @banners.each do |banner| %>
-    <li class="bannerContent">
-      <%= link_to banner_path(banner.id), class: "bannerLink" do %>
-        <%= image_tag banner.banner_image.url, class: "bannerImage" %>
-        <div class="bannerPop">
-          <p class="bannerTitle"><%= banner.banner_name %></p>
-          <p class="bannerTag">#<%= banner.banner_tag %></p>
+      </div>
+      <% if params[:tag_id] %>
+        <ul class="usersIndex">
+          <% @connect_users.each do |user| %>
+            <li class="userList">
+              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
+                <div class="left-icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="right-name">
+                  <p class="user-id"><%= user.id_name %></p>
+                  <p class="user-nickname"><%= user.nickname %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <ul class="usersIndex">
+          <% @users.each do |user| %>
+            <li class="userList">
+              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
+                <div class="left-icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="right-name">
+                  <p class="user-id"><%= user.id_name %></p>
+                  <p class="user-nickname"><%= user.nickname %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <div class="search-tab-contents-item" data-content="1">
+      <div class="tagListArea">
+        <% @posts_tag_lists.each do |post_list| %>
+          <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "listLink" %>
+        <% end %>
+      </div>
+      <% if params[:post_tag_id] %>
+        <div class="defaultPostedArea">
+          <% @connect_posts.each do |post| %>
+            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="defaultPostedArea">
+          <% @posts.each do |post| %>
+            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+          <% end %>
         </div>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </div>
+  </div>
+</div>
 
 <%= render partial: "modules/footer" %>
 
-<%= javascript_include_tag 'flashMessage' %>
-<%= javascript_include_tag 'banner' %>
+<%= javascript_include_tag 'search-tab' %>
