@@ -54,11 +54,21 @@
   </div>
 </div>
 
-<div class="userPostedArea">
-  <h1>投稿</h1>
-  <% @posts.each do |video| %>
-    <%= video_tag(video.post_video.to_s, controls: true, playsinline: true, class: "myPostesContent") %>
-  <% end %>
+<div class="tab" id="js-tab">
+  <div class="tab-nav">
+    <%= link_to "#", class: "tab-nav-item is-active", data: {nav: '0'} do %><i class="fas fa-film"></i><% end %>
+    <%= link_to "#", class: "tab-nav-item", data: {nav: '1'} do %><i class="fas fa-ad"></i><% end %>
+  </div>
+  <div class="tab-contens">
+    <div class="tab-contents-item" data-content="0">
+      <div class="userPostedArea">
+        <% @posts.each do |video| %>
+          <%= video_tag(video.post_video.to_s, controls: true, playsinline: true, class: "myPostesContent") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-contents-item" data-content="1">その1</div>
+  </div>
 </div>
 
 
@@ -72,3 +82,5 @@
 
 
 <%= render partial: "modules/footer" %>
+
+<%= javascript_include_tag 'tab' %>
