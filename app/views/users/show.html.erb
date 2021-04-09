@@ -67,7 +67,19 @@
         <% end %>
       </div>
     </div>
-    <div class="tab-contents-item" data-content="1">その1</div>
+    <div class="tab-contents-item" data-content="1">
+      <div class="userBannerArea">
+        <% @banners.each do |banner| %>
+          <%= link_to banner_path(banner.id), class: "userBannerLink" do %>
+            <%= image_tag banner.banner_image.url, class: "userBannerImage" %>
+            <div class="bannerPop">
+            <p class="bannerTitle"><%= banner.banner_name %></p>
+            <p class="bannerTag">#<%= banner.banner_tag %></p>
+        </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id] )
     @posts = @user.posts.order(created_at: "DESC")
+    @banners = @user.banners.order(created_at: "DESC")
   end
 
   def edit

@@ -5,4 +5,7 @@ class Banner < ApplicationRecord
   # バリデーション
   validates :banner_name, presence: true
   validates :banner_image, presence: true
+
+  # アソシエーション
+  belongs_to :user
 end
