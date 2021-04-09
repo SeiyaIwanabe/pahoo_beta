@@ -126,26 +126,55 @@
   }
 }
 
-.userPostedArea {
-  height: auto;
+.tab {
+  width: 100%;
   margin-top: 50px;
-  padding: 10px;
-  // width: 100%;
-  // overflow: scroll;
-  // background-color: lightsalmon;
-
-  h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    font-weight: bold;
+  .tab-nav {
+    display: flex;
+    justify-content: space-evenly;
+    .tab-nav-item {
+      display: block;
+      width: 50%;
+      text-decoration: none;
+      font-size: 80px;
+      color: lightgray;
+      text-align: center;
+      // border-bottom: 1px solid lightgray;
+      position: relative;
+      z-index: 2;
+    }
+    .tab-nav-item.is-active {
+      color: #000;
+      border-bottom: 1px solid lightgray;
+      position: relative;
+      z-index: 2;
+    }
   }
+  .tab-contens {
+    .tab-contents-item {
+      display: none;
 
-  .myPostesContent {
-    width: 315px;
-    height: 315px;
-    object-fit: cover;
+      .userPostedArea {
+        height: auto;
+        padding: 10px;
+        // width: 100%;
+        // overflow: scroll;
+      
+        h1 {
+          font-size: 30px;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+        .myPostesContent {
+          width: 315px;
+          height: 315px;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
+
 
 .test {
   height: 500px;
