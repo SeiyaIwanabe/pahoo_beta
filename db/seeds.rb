@@ -15,6 +15,15 @@ Tag.create!([
   {name: "Enjoyしよう勢"},
 ])
 
+PostTag.create!([
+  {post_tag_name: "Hiphop"},
+  {post_tag_name: "Pop"},
+  {post_tag_name: "House"},
+  {post_tag_name: "Break"},
+  {post_tag_name: "Lock"},
+  {post_tag_name: "Enjoyしよう勢"},
+])
+
 # Banner.create!(
 #   [
 #     {

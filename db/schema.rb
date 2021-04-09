@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_225542) do
+ActiveRecord::Schema.define(version: 2021_04_09_122141) do
 
   create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_name", null: false
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 2021_04_08_225542) do
     t.string "banner_image"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_banners_on_user_id"
+  end
+
+  create_table "connects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "post_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_connects_on_post_id"
+    t.index ["post_tag_id"], name: "index_connects_on_post_tag_id"
+  end
+
+  create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "post_tag_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,6 +73,8 @@ ActiveRecord::Schema.define(version: 2021_04_08_225542) do
   end
 
   add_foreign_key "banners", "users"
+  add_foreign_key "connects", "post_tags"
+  add_foreign_key "connects", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "tag_maps", "users"

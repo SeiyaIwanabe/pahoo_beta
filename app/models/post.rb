@@ -8,4 +8,6 @@ class Post < ApplicationRecord
 
   # アソシエーション
   belongs_to :user
+  has_many :connects, dependent: :destroy
+  has_many :post_tags, through: :connects
 end

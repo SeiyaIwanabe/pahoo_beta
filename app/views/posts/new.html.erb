@@ -10,6 +10,15 @@
       <%= f.file_field :post_video, :accept => 'video/*' %>
     </div>
 
+    <div class="checkArea">
+      <p>興味のあるジャンルを選ぼう（複数選択できるヲ）</p>
+      <%= f.collection_check_boxes(:post_tag_ids, PostTag.all, :id, :post_tag_name, include_hidden: false, class: "checkBox") do |tag| %>
+        <label class="genreLabel">
+          <%= tag.check_box + tag.text %>
+        </label>
+      <% end %>
+    </div>
+
     <%= f.submit "投稿", class: "submitBtn" %>
 
   <% end %>

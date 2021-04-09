@@ -34,14 +34,47 @@
           <% end %>
         </ul>
       <% else %>
+        <ul class="usersIndex">
+          <% @users.each do |user| %>
+            <li class="userList">
+              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
+                <div class="left-icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="right-name">
+                  <p class="user-id"><%= user.id_name %></p>
+                  <p class="user-nickname"><%= user.nickname %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <div class="search-tab-contents-item" data-content="1">
+      <div class="tagListArea">
+        <% @posts_tag_lists.each do |list| %>
+          <%= link_to list.post_tag_name, posts_path(post_tag_id: list.id), class: "listLink" %>
+        <% end %>
+      </div>
+      <% if params[:post_tag_id] %>
+        <ul class="PostsIndex">
+          <% @posts.each do |post| %>
+            <li class="postList">
+              <%= link_to post_path(id: post.id), class: "userShowLink" do %>
+                <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "defaultContent") %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
         <div class="defaultPostedArea">
-          <% @posts.each do |video| %>
-            <%= video_tag(video.post_video.to_s, controls: true, playsinline: true, class: "defaultContent") %>
+          <% @posts.each do |post| %>
+            <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "defaultContent") %>
           <% end %>
         </div>
       <% end %>
     </div>
-    <div class="search-tab-contents-item" data-content="1">その1</div>
   </div>
 </div>
 
