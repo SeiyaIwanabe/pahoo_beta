@@ -7,51 +7,11 @@
 
 <div class="search-tab" id="js-tab">
   <div class="search-tab-nav">
-    <%= link_to "アカウント", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
-    <%= link_to "投稿", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
+    <%= link_to "投稿", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
+    <%= link_to "アカウント", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
   </div>
   <div class="search-tab-contens">
     <div class="search-tab-contents-item" data-content="0">
-      <div class="tagListArea">
-        <% @tag_lists.each do |list| %>
-          <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
-        <% end %>
-      </div>
-      <% if params[:tag_id] %>
-        <ul class="usersIndex">
-          <% @connect_users.each do |user| %>
-            <li class="userList">
-              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
-                <div class="left-icon">
-                  <i class="fas fa-user-circle"></i>
-                </div>
-                <div class="right-name">
-                  <p class="user-id"><%= user.id_name %></p>
-                  <p class="user-nickname"><%= user.nickname %>
-                </div>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      <% else %>
-        <ul class="usersIndex">
-          <% @users.each do |user| %>
-            <li class="userList">
-              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
-                <div class="left-icon">
-                  <i class="fas fa-user-circle"></i>
-                </div>
-                <div class="right-name">
-                  <p class="user-id"><%= user.id_name %></p>
-                  <p class="user-nickname"><%= user.nickname %>
-                </div>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
-    <div class="search-tab-contents-item" data-content="1">
       <div class="tagListArea">
         <% @posts_tag_lists.each do |post_list| %>
           <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "listLink" %>
@@ -69,6 +29,54 @@
             <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
           <% end %>
         </div>
+      <% end %>
+    </div>
+    <div class="search-tab-contents-item" data-content="1">
+      <div class="tagListArea">
+        <% @tag_lists.each do |list| %>
+          <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
+        <% end %>
+      </div>
+      <% if params[:tag_id] %>
+        <ul class="usersIndex">
+          <% @connect_users.each do |user| %>
+            <li class="userList">
+              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
+                <div class="left-icon">
+                  <% if user.icon? %>
+                    <%= image_tag user.icon.url, class: "userIcon" %>
+                  <% else %>
+                    <i class="fas fa-user-circle"></i>
+                  <% end %>
+                </div>
+                <div class="right-name">
+                  <p class="user-id"><%= user.id_name %></p>
+                  <p class="user-nickname"><%= user.nickname %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <ul class="usersIndex">
+          <% @users.each do |user| %>
+            <li class="userList">
+              <%= link_to user_path(id: user.id), class: "userShowLink" do %>
+                <div class="left-icon">
+                  <% if user.icon? %>
+                    <%= image_tag user.icon.url, class: "userIcon" %>
+                  <% else %>
+                    <i class="fas fa-user-circle"></i>
+                  <% end %>
+                </div>
+                <div class="right-name">
+                  <p class="user-id"><%= user.id_name %></p>
+                  <p class="user-nickname"><%= user.nickname %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
       <% end %>
     </div>
   </div>

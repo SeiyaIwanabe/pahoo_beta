@@ -23,7 +23,11 @@
             <li class="userList">
               <%= link_to user_path(id: user.id), class: "userShowLink" do %>
                 <div class="left-icon">
-                  <i class="fas fa-user-circle"></i>
+                  <% if user.icon? %>
+                    <%= image_tag user.icon.url, class: "userIcon" %>
+                  <% else %>
+                    <i class="fas fa-user-circle"></i>
+                  <% end %>
                 </div>
                 <div class="right-name">
                   <p class="user-id"><%= user.id_name %></p>
@@ -39,7 +43,11 @@
             <li class="userList">
               <%= link_to user_path(id: user.id), class: "userShowLink" do %>
                 <div class="left-icon">
-                  <i class="fas fa-user-circle"></i>
+                  <% if user.icon? %>
+                    <%= image_tag user.icon.url, class: "userIcon" %>
+                  <% else %>
+                    <i class="fas fa-user-circle"></i>
+                  <% end %>
                 </div>
                 <div class="right-name">
                   <p class="user-id"><%= user.id_name %></p>

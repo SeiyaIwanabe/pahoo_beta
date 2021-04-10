@@ -176,11 +176,15 @@
       .userBannerArea {
         height: auto;
         padding: 60px;
+        display: flex;
+        flex-wrap: wrap;
 
         .userBannerLink {
           display: block;
           text-decoration: none;
           position: relative;
+          margin-right: 30px;
+          margin-bottom: 30px;
 
           .userBannerImage {
             width: 250px;
