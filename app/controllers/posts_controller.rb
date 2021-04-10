@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :move_to_login
 
   def index
     if params[:post_tag_id].present?
@@ -35,12 +34,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:post_text, :post_video,  { post_tag_ids: [] } ).merge(user_id: current_user.id)
   end
-
-  def move_to_login
-    if current_user.nil?
-      #サインインしていないユーザーはログインページが表示される
-      redirect_to login_path
-    end
-  end
-
 end
