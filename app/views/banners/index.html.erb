@@ -7,34 +7,38 @@
 
 <div class="search-tab" id="js-tab">
   <div class="search-tab-nav">
-    <%= link_to "投稿", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
+    <%= link_to "バナー", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
     <%= link_to "アカウント", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
-    <%= link_to "バナー", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
+    <%= link_to "投稿", "#", class: "search-tab-nav-item", data: {nav: '2'} %>
   </div>
   <div class="search-tab-contens">
     <div class="search-tab-contents-item" data-content="0">
 
       <div class="tagListArea">
-        <% @posts_tag_lists.each do |post_list| %>
-          <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "listLink" %>
+        <% @banners_tag_lists.each do |banner_list| %>
+          <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "listLink" %>
         <% end %>
       </div>
-      <% if params[:post_tag_id] %>
-        <div class="defaultPostedArea">
-          <% @connect_posts.each do |post| %>
-            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+      <% if params[:banner_tag_id] %>
+        <ul class="PostsIndex">
+          <% @connect_banners.each do |banner| %>
+            <li class="postList">
+              <%= link_to banner_path(id: banner.id), class: "userShowLink" do %>
+                <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+              <% end %>
+            </li>
           <% end %>
-        </div>
+        </ul>
       <% else %>
-        <div class="defaultPostedArea">
-          <% @posts.each do |post| %>
-            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
-          <% end %>
-        </div>
+        <% @banners.each do |banner| %>
+          <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+        <% end %>
       <% end %>
+
     </div>
 
     <div class="search-tab-contents-item" data-content="1">
+
       <div class="tagListArea">
         <% @tag_lists.each do |list| %>
           <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
@@ -85,29 +89,30 @@
 
     <div class="search-tab-contents-item" data-content="2">
 
-    <div class="tagListArea">
-        <% @banners_tag_lists.each do |banner_list| %>
-          <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "listLink" %>
+      <div class="tagListArea">
+        <% @posts_tag_lists.each do |post_list| %>
+          <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "listLink" %>
         <% end %>
       </div>
-      <% if params[:banner_tag_id] %>
+      <% if params[:post_tag_id] %>
         <ul class="PostsIndex">
-          <% @connect_banners.each do |banner| %>
+          <% @connect_posts.each do |post| %>
             <li class="postList">
-              <%= link_to banner_path(id: banner.id), class: "userShowLink" do %>
-                <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+              <%= link_to post_path(id: post.id), class: "userShowLink" do %>
+                <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
               <% end %>
             </li>
           <% end %>
         </ul>
       <% else %>
-        <% @banners.each do |banner| %>
-          <%= image_tag banner.banner_image.url, class: "bannerImage" %>
-        <% end %>
+        <div class="defaultPostedArea">
+          <% @posts.each do |post| %>
+            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+          <% end %>
+        </div>
       <% end %>
     </div>
 
-    </div>
   </div>
 </div>
 

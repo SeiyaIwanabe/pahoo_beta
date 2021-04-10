@@ -24,6 +24,13 @@ PostTag.create!([
   {post_tag_name: "Enjoyしよう勢"},
 ])
 
+BannerTag.create!([
+  {banner_tag_name: "ナンバー募集"},
+  {banner_tag_name: "練習会"},
+  {banner_tag_name: "レッスン生募集"},
+  {banner_tag_name: "コラム記事"},
+])
+
 # Banner.create!(
 #   [
 #     {

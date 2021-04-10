@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_122141) do
+ActiveRecord::Schema.define(version: 2021_04_10_123542) do
+
+  create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "banner_tag_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "banners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "banner_tag"
     t.string "banner_image"
     t.bigint "user_id", null: false
+    t.bigint "banner_tag_id"
+    t.index ["banner_tag_id"], name: "index_banners_on_banner_tag_id"
     t.index ["user_id"], name: "index_banners_on_user_id"
   end
 
@@ -72,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_122141) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "banners", "banner_tags"
   add_foreign_key "banners", "users"
   add_foreign_key "connects", "post_tags"
   add_foreign_key "connects", "posts"

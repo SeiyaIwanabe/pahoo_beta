@@ -8,4 +8,5 @@ class Banner < ApplicationRecord
 
   # アソシエーション
   belongs_to :user
+  belongs_to :banner_tag
 end
