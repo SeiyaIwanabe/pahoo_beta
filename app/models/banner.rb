@@ -8,4 +8,6 @@ class Banner < ApplicationRecord
 
   # アソシエーション
   belongs_to :user
+  has_many :intermediates, dependent: :destroy
+  has_many :banner_tags, through: :intermediates
 end
