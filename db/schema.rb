@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_090224) do
+ActiveRecord::Schema.define(version: 2021_04_10_123542) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_04_10_090224) do
     t.datetime "updated_at", null: false
     t.string "banner_image"
     t.bigint "user_id", null: false
+    t.bigint "banner_tag_id"
+    t.index ["banner_tag_id"], name: "index_banners_on_banner_tag_id"
     t.index ["user_id"], name: "index_banners_on_user_id"
   end
 
@@ -34,15 +36,6 @@ ActiveRecord::Schema.define(version: 2021_04_10_090224) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_connects_on_post_id"
     t.index ["post_tag_id"], name: "index_connects_on_post_tag_id"
-  end
-
-  create_table "intermediates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "banner_id"
-    t.bigint "banner_tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["banner_id"], name: "index_intermediates_on_banner_id"
-    t.index ["banner_tag_id"], name: "index_intermediates_on_banner_tag_id"
   end
 
   create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,11 +79,10 @@ ActiveRecord::Schema.define(version: 2021_04_10_090224) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "banners", "banner_tags"
   add_foreign_key "banners", "users"
   add_foreign_key "connects", "post_tags"
   add_foreign_key "connects", "posts"
-  add_foreign_key "intermediates", "banner_tags"
-  add_foreign_key "intermediates", "banners"
   add_foreign_key "posts", "users"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "tag_maps", "users"

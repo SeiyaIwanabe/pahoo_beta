@@ -61,7 +61,6 @@
   </ul>
 </div>
 
-
 <ul class="bannerArea">
   <% @banners.each do |banner| %>
     <li class="bannerContent">
@@ -69,7 +68,7 @@
         <%= image_tag banner.banner_image.url, class: "bannerImage" %>
         <div class="bannerPop">
           <p class="bannerTitle"><%= banner.banner_name %></p>
-          <p class="bannerTag">#<%= banner.banner_tag %></p>
+          
         </div>
       <% end %>
     </li>

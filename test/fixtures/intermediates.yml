@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  banner: one
-  banner_tag: one
-
-two:
-  banner: two
-  banner_tag: two

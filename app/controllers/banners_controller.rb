@@ -17,12 +17,9 @@ class BannersController < ApplicationController
     @banner = Banner.find(params[:id])
   end
 
-
-
   private
-
   def banner_params
-    params.require(:banner).permit(:banner_name, :banner_tag, :banner_image).merge(user_id: current_user.id)
+    params.require(:banner).permit(:banner_name, :banner_image, :banner_tag_id).merge(user_id: current_user.id)
   end
 
 end
