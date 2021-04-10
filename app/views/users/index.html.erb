@@ -9,9 +9,11 @@
   <div class="search-tab-nav">
     <%= link_to "アカウント", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
     <%= link_to "投稿", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
+    <%= link_to "バナー", "#", class: "search-tab-nav-item", data: {nav: '2'} %>
   </div>
   <div class="search-tab-contens">
     <div class="search-tab-contents-item" data-content="0">
+
       <div class="tagListArea">
         <% @tag_lists.each do |list| %>
           <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
@@ -59,6 +61,7 @@
         </ul>
       <% end %>
     </div>
+
     <div class="search-tab-contents-item" data-content="1">
       <div class="tagListArea">
         <% @posts_tag_lists.each do |post_list| %>
@@ -83,6 +86,31 @@
         </div>
       <% end %>
     </div>
+
+    <div class="search-tab-contents-item" data-content="2">
+
+      <div class="tagListArea">
+        <% @banners_tag_lists.each do |banner_list| %>
+          <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "listLink" %>
+        <% end %>
+      </div>
+      <% if params[:banner_tag_id] %>
+        <ul class="PostsIndex">
+          <% @connect_banners.each do |banner| %>
+            <li class="postList">
+              <%= link_to banner_path(id: banner.id), class: "userShowLink" do %>
+                <%= image_tag banner.image.url, class: "bannerImage" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <% @banners.each do |banner| %>
+          <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 </div>
 
