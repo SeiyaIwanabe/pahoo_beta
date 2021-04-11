@@ -35,6 +35,12 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @post = Post.find(params[:id])
+    @user = @post.user
+    @posts = @user.posts.order(created_at: "DESC")
+  end
   
   def destroy
     post = Post.find(params[:id])

@@ -67,21 +67,25 @@
 }
 
 // 初期画面
-.defaultPostedArea {
-  height: 800px;
-  // background-color: lightgray;
-  padding: 10px 10px 10px 10px;
+.postScallLink {
+  text-decoration: none;
 
-  .defaultContent {
-    width: 315px;
-    height: 315px;
-    // max-height: 315px;
-    // max-width: 315px;
-    object-fit: cover;
-    background-color: #000;
-    // margin-right: 10px;
-  }
-} 
+  .defaultPostedArea {
+    height: 800px;
+    // background-color: lightgray;
+    padding: 10px;
+  
+    .defaultContent {
+      width: 315px;
+      height: 315px;
+      // max-height: 315px;
+      // max-width: 315px;
+      object-fit: cover;
+      background-color: #000;
+      // margin-right: 10px;
+    }
+  } 
+}
 
 .usersIndex {
   height: auto;

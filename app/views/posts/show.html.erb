@@ -1,0 +1,46 @@
+<div class="showHeader">
+  <%# <%= link_to "", :back, class: "backLink" %>
+  <p class="postOwnerName"><%= @post.user.nickname %></p>
+  <h1>投稿</h1>
+</div>
+
+<div class="PickupContent">
+  <%= video_tag(@post.post_video.to_s, controls: true, playsinline: true, class: "scallPostVideo") %>
+  <%= link_to user_path(@post.user.id), class: "scallProfileLink" do%>
+    <% if @post.user.icon? %>
+      <%= image_tag @post.user.icon.url, class: "user-icon"%>
+    <% else %>
+      <i class="fas fa-user-circle"></i>
+    <% end %>
+    <p class="user-nickname"><%= @post.user.nickname %></p>
+  <% end %>
+  <%= link_to "#", class: "goodLink" do%>
+    <i class="far fa-heart", id="js-good"></i>
+  <% end %>
+  <%= link_to "#", class: "commentLink" do%>
+    <i class="far fa-comment-dots"></i>
+  <% end %>
+  <%= link_to "#", class: "shareLink" do%>
+    <i class="fas fa-share-alt"></i>
+  <% end %>
+  <div class="postText"><%= @post.post_text %></div>
+  <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
+</div>
+
+
+<!-- ユーザーの他の投稿一覧 -->
+<div class="userOthersPosted">
+  <p><span><%= @post.user.nickname %></span>さんの他の投稿</p>
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post.id), class: "postScallLink" do %>
+      <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "otherContents") %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+
+
+
+<%= render partial: "modules/footer" %>

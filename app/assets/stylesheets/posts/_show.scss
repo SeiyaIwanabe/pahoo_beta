@@ -1,0 +1,76 @@
+.showHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // .backLink {
+  //   text-decoration: none;
+  //   display: block;
+  //   width: 30px;
+  //   height: 30px;
+  //   border: 5px solid;
+  //   border-color:  transparent transparent #565656 #565656;
+  //   transform: rotate(45deg);
+  // }
+  .postOwnerName {
+    color: gray;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 35px;
+  }
+}
+
+.PickupContent {
+  padding-top: 100px;
+  
+  .scallPostVideo {
+    width: 100vw;
+    max-height: 800px;
+    position: relative;
+    // background-color: black;
+    object-fit: contain;
+  }
+  
+  .scallProfileLink {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    text-decoration: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.userOthersPosted {
+  margin-top: 100px;
+  padding: 10px;
+
+  p {
+    font-size: 30px;
+  }
+
+  .postScallLink {
+
+    .otherContents {
+      width: 315px;
+      height: 315px;
+      // max-height: 315px;
+      // max-width: 315px;
+      object-fit: cover;
+      background-color: #000;
+      // margin-right: 10px;
+    }
+  }
+}
