@@ -9,7 +9,7 @@
   <div class="search-tab-nav">
     <%= link_to "投稿", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
     <%= link_to "アカウント", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
-    <%= link_to "バナー", "#", class: "search-tab-nav-item", data: {nav: '1'} %>
+    <%= link_to "バナー", "#", class: "search-tab-nav-item", data: {nav: '2'} %>
   </div>
   <div class="search-tab-contens">
     <div class="search-tab-contents-item" data-content="0">
@@ -105,9 +105,17 @@
           <% end %>
         </ul>
       <% else %>
-        <% @banners.each do |banner| %>
-          <%= image_tag banner.banner_image.url, class: "bannerImage" %>
-        <% end %>
+        <div class="userBannerArea">
+          <% @banners.each do |banner| %>
+            <%= link_to banner_path(banner.id), class: "userBannerLink" do %>
+              <%= image_tag banner.banner_image.url, class: "userBannerImage" %>
+              <div class="bannerPop">
+              <p class="bannerTitle"><%= banner.banner_name %></p>
+              <!--<p class="bannerTag">#<%= banner.banner_tag %></p>-->
+          </div>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
 
