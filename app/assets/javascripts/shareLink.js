@@ -21,6 +21,4 @@ $(document).ready(function() {
     $('nav').animate({ "margin-bottom": -500 }, 200);
     $(this).css('display', 'none');
   });
-
-
 });
