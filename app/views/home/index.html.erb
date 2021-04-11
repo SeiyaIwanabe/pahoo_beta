@@ -4,6 +4,9 @@
   <% end %>
 </div>
 
+<label id="js-nav-close"></label>
+
+
 <header class="header">
   <p id="pahoo">Pahoo</p>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
@@ -16,6 +19,17 @@
     <% @posts.each do |post| %>
       <li class="post-content">
         <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "postVideo") %>
+        <nav id="shareNav">
+          <li>
+            <i class="fab fa-twitter"></i>
+            <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank' %>
+          </li>
+          <li>
+            <i class="fab fa-line"></i>
+          </li>
+          <li>
+          </li>
+        </nav>
         <%# <div class="controls">
           <div class="orange-bar">
             <div class="orange-juice"></div>
@@ -76,3 +90,4 @@
 
 <%= javascript_include_tag 'flashMessage' %>
 <%= javascript_include_tag 'banner' %>
+<%= javascript_include_tag 'menu' %>

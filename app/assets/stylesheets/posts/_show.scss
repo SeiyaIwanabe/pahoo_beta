@@ -120,6 +120,47 @@
   }
 }
 
+#shareNav {
+  background-color: #fff;
+  width: 100vw;
+  height: 500px;
+  // margin: 0 auto;
+  border-radius: 20px;
+  position: fixed;
+  bottom: 0;
+  z-index: 200; /*最前面に*/
+  margin-bottom: -500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  li {
+    list-style: none;
+    height: 100px;
+    border-bottom: 1px solid lightgray;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 40px;
+      margin-right: 20px;
+    }
+    .postShareLink {
+      text-decoration: none;
+      color: #000;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center; 
+    }
+    iframe {
+      width: 150px;
+      height: 40px;
+    }
+  }
+}
+
 
 .userOthersPosted {
   margin-top: 100px;

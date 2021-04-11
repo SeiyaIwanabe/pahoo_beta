@@ -43,6 +43,22 @@
 
     .post-content {
       position: relative;
+
+      #shareNav {
+        background-color: #fff;
+        width: 100vw;
+        height: 500px;
+        // margin: 0 auto;
+        border-radius: 20px;
+        position: fixed;
+        bottom: 0;
+        z-index: 200; /*最前面に*/
+        margin-bottom: -500px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
       
       .postVideo {
         width: 100vw;
