@@ -1,8 +1,42 @@
-<div class="notifications">
+<!--<div class="notifications">
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: key)%>
   <% end %>
-</div>
+</div>-->
+
+<label id="js-nav-close"></label>
+<nav id="menuNav">
+  <li>
+    <% if current_user %>
+      <i class="fas fa-sign-out-alt"></i>
+      <%= link_to "ログアウト", logout_path, method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if current_user %>
+      <i class="fas fa-history"></i>
+      <%= link_to "アーカイブ(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if current_user %>
+      <i class="fas fa-paperclip"></i>
+      <%= link_to "保存済み(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if current_user %>
+      <i class="fas fa-infinity"></i>
+      <%= link_to "Unity(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if current_user %>
+      <i class="fas fa-user-plus"></i>
+      <%= link_to "ユーザーを探そう(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+</nav>
 
 <header class="mypage-header">
 
@@ -13,8 +47,10 @@
     <%= link_to new_banner_path, class: "CreateBannerLink" do %>
       <i class="fas fa-plus-square"></i>
     <% end %>
-    <label class="setting-menu">
-      <i class="fas fa-bars"></i>
+    <label class="menu-wrapper">
+      <div class="menu-item line1"></div>
+      <div class="menu-item line2"></div>
+      <div class="menu-item line3"></div>
     </label>
   </div>
   
@@ -89,12 +125,11 @@
 
  
 
-<div class="menuNav">
-  <p>ハンバーガーメニュー</p>
-  <p>画面したから出現</p>
-</div>
+
 
 
 <%= render partial: "modules/footer" %>
 
 <%= javascript_include_tag 'user-show-tab' %>
+<%= javascript_include_tag 'menu' %>
+
