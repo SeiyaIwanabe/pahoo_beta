@@ -166,10 +166,15 @@
           margin-bottom: 10px;
           font-weight: bold;
         }
-        .myPostesContent {
-          width: 315px;
-          height: 315px;
-          object-fit: cover;
+
+        .postScallLink {
+          text-decoration: none;
+          
+          .myPostesContent {
+            width: 315px;
+            height: 315px;
+            object-fit: cover;
+          }
         }
       }
 

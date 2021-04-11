@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+
 
   // .backLink {
   //   text-decoration: none;
@@ -32,23 +34,77 @@
 
 .PickupContent {
   padding-top: 100px;
+  position: relative;
   
   .scallPostVideo {
     width: 100vw;
     max-height: 800px;
-    position: relative;
-    // background-color: black;
+    background-color: black;
     object-fit: contain;
   }
   
   .scallProfileLink {
     position: absolute;
-    top: 30px;
+    top: 120px;
     left: 30px;
     text-decoration: none;
     outline: none;
     display: flex;
     align-items: center;
+
+    .user-icon {
+      display: block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    i {
+      color: #fff;
+      font-size: 60px;
+      margin-right: 20px;
+    }
+    .user-nickname {
+      color: #000;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+  .goodLink {
+    position: absolute;
+    right: 40px;
+    bottom: 290px;
+    i {
+      color: #fff;
+      font-size: 60px;
+    }
+  }
+  .commentLink {
+    position: absolute;
+    right: 40px;
+    bottom: 190px;
+    i {
+      color: #fff;
+      font-size: 60px;
+    }
+  }
+  .shareLink {
+    position: absolute;
+    right: 40px;
+    bottom: 90px;
+    i {
+      color: #fff;
+      font-size: 60px;
+    }
+  }
+  .postText {
+    width: 50%;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: #FFF;
+    font-size: 20px;
   }
 }
 
