@@ -62,8 +62,10 @@
   <div class="tab-contens">
     <div class="tab-contents-item" data-content="0">
       <div class="userPostedArea">
-        <% @posts.each do |video| %>
-          <%= video_tag(video.post_video.to_s, controls: true, playsinline: true, class: "myPostesContent") %>
+        <% @posts.each do |post| %>
+          <%= link_to post_path(post.id), class: "postScallLink" do %>
+            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "myPostesContent") %>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index'
 
 
-  resources :posts, only: [:index, :new, :create, :show, :destroy]
+  resources :posts, only: [:index, :new, :create, :show, :destroy] 
+
   resources :banners, only: [:index, :new, :create, :show]
+
   resources :users, only: [:index, :new, :create, :show, :edit, :update]
+  
 
 end

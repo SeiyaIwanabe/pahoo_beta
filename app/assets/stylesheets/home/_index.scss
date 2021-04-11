@@ -43,7 +43,7 @@
 
     .post-content {
       position: relative;
-
+      
       .postVideo {
         width: 100vw;
         max-height: 800px;
@@ -143,11 +143,11 @@
         }
       }
       .profileLink {
-        text-decoration: none;
-        outline: none;
         position: absolute;
         top: 30px;
         left: 30px;
+        text-decoration: none;
+        outline: none;
         display: flex;
         align-items: center;
 
