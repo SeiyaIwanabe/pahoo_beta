@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   #ホーム画面
@@ -7,9 +8,9 @@ Rails.application.routes.draw do
   get 'home/index'
   
   # ログイン関連
-  get 'login', to: "sessions#new"
-  post 'login', to: "sessions#create"
-  delete 'logout', to: "sessions#destroy"
+  # get 'login', to: "sessions#new"
+  # post 'login', to: "sessions#create"
+  # delete 'logout', to: "sessions#destroy"
   
   # 検索画面
   get 'search', to: 'search#index'

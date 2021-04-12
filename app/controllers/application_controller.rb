@@ -1,22 +1,12 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  
-  def login?
-    if current_user.nil?
-      redirect_to login_path, notice: "おいおい、ログインしないで投稿するつもりかい？"
-    end
+  #新規登録時のストロングパラメータに「nicknameカラム」の追加
+  def configure_permitted_parameters
+    #新規登録時のストロングパラメータに「nicknameカラムとageカラム」の追加
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :id_name, :tag_ids => []])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:nickname, :id_name, :tag_ids => []])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :id_name, :icon, :tag_ids => []])
   end
-  
-  def already_login?
-    unless current_user.nil?
-      redirect_to root_path, notice: "もうログインしてるぜ"
-    end
-  end
-  
- private
- def current_user
-   @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
- end
 
-end
+end 

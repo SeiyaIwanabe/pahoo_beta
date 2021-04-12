@@ -9,7 +9,7 @@
   <li>
     <% if current_user %>
       <i class="fas fa-sign-out-alt"></i>
-      <%= link_to "ログアウト", logout_path, method: :delete, class: "logoutLink" %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
