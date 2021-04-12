@@ -2,9 +2,9 @@ $(document).ready(function() {
 
   console.log('test');
   const $hambarger = document.querySelector('.menu-wrapper');
-  const $share_link = document.querySelector('.shareLink');
+  const $bars = document.querySelectorAll('.menu-item');
+
   
-  console.log($share_link);
   // const $menu_nav = document.getElementById('menuNav');
   // const $close = document.getElementById('js-nav-close');
 
@@ -12,20 +12,22 @@ $(document).ready(function() {
 
   // ハンバーガーがクリックされたらイベント発火
   $hambarger.addEventListener('click', () => {
-    // menu.classList.toggle('show-animate');
+    index = 0;
+    while(index < $bars.length) {
+      $bars[index].classList.toggle('show-animate');
+      index++;
+    }
     $('nav').animate({ "margin-bottom": 0 }, 200);
     $('#js-nav-close').css('display', 'block');
   });
 
-  // シェアリングを押したらイベント発火
-  // $share_link.addEventListener('click', (e) => {
-  //   // e.preventDefault;
-  //   $('nav').animate({ "margin-bottom": 0 }, 200);
-  //   $('#js-nav-close').css('display', 'block');
-  // });
-
   // 周りの黒背景をクリックしたらメニューと黒背景が閉じる
   $('#js-nav-close').click(function() {
+    index = 0;
+    while(index < $bars.length) {
+      $bars[index].classList.toggle('show-animate');
+      index++;
+    }
     $('nav').animate({ "margin-bottom": -800 }, 200);
     $(this).css('display', 'none');
   });
