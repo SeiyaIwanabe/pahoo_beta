@@ -69,3 +69,6 @@ gem 'mini_magick'
 
 # デバッグ
 gem 'pry-rails'
+
+# devise
+gem 'devise'

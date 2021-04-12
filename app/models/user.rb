@@ -1,8 +1,10 @@
 class User < ApplicationRecord
-  # パスワード暗号化
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  # Icon設定
+  # CarrierWaveでアイコンをアップロード
   mount_uploader :icon, UserIconUploader
 
   # アソシエーション
@@ -11,6 +13,12 @@ class User < ApplicationRecord
   has_many :tag_maps, dependent: :destroy
   has_many :tags, through: :tag_maps
 
-  # accepts_nested_attributes_for :tag_maps, allow_destroy: true
+  #登録時にメールアドレスを不要とする
+  def email_required?
+    false
+  end
 
+  def email_changed?
+    false
+  end
 end
