@@ -1,14 +1,7 @@
 $(document).ready(function() {
 
-  console.log('test');
   const $hambarger = document.querySelector('.menu-wrapper');
   const $bars = document.querySelectorAll('.menu-item');
-
-  
-  // const $menu_nav = document.getElementById('menuNav');
-  // const $close = document.getElementById('js-nav-close');
-
-
 
   // ハンバーガーがクリックされたらイベント発火
   $hambarger.addEventListener('click', () => {
@@ -31,6 +24,4 @@ $(document).ready(function() {
     $('nav').animate({ "margin-bottom": -800 }, 200);
     $(this).css('display', 'none');
   });
-
-
 });
