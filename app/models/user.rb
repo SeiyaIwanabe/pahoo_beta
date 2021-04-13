@@ -23,4 +23,10 @@ class User < ApplicationRecord
   def email_changed?
     false
   end
+
+  # すでにいいねしているかを判定するメソッド
+  def already_favorited?(post)
+    self.favorites.exists?(post_id: post.id)
+  end
+  
 end
