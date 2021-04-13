@@ -41,7 +41,10 @@
   <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
 </div>
 
+<!-- 黒背景 -->
 <label id="js-nav-close"></label>
+
+<!-- シェアナビゲーション -->
 <nav id="shareNav">
   <li>
     <i class="fab fa-twitter"></i>
@@ -58,6 +61,43 @@
   </li>
 </nav>
 
+<!-- コメントナビゲーション -->
+<nav id="commentNav">
+  <p class="commentCount"><%= @comments.count %>件のコメント</p>
+  <% if @comments %>
+    <div class="commentOutline">
+      <% @comments.each do |comment| %>
+        <li>
+          <div class="topPosition">
+            <%= link_to user_path(@post.user.id), class: "commentUserLink" do %>
+              <% if comment.user.icon? %>
+                <%= image_tag comment.user.icon.url, class: "commentUserIcon"%>
+              <% else %>
+                <i class="fas fa-user-circle"></i>
+              <% end %>
+              <p class="commentUserName"><%= comment.user.nickname %></p>
+            <% end%>
+            <%= link_to post_comment_path(@post, comment), method: :delete, class: "deleteCommentLink" do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+          <div class="bottomPosition">
+            <p class="commentContent"><%= comment.content %></p>
+            <p class="commentDatetime"><%= comment.created_at.strftime('%Y/%m/%d') %></p>
+          </div>
+        </li>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="bottomInput">
+    <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <%= f.text_field :content, class: "inputComment"%>
+      <%= f.submit "コメントする", class: "submitComment" %>
+    <% end %>
+  </div>
+</nav>
+
 
 <!-- ユーザーの他の投稿一覧 -->
 <div class="userOthersPosted">
@@ -72,4 +112,6 @@
 <%= render partial: "modules/footer" %>
 
 <%= javascript_include_tag 'shareLink' %>
+<%= javascript_include_tag 'post-comment' %>
+
 

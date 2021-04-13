@@ -173,6 +173,133 @@
   }
 }
 
+#commentNav {
+  background-color: #fff;
+  width: 100vw;
+  height: 900px;
+  // margin: 0 auto;
+  border-radius: 20px;
+  position: fixed;
+  bottom: 0;
+  z-index: 200; /*最前面に*/
+  margin-bottom: -900px;
+  // overflow: scroll;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  .commentCount {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  .commentOutline { 
+    overflow: scroll;
+    height: 700px;
+
+    li {
+      list-style: none;
+      height: auto;
+      margin-bottom: 20px;
+  
+      .topPosition {
+        display: flex;
+        align-items: center;
+  
+        .commentUserLink {
+          text-decoration: none;
+          display: flex;
+          margin-right: 20px;
+  
+          .commentUserIcon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+          i {
+            font-size: 50px;
+            margin-right: 20px;
+            color: #000;
+          }
+          .commentUserName {
+            font-size: 20px;
+            color: gray;
+            font-weight: bold;
+            line-height: 50px;
+          }
+        }
+        .deleteCommentLink {
+          text-decoration: none;
+
+          i {
+            font-size: 25px;
+            color: #000;
+          }
+        }
+      }
+      .bottomPosition {
+        display: flex;
+        align-items: center;
+  
+        .commentContent {
+          font-size: 20px;
+          font-weight: bold;
+          margin-right: 20px;
+        }
+        .commentDatetime {
+          color: gray;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  
+
+  .bottomInput {
+    width: 100%;
+    height: 100px;
+    // position: fixed;
+    // bottom: 0;
+
+    form {
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      .inputComment {
+        height: 60px;
+        margin-right: 20px;
+        width: 70%;
+        border-radius: 15px;
+        outline: none;
+      }
+      .submitComment {
+        text-decoration: none;
+        display: block;
+        background-color: #3ccace;
+        color: #ffffff;
+        width: 250px;
+        height: 60px;
+        font-size: 25px;
+        border-radius: 100px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-align: center;
+        line-height: 60px;
+      }
+      .submitComment:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
 
 .userOthersPosted {
   margin-top: 100px;
