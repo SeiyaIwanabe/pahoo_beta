@@ -14,15 +14,29 @@
     <% end %>
     <p class="user-nickname"><%= @post.user.nickname %></p>
   <% end %>
-  <%= link_to "#", class: "goodLink" do%>
-    <i class="far fa-heart", id="js-good"></i>
+
+  <!--いいねリンク -->
+  <% if current_user.already_favorited?(@post) %>
+    <%= link_to post_favorites_path(@post), method: :delete, class: "goodLink" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  <% else %>
+    <%= link_to post_favorites_path(@post), method: :post, class: "goodLink" do %>
+      <i class="far fa-heart"></i>
+    <% end %>
   <% end %>
+  <p class="favoriteCount"><%= @post.favorites.count %></p>
+
+  <!--コメントリンク -->
   <%= link_to "#", class: "commentLink" do%>
     <i class="far fa-comment-dots"></i>
   <% end %>
+
+  <!--シェアリンク -->
   <%= link_to "#", class: "shareLink" do%>
-    <i class="fas fa-share-alt"></i>
+    <i class="fas fa-share"></i>
   <% end %>
+  
   <div class="postText"><%= @post.post_text %></div>
   <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
 </div>
