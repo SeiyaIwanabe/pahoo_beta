@@ -10,7 +10,7 @@
     margin-bottom: 50px;
   }
 
-  .registrationForm {
+  form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -102,7 +102,7 @@
       line-height: 48px;
     }
     .toLogin:hover {
-      opacity: 0.5;
+      opacity: 0.7;
     }
   }
 }

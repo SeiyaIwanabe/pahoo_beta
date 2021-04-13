@@ -7,6 +7,10 @@ class HomeController < ApplicationController
     @banners = Banner.all.order(id: "DESC")
     @users = User.all
     @user = current_user
+
+    # コメントナビゲーション
+    @comment = Comment.new
+    @comments = Comment.all.includes(:user)
   end
   
   private

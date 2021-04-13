@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :tag_maps, dependent: :destroy
   has_many :tags, through: :tag_maps
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+
 
 
   #登録時にメールアドレスを不要とする

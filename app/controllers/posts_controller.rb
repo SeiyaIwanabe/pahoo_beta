@@ -40,6 +40,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
     @posts = @user.posts.order(created_at: "DESC")
+
+    # コメントナビゲーション
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
   
   def destroy

@@ -6,7 +6,6 @@
 
 <label id="js-nav-close"></label>
 
-
 <header class="header">
   <p id="pahoo">Pahoo</p>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
@@ -19,6 +18,78 @@
     <% @posts.each do |post| %>
       <li class="post-content">
         <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "postVideo") %>
+
+        <!-- プロフィールリンク -->
+        <%= link_to user_path(post.user.id), class: "profileLink" do%>
+          <% if post.user.icon? %>
+            <%= image_tag post.user.icon.url, class: "user-icon"%>
+          <% else %>
+            <i class="fas fa-user-circle"></i>
+          <% end %>
+          <p class="user-nickname"><%= post.user.nickname %></p>
+        <% end %>
+
+        <!-- いいねリンク -->
+        <% if current_user.already_favorited?(post) %>
+          <%= link_to post_favorites_path(post), method: :delete, class: "goodLink" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to post_favorites_path(post), method: :post, class: "goodLink" do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+        <p class="favoriteCount"><%= post.favorites.count %></p>
+
+        <!-- コメントイベントの発火 -->
+        <%= link_to "#", class: "commentLink" do%>
+          <i class="far fa-comment-dots"></i>
+        <% end %>
+
+        <!-- コメントナビゲーション -->
+        <nav id="commentNav">
+          <p class="commentCount"><%= post.comments.count %>件のコメント</p>
+          <% if @comments %>
+            <div class="commentOutline">
+              <%  @comments.each do |comment| %>
+                <li>
+                  <div class="topPosition">
+                    <%= link_to user_path(comment.user.id), class: "commentUserLink" do %>
+                      <% if comment.user.icon? %>
+                        <%= image_tag comment.user.icon.url, class: "commentUserIcon"%>
+                      <% else %>
+                        <i class="fas fa-user-circle"></i>
+                      <% end %>
+                      <p class="commentUserName"><%= comment.user.nickname %></p>
+                    <% end%>
+                    <%= link_to post_comment_path(post, comment), method: :delete, class: "deleteCommentLink" do %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                  </div>
+                  <div class="bottomPosition">
+                    <p class="commentContent"><%= comment.content %></p>
+                    <p class="commentDatetime"><%= comment.created_at.strftime('%Y/%m/%d') %></p>
+                  </div>
+                </li>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="bottomInput">
+            <%= form_with(model: [post, @comment], local: true) do |f| %>
+              <%= f.text_field :content, class: "inputComment"%>
+              <%= f.submit "コメントする", class: "submitComment" %>
+            <% end %>
+          </div>
+        </nav>  
+
+
+        <!-- 他SNSへのシェアイベントの発火 -->
+        <%= link_to "#", class: "shareLink" do%>
+          <i class="fas fa-share"></i>
+        <% end %>
+
+        <!-- シェアナビゲーション -->
         <nav id="shareNav">
           <li>
             <i class="fab fa-twitter"></i>
@@ -30,58 +101,8 @@
           <li>
           </li>
         </nav>
-        <%# <div class="controls">
-          <div class="orange-bar">
-            <div class="orange-juice"></div>
-          </div>
-        </div>
-        <label class="btnLabel" ">
-          <div class="buttons">
-            <button id="playPause"></button>
-          </div>
-        </label> %>
-        
-        <%# <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label> %>
-
-        <!--<%= link_to "#", class: "menuLink" do%>
-          <i class="fas fa-ellipsis-h"></i>
-        <% end %>-->
-        <% @users.each do |user| %>
-          <!-- プロフィールリンク -->
-          <%= link_to user_path(post.user.id), class: "profileLink" do%>
-            <% if post.user.icon? %>
-              <%= image_tag post.user.icon.url, class: "user-icon"%>
-            <% else %>
-              <i class="fas fa-user-circle"></i>
-            <% end %>
-            <p class="user-nickname"><%= post.user.nickname %></p>
-          <% end %>
-
-          <!-- いいねリンク -->
-          <% if current_user.already_favorited?(post) %>
-            <%= link_to post_favorites_path(post), method: :delete, class: "goodLink" do %>
-              <i class="fas fa-heart"></i>
-            <% end %>
-          <% else %>
-            <%= link_to post_favorites_path(post), method: :post, class: "goodLink" do %>
-              <i class="far fa-heart"></i>
-            <% end %>
-          <% end %>
-          <p class="favoriteCount"><%= post.favorites.count %></p>
-
-          <!-- コメントイベントの発火 -->
-          <%= link_to "#", class: "commentLink" do%>
-            <i class="far fa-comment-dots"></i>
-          <% end %>
-
-          <!-- 他SNSへのシェアイベントの発火 -->
-          <%= link_to "#", class: "shareLink" do%>
-            <i class="fas fa-share"></i>
-          <% end %>
-
-          <div class="postText"><%= post.post_text %></div>
-          <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
-        <% end %>
+        <div class="postText"><%= post.post_text %></div>
+        <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
       </li>
     <% end %>
   </ul>
@@ -94,14 +115,18 @@
         <%= image_tag banner.banner_image.url, class: "bannerImage" %>
         <div class="bannerPop">
           <p class="bannerTitle"><%= banner.banner_name %></p>
-          
         </div>
       <% end %>
     </li>
   <% end %>
 </ul>
 
+
+
 <%= render partial: "modules/footer" %>
 
+<!-- JSファイル読み込み -->
 <%= javascript_include_tag 'flashMessage' %>
 <%= javascript_include_tag 'banner' %>
+<%= javascript_include_tag 'home-post-comment' %>
+
