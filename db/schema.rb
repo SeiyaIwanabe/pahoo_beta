@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_184041) do
+ActiveRecord::Schema.define(version: 2021_04_13_002728) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2021_04_12_184041) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_connects_on_post_id"
     t.index ["post_tag_id"], name: "index_connects_on_post_tag_id"
+  end
+
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_favorites_on_post_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,6 +98,8 @@ ActiveRecord::Schema.define(version: 2021_04_12_184041) do
   add_foreign_key "banners", "users"
   add_foreign_key "connects", "post_tags"
   add_foreign_key "connects", "posts"
+  add_foreign_key "favorites", "posts"
+  add_foreign_key "favorites", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "tag_maps", "users"

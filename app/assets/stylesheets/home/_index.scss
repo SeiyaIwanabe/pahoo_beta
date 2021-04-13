@@ -189,16 +189,28 @@
       .goodLink {
         position: absolute;
         right: 40px;
-        bottom: 290px;
-        i {
-          color: #fff;
+        bottom: 370px;
+        .far {
+          font-size: 60px;
+          color: #FFF;
+        }
+        .fas {
+          color: orangered;
           font-size: 60px;
         }
+      }
+      .favoriteCount {
+        font-size: 25px;
+        font-weight: bold;
+        color: #FFF;
+        position: absolute;
+        right: 40px;
+        bottom: 350px;
       }
       .commentLink {
         position: absolute;
         right: 40px;
-        bottom: 190px;
+        bottom: 250px;
         i {
           color: #fff;
           font-size: 60px;
@@ -207,7 +219,7 @@
       .shareLink {
         position: absolute;
         right: 40px;
-        bottom: 90px;
+        bottom: 120px;
         i {
           color: #fff;
           font-size: 60px;
