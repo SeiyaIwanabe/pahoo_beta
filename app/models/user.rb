@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :banners, dependent: :destroy
   has_many :tag_maps, dependent: :destroy
   has_many :tags, through: :tag_maps
+  has_many :favorites, dependent: :destroy
+
 
   #登録時にメールアドレスを不要とする
   def email_required?

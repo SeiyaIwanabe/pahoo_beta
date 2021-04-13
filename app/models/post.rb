@@ -10,4 +10,5 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :connects, dependent: :destroy
   has_many :post_tags, through: :connects
+  has_many :favorites, dependent: :destroy
 end
