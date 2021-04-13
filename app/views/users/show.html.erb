@@ -72,9 +72,12 @@
     </div>
   </div>
 
-  <div class="profileMiddle">
-    <%= link_to "プロフィール編集", edit_user_path, class: "userEditLink" %>
-  </div>
+  <!-- ログインユーザーのみプロフィール編集を許可 -->
+  <% if current_user.id == @user.id %>
+    <div class="profileMiddle">
+      <%= link_to "プロフィール編集", edit_user_path, class: "userEditLink" %>
+    </div>
+  <% end %>
   
   <div class="tagArea">
     <h2 class="tagTitle">興味のあるジャンル</h2>
