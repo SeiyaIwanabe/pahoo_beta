@@ -77,8 +77,10 @@
               <% end %>
               <p class="commentUserName"><%= comment.user.nickname %></p>
             <% end%>
-            <%= link_to post_comment_path(@post, comment), method: :delete, class: "deleteCommentLink" do %>
-              <i class="fas fa-trash"></i>
+            <% if comment.user_id == current_user.id %>
+              <%= link_to post_comment_path(@post, comment), method: :delete, class: "deleteCommentLink" do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
             <% end %>
           </div>
           <div class="bottomPosition">
@@ -93,8 +95,8 @@
   <% end %>
 
   <div class="bottomInput">
-    <%= form_with(model: [@post, @comment], local: true) do |f| %>
-      <%= f.text_field :content, class: "inputComment"%>
+    <%= form_with(model: [@post, @comment], id: "new-comment", local: true) do |f| %>
+      <%= f.text_field :content, class: "inputComment" %>
       <%= f.submit "コメントする", class: "submitComment" %>
     <% end %>
   </div>

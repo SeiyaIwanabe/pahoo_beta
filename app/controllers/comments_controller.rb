@@ -2,8 +2,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    # 前の画面に遷移
-    redirect_back(fallback_location: root_path)
+    respond_to do |format|
+      format.html{ redirect_back(fallback_location: root_path) } # 前の画面に遷移
+      format.json
+    end
   end
 
   def destroy
