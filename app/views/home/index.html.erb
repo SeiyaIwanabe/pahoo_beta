@@ -30,16 +30,9 @@
         <% end %>
 
         <!-- いいねリンク -->
-        <% if current_user.already_favorited?(post) %>
-          <%= link_to post_favorites_path(post), method: :delete, class: "goodLink" do %>
-            <i class="fas fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to post_favorites_path(post), method: :post, class: "goodLink" do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-        <% end %>
-        <p class="favoriteCount"><%= post.favorites.count %></p>
+        <div id="favorite_area_<%= post.id %>", class="favoriteArea">
+          <%= render partial: "modules/favorite", locals: { post: post } %>
+        </div>
 
         <!-- コメントイベントの発火 -->
         <%= link_to "#", class: "commentLink" do%>
