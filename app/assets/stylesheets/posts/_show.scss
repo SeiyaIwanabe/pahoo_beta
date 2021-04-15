@@ -83,26 +83,33 @@
       font-weight: bold;
     }
   }
-  .goodLink {
+  .favoriteArea {
     position: absolute;
     right: 40px;
     bottom: 370px;
-    .far {
-      font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .goodLink {
+      display: block;
+      .far {
+        font-size: 60px;
+        color: #FFF;
+      }
+      .fas {
+        color: orangered;
+        font-size: 60px;
+      }
+    }
+    .favoriteCount {
+      font-size: 25px;
+      font-weight: bold;
       color: #FFF;
+      // position: absolute;
+      // right: 40px;
+      // bottom: 350px;
     }
-    .fas {
-      color: orangered;
-      font-size: 60px;
-    }
-  }
-  .favoriteCount {
-    font-size: 25px;
-    font-weight: bold;
-    color: #FFF;
-    position: absolute;
-    right: 40px;
-    bottom: 350px;
   }
   .commentLink {
     position: absolute;

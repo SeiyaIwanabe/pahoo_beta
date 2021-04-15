@@ -12,23 +12,24 @@ Tag.create!([
   {name: "House"},
   {name: "Break"},
   {name: "Lock"},
-  {name: "Enjoyしよう勢"},
+  {name: "Enjoyしよう勢"}
 ])
 
 PostTag.create!([
-  {post_tag_name: "ヒップホップ\nHiphop"},
-  {post_tag_name: "ブレイク\nBreak"},
-  {post_tag_name: "ロック\nLock"},
-  {post_tag_name: "ポップ\nPop"},
-  {post_tag_name: "ハウス\nHouse"},
-  {post_tag_name: "Enjoyしよう勢"},
+  {post_tag_name: "Hiphop"},
+  {post_tag_name: "Break"},
+  {post_tag_name: "Lock"},
+  {post_tag_name: "Pop"},
+  {post_tag_name: "House"},
+  {post_tag_name: "Enjoyしよう勢"}
 ])
 
 BannerTag.create!([
   {banner_tag_name: "ナンバー募集"},
-  {banner_tag_name: "練習会"},
+  {banner_tag_name: "練習会開催"},
   {banner_tag_name: "レッスン生募集"},
   {banner_tag_name: "コラム記事"},
+  {banner_tag_name: "お知らせ"}
 ])
 
 # Banner.create!(

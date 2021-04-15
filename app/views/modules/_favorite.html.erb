@@ -1,0 +1,10 @@
+<% if current_user.already_favorited?(post) %>
+  <%= link_to post_favorites_path(post), method: :delete, class: "goodLink", remote: true do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to post_favorites_path(post), method: :post, class: "goodLink", remote: true do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+<% end %>
+<p class="favoriteCount"><%= post.favorites.count %></p>

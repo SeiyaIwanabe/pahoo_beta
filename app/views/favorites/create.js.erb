@@ -1,0 +1,2 @@
+<!-- #favorite_area_<%= @post.id %>この部分のHTMLだけ、renderで部分的に更新するという処理 -->
+$("#favorite_area_<%= @post.id %>").html("<%= j(render partial: 'modules/favorite', locals: { post: @post }) %>");
