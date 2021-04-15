@@ -45,13 +45,13 @@
         <%= link_to "#", class: "commentLink" do%>
           <i class="far fa-comment-dots"></i>
         <% end %>
-
+        
         <!-- コメントナビゲーション -->
         <nav id="commentNav">
           <p class="commentCount"><%= post.comments.count %>件のコメント</p>
           <% if @comments %>
             <div class="commentOutline">
-              <%  @comments.each do |comment| %>
+              <% post.comments.each do |comment| %>
                 <li>
                   <div class="topPosition">
                     <%= link_to user_path(comment.user.id), class: "commentUserLink" do %>
@@ -82,6 +82,7 @@
             <% end %>
           </div>
         </nav>  
+
 
 
         <!-- 他SNSへのシェアイベントの発火 -->

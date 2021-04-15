@@ -10,12 +10,18 @@ $(document).ready(function() {
 
     // クリックされたnavとそのデータを取得
     const $this = e.target;
+    // const $this_next = e.target.next('#commentNav');
+
     console.log('$this', $this);
+    // console.log('$this_next', $this_next);
+
 
     // ボトムからコメントナビゲーション出現
     $this.addEventListener('click', () => {
       e.preventDefault();
       $('#commentNav').animate({ "margin-bottom": 0 }, 200);
+      // $(this).parent('.commentLink').next('#commentNav').animate({ "margin-bottom": 0 }, 200);
+      // closestメソッドが使えるかも
       $('#js-nav-close').css('display', 'block');
     });
 
