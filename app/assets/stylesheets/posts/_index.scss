@@ -1,5 +1,4 @@
 .search-tab {
-  // padding-top: 80px;
   height: auto;
 
   .search-tab-nav {
@@ -7,6 +6,8 @@
     justify-content: space-evenly;
 
     .search-tab-nav-item {
+      height: 100px;
+      line-height: 100px;
       font-size: 40px;
       font-weight: bold;
       display: block;
@@ -24,122 +25,157 @@
 
     .search-tab-contents-item {
       display: none;
-    }
-  }
-}
 
-
-.tagListArea {
-  width: 100%;
-  height: 180px;
-  // はみ出したコンテンツを水平方向にする
-  overflow-x: auto;
-  overflow-scrolling: touch;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  // padding-top: 20px;
-  padding-bottom: 10px;
-
-  .listLink {
-    display: inline-block;  
-    width: 200px;
-    text-decoration: none;
-    border: 2px solid lightgray;
-    height: 120px;
-    padding: 10px;
-    border-radius: 10px;
-    color: #000;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 20px;
-    // margin-right: 80px;
-  }
-  .listLink:hover {
-    background-color: lightgray;
-    opacity: 0.5;
-  }
-  // .tagList {
-  //   list-style: none;
-  //   margin-left: 50px;
-  //   width: 250px;
-  // }
-}
-
-// 初期画面
-.postScallLink {
-  text-decoration: none;
-
-  .defaultPostedArea {
-    height: 800px;
-    // background-color: lightgray;
-    padding: 10px;
-  
-    .defaultContent {
-      width: 315px;
-      height: 315px;
-      // max-height: 315px;
-      // max-width: 315px;
-      object-fit: cover;
-      background-color: #000;
-      // margin-right: 10px;
-    }
-  } 
-}
-
-.usersIndex {
-  height: auto;
-  padding-top: 30px;
-
-  .userList {
-    height: 150px;
-    display: flex;
-    padding-left: 30px;
-    align-items: center;
-    margin-bottom: 20px;
-
-    .userShowLink {
-      text-decoration: none;
-      display: block;
-      width: 100%;
-      display: flex;
-      
-      .left-icon {
-        .userIcon {
-          width: 110px;
-          height: 110px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-right: 30px;
-        }
-        i {
-          font-size: 110px;
-          margin-right: 30px;
-          color: black;
-        }
-      }
-      .right-name {
+      .tagArea {
+        width: 100%;
+        height: 180px;
+        // はみ出したコンテンツを水平方向にする
+        overflow-x: auto;
+        overflow-scrolling: touch;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-  
-        .user-nickname {
-          font-size: 40px;
-          color: #222222;
-          font-weight: bold;
-          opacity: 0.8;
-        }
-        .user-id {
+        align-items: center;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      
+        .user-post-list-link {
+          display: inline-block;  
+          width: 200px;
+          text-decoration: none;
+          border: 2px solid lightgray;
+          height: 120px;
+          line-height: 60px;
+          padding: 10px;
+          border-radius: 10px;
+          color: #000;
+          text-align: center;
           font-size: 30px;
-          color: #848484;
-          font-weight: bold;
+        }
+        .user-post-list-link:hover {
+          background-color: lightgray;
+          opacity: 0.5;
+        }
+
+        .banner-list-link {
+          display: inline-block;  
+          width: 200px;
+          text-decoration: none;
+          border: 2px solid lightgray;
+          height: 120px;
+          line-height: 60px;
+          padding: 10px;
+          border-radius: 10px;
+          color: #000;
+          text-align: center;
+          font-size: 30px;
+        }
+      }
+
+      // 初期画面
+      .defaultPostedArea {
+        height: auto;
+        padding: 10px;
+        overflow: scroll;
+        
+        .postScallLink {
+          text-decoration: none;
+        
+          .defaultContent {
+            width: 315px;
+            height: 315px;
+            // max-height: 315px;
+            // max-width: 315px;
+            object-fit: cover;
+            background-color: #000;
+            // margin-right: 10px;
+          }
+        } 
+      }
+      
+      .usersIndex {
+        height: auto;
+        padding-top: 30px;
+      
+        .userList {
+          height: 150px;
+          display: flex;
+          padding-left: 30px;
+          align-items: center;
+          margin-bottom: 20px;
+      
+          .userShowLink {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            display: flex;
+            
+            .left-icon {
+              .userIcon {
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 30px;
+              }
+              i {
+                font-size: 110px;
+                margin-right: 30px;
+                color: black;
+              }
+            }
+            .right-name {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+        
+              .user-nickname {
+                font-size: 40px;
+                color: #222222;
+                font-weight: bold;
+                opacity: 0.8;
+              }
+              .user-id {
+                font-size: 30px;
+                color: #848484;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .userList:hover {
+          background-color: lightgray;
+        }
+      }
+
+      .bannersIndex {
+        height: auto;
+        padding-top: 30px;
+
+        .bannerList {
+          display: flex;
+
+          .bannerShowLink {
+
+            .bannerIndexImage {
+              display: block;
+              width: 170x;
+              height: 170px;
+              border-radius: 50%;
+
+            }
+          }
+          .banner-title {
+
+          }
+          .banner-right-area {
+
+            .right-inner-area {
+              display: flex;
+            }
+
+          }
         }
       }
     }
   }
-  .userList:hover {
-    background-color: lightgray;
-  }
 }
+

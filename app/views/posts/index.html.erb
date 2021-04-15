@@ -14,9 +14,9 @@
   <div class="search-tab-contens">
     <div class="search-tab-contents-item" data-content="0">
 
-      <div class="tagListArea">
+      <div class="tagArea">
         <% @posts_tag_lists.each do |post_list| %>
-          <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "listLink" %>
+          <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "user-post-list-link" %>
         <% end %>
       </div>
       <% if params[:post_tag_id] %>
@@ -39,11 +39,13 @@
     </div>
 
     <div class="search-tab-contents-item" data-content="1">
-      <div class="tagListArea">
+
+      <div class="tagArea">
         <% @tag_lists.each do |list| %>
-          <%= link_to list.name, users_path(tag_id: list.id), class: "listLink" %>
+          <%= link_to list.name, users_path(tag_id: list.id), class: "user-post-list-link" %>
         <% end %>
       </div>
+
       <% if params[:tag_id] %>
         <ul class="usersIndex">
           <% @connect_users.each do |user| %>
@@ -89,35 +91,40 @@
 
     <div class="search-tab-contents-item" data-content="2">
 
-    <div class="tagListArea">
-        <% @banners_tag_lists.each do |banner_list| %>
-          <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "listLink" %>
-        <% end %>
+      <div class="tagArea">
+          <% @banners_tag_lists.each do |banner_list| %>
+            <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "banner-list-link" %>
+          <% end %>
       </div>
+
       <% if params[:banner_tag_id] %>
-        <ul class="PostsIndex">
+        <ul class="bannersIndex">
           <% @connect_banners.each do |banner| %>
-            <li class="postList">
-              <%= link_to banner_path(id: banner.id), class: "userShowLink" do %>
-                <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+            <li class="bannerList">
+              <%= link_to banner_path(id: banner.id), class: "bannerShowLink" do %>
+                <%= image_tag banner.banner_image.url, class: "bannerIndexImage" %>
               <% end %>
             </li>
           <% end %>
         </ul>
       <% else %>
-        <div class="userBannerArea">
+        <ul class="bannersIndex">
           <% @banners.each do |banner| %>
-            <%= link_to banner_path(banner.id), class: "userBannerLink" do %>
-              <%= image_tag banner.banner_image.url, class: "userBannerImage" %>
-              <div class="bannerPop">
-              <p class="bannerTitle"><%= banner.banner_name %></p>
-              <!--<p class="bannerTag">#<%= banner.banner_tag %></p>-->
-          </div>
-            <% end %>
+            <li class="bannerList">
+              <%= link_to banner_path(id: banner.id), class: "bannerShowLink" do %>
+                <%= image_tag banner.banner_image.url, class: "bannerIndexImage" %>
+              <% end %>
+              <div class="banner-right-area">
+                <p class="banner-title"><%= banner.banner_name %></p>
+                <div class="right-inner-area">
+                  <p class="banner-genre">hiphop</p>
+                  <p class="banner-limit">募集〆切 - 8/15</p>
+                </div>
+              </div>
+            </li>
           <% end %>
-        </div>
+        </ul>
       <% end %>
-    </div>
 
     </div>
   </div>
