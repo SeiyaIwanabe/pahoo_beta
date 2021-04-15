@@ -1,16 +1,19 @@
 class FavoritesController < ApplicationController
+  before_action :set_post
 
   def create
-    @favorite = current_user.favorites.create(post_id: params[:post_id])
-    # 前の画面に遷移
-    redirect_back(fallback_location: root_path)
+    @favorite = Favorite.create(user_id: current_user.id, post_id: @post.id)
+    @favorite.save
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @favorite = Favorite.find_by(user_id: current_user.id, post_id: @post.id)
     @favorite.destroy
-    redirect_back(fallback_location: root_path)
+  end
+
+  private
+  def set_post
+    @post = Post.find(params[:post_id])
   end
 
 end
