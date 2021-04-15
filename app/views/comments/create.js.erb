@@ -1,0 +1,4 @@
+console.log('テスト');
+
+$(".commentOutline").html("<%= j(render 'modules/comment', { comments: @comment.post.comments }) %>")
+$(".inputComment").val('');

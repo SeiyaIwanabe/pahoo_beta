@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
     # コメントナビゲーション
     @comment = Comment.new
-    @comments = Comment.all.includes(:user)
+    @comments = Comment.all
   end
   
   private

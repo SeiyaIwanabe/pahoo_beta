@@ -20,49 +20,49 @@ $(document).ready(function() {
   });
 
   // 非同期通信
-  function buildHTML(comment) {
-    let html = `<li>
-                  <div class="topPosition">
-                    <%= link_to user_path(@post.user.id), class: "commentUserLink" do %>
-                      <% if comment.user.icon? %>
-                        <%= image_tag comment.user.icon.url, class: "commentUserIcon"%>
-                      <% else %>
-                        <i class="fas fa-user-circle"></i>
-                      <% end %>
-                      <p class="commentUserName"><%= comment.user.nickname %></p>
-                    <% end%>
-                    <%= link_to post_comment_path(@post, comment), method: :delete, class: "deleteCommentLink" do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                  </div>
-                  <div class="bottomPosition">
-                    <p class="commentContent"><%= comment.content %></p>
-                    <p class="commentDatetime"><%= comment.created_at.strftime('%Y/%m/%d') %></p>
-                  </div>
-                </li>`
-    return html;
-  }
-  $('#new-comment').on('submit', function(e) {
-    e.preventDefault();
-    console.log(this);
-    let formData = new FormData(this);
-    let url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data) {
-      let html = buildHTML(data);
-      $('.commentOutline').append(html);
-      $('.inputComment').val('');
-      $('.submitComment').prop('disabled', false);
-    })
-    .fail(function() {
-      alert('error');
-    })
-  });
+  // function buildHTML(comment) {
+  //   let html = `<li>
+  //                 <div class="topPosition">
+  //                   <a href=/users/${comment.user_id} class="commentUserLink"> 
+  //                     <% if ${comment.user.icon} %>
+  //                       <img src="/uploads/user/icon/${comment.user_id}/url" class="commentUserIcon">
+  //                     <% else %>
+  //                       <i class="fas fa-user-circle"></i>
+  //                     <% end %>
+  //                     <p class="commentUserName">${comment.user_nickname}/p>
+  //                   </a>
+  //                   <a href=/posts/${comment.post_id}/comments/${comment_id}, method: :delete class="deleteCommentLink">
+  //                     <i class="fas fa-trash"></i>
+  //                   </a>
+  //                 </div>
+  //                 <div class="bottomPosition">
+  //                   <p class="commentContent">${comment.content}</p>
+  //                   <p class="commentDatetime">${comment.created_at.strftime('%Y/%m/%d')}</p>
+  //                 </div>
+  //               </li>`
+  //   return html;
+  // }
+  // $('#new-comment').on('submit', function(e) {
+  //   e.preventDefault();
+  //   console.log(this);
+  //   let formData = new FormData(this);
+  //   let url = $(this).attr('action');
+  //   $.ajax({
+  //     url: url,
+  //     type: "POST",
+  //     data: formData,
+  //     dataType: 'json',
+  //     processData: false,
+  //     contentType: false
+  //   })
+  //   .done(function(data) {
+  //     let html = buildHTML(data);
+  //     $('.commentOutline').append(html);
+  //     $('.inputComment').val('');
+  //     $('.submitComment').prop('disabled', false);
+  //   })
+  //   .fail(function() {
+  //     alert('error');
+  //   })
+  // });
 });
