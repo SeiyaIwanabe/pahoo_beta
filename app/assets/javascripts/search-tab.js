@@ -46,5 +46,6 @@ $(document).ready(function() {
       $nav[index].addEventListener('click', (e) => handleClick(e));
       index++;
     }
+    
   })();
 })

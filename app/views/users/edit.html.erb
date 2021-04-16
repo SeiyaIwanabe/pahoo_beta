@@ -25,10 +25,12 @@
       <%= f.text_field :id_name %>
     </div>
 
-    <div class="checkArea">
+     <div class="checkArea">
       <p>興味のあるジャンルを選ぼう（複数選択できるヲ）</p>
       <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, include_hidden: false, class: "checkBox") do |tag| %>
-        <%= tag.label { tag.check_box + tag.text } %>
+        <label class="genreLabel">
+          <%= tag.check_box + tag.text %>
+        </label>
       <% end %>
     </div>
 
@@ -41,3 +43,4 @@
 </div>
 
 <%= javascript_include_tag 'icon' %>
+<%= javascript_include_tag 'genre-label' %>

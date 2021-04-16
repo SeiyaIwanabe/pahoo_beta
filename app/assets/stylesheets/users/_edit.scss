@@ -94,13 +94,13 @@
         font-size: 25px;
 
         input {
-          // display: none;
+          display: none;
         }
       }
-      // label.is-active {
-      //   color: orangered;
-      //   border-color: orangered;
-      // }
+      label.is-active {
+        color: orangered;
+        border-color: orangered;
+      }
     }
     .submitBtn {
       display: block;

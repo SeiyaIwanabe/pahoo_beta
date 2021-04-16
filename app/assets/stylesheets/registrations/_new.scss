@@ -57,13 +57,13 @@
         color: lightskyblue;
 
         input {
-          // display: none;
+          display: none;
         }
       }
-      // label.is-active {
-      //   color: orangered;
-      //   border-color: orangered;
-      // }
+      label.is-active {
+        color: #F47837;
+        border-color: #F47837;
+      }
     }
     .submitBtn {
       display: block;
