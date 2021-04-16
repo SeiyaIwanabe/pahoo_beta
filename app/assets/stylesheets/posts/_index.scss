@@ -163,15 +163,31 @@
 
             }
           }
-          .banner-title {
-
-          }
           .banner-right-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .banner-title {
+              color: #222222;
+              font-size: 40px;
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
 
             .right-inner-area {
               display: flex;
-            }
 
+              .banner-genre {
+                color: #848484;
+                font-size: 25px;
+                margin-right: 20px;
+              }
+              .banner-limit {
+                color: #848484;
+                font-size: 25px;
+              }
+            }
           }
         }
       }
