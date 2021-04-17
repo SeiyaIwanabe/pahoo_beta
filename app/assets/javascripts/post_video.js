@@ -1,38 +1,15 @@
 $(document).ready(function() {
-  const video = document.querySelector('.postVideo');
-  // const btn = document.querySelector('#playPause');
-  const mute = document.getElementById('mute');
+
+  const video = document.querySelectorAll('.postVideo');
+  const $btn = document.querySelectorAll('#playPause');
+  // const mute = document.getElementById('mute');
   const juice = document.querySelector('.orange-juice');
   
-  
-  // ProgressBarを表示
-  // video.addEventListener('timeupdate', function() {
-  //   const juicePos = video.currentTime / video.duration;
-  //   juice.style.width = juicePos * 100 + "%";
-  //   if(video.end) {
-  //     btn.className = "play";
-  //   }
-  // });
 
   
-  // 動画の再生/停止
-  // function togglePlayPause() {
-  //   if(video.paused) {
-  //     btn.className = "pause";
-  //     video.play();
-  //   }
-  //   else {
-  //     btn.className = "play";
-  //     video.pause();
-  //   }
-  // }
-  // btn.onclick = function() {
-  //   togglePlayPause();
-  // };
   
-  // mute.addEventListener('click', function(e) {
-  //   video.muted = !video.muted;
-  // });
+  
+  
 
   // 最初の動画を自動再生
   // video.play();
@@ -52,6 +29,54 @@ $(document).ready(function() {
   //   const btn = $(this);
   //   console.log(btn);
   // })
+
+  const handleClick = (e) => {
+    const $this = e.target;
+    const $target_label = $this.closest('.btnLabel');
+    const $target_video = $target_label.parentNode.firstElementChild;
+    const $target_mute_btn = $target_label.nextElementSibling;
+    console.log('$this', $this);
+    console.log('$target_label', $target_label);
+    console.log('$target_video', $target_video);
+    console.log('$target_mute_btn', $target_mute_btn);
+
+
+    //動画の再生/停止
+    function togglePlayPause() {
+      if($target_video.paused) {
+        $this.className = "pause";
+        $target_video.play();
+      }
+      else {
+        $this.className = "play";
+        $target_video.pause();
+      }
+
+      $target_mute_btn.addEventListener('click', function(e) {
+        $target_video.muted = !$target_video.muted;
+      });
+    }
+    $this.onclick = function() {
+      togglePlayPause();
+    };
+
+
+    // ProgressBarを表示
+    // $target_video.addEventListener('timeupdate', function() {
+    //   const juicePos = $target_video.currentTime / $target_video.duration;
+    //   juice.style.width = juicePos * 100 + "%";
+    //   if($target_video.end) {
+    //     $this.className = "play";
+    //   }
+    // });
+  }
+
+  // 全$btnに関数を適用
+  let index = 0;
+  while(index < $btn.length) {
+    $btn[index].addEventListener('click', (e) => handleClick(e));
+    index++;
+  }
 
 
 });
