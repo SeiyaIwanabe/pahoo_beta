@@ -154,19 +154,24 @@
           display: flex;
 
           .bannerShowLink {
+            // display: block;
 
             .bannerIndexImage {
               display: block;
-              width: 170x;
+              width: 170px;
               height: 170px;
               border-radius: 50%;
-
+              // object-fit: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
             }
           }
           .banner-right-area {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-left: 20px;
             
             .banner-title {
               color: #222222;
