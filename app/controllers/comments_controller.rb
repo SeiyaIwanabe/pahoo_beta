@@ -16,8 +16,15 @@ class CommentsController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @comment = current_user.comments.find_by(post_id: @post.id)
-    @comment.destroy
-    redirect_back(fallback_location: root_path)
+    respond_to do |format|
+      if @comment.destroy
+        format.html { redirect_back(fallback_location: root_path) } # 前のページに遷移
+        format.js  # destroy.js.erbが呼び出される
+      else
+        format.html { redirect_back(fallback_location: root_path) } # 前のページに遷移
+        format.js { render :errors } # 一番最後に実装の解説あります
+      end
+    end
   end
 
   private

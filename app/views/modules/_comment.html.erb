@@ -10,7 +10,7 @@
         <p class="commentUserName"><%= comment.user.nickname %></p>
       <% end%>
       <% if comment.user_id == current_user.id %>
-        <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, class: "deleteCommentLink" do %>
+        <%= link_to post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "deleteCommentLink" do %>
           <i class="fas fa-trash"></i>
         <% end %>
       <% end %>

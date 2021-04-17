@@ -56,7 +56,7 @@
 
 <!-- コメントナビゲーション -->
 <nav id="commentNav">
-  <p class="commentCount"><%= @comments.count %>件のコメント</p>
+  <!--<p class="commentCount"><%= @comments.count %>件のコメント</p>-->
   <% if @comments %>
     <div class="commentOutline">
       <%= render partial: "modules/comment", locals: { comments: @comments }%>
