@@ -10,24 +10,26 @@ $(document).ready(function() {
 
     // クリックされたnavとそのデータを取得
     const $this = e.target;
-    // const $this_next = e.target.next('#commentNav');
+    const $target_nav = $this.parentElement.previousElementSibling;
+    const $target_video = $target_nav.previousElementSibling;
+    const $object_position = $target_video.getBoundingClientRect().bottom;
 
     console.log('$this', $this);
-    // console.log('$this_next', $this_next);
+    console.log('$target_nav', $target_nav);
+    console.log('$target_video', $target_video);
+    console.log('$object_position', $object_position);
 
 
     // ボトムからコメントナビゲーション出現
     $this.addEventListener('click', () => {
       e.preventDefault();
-      $('#commentNav').animate({ "margin-bottom": 0 }, 200);
-      // $(this).parent('.commentLink').next('#commentNav').animate({ "margin-bottom": 0 }, 200);
-      // closestメソッドが使えるかも
+      $($target_nav).animate({ "margin-bottom": 0 }, 200);
       $('#js-nav-close').css('display', 'block');
     });
 
     // 周りの黒背景をクリックしたらメニューと黒背景が閉じる
     $('#js-nav-close').click(function() {
-      $('#commentNav').animate({ "margin-bottom": -900 }, 200);
+      $($target_nav).animate({ "margin-bottom": -900 }, 200);
       $(this).css('display', 'none');
     });
   };
