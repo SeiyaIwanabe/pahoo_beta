@@ -196,15 +196,16 @@
   flex-direction: column;
   justify-content: space-between;
   
-  .commentCount {
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-  }
   .commentOutline { 
     overflow: scroll;
     height: 700px;
-
+    
+    .commentCount {
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+    }
+    
     li {
       list-style: none;
       height: auto;
