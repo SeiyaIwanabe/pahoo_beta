@@ -45,7 +45,7 @@
 }
 
 .PickupContent {
-  padding-top: 100px;
+  // padding-top: 100px;
   position: relative;
   
   .scallPostVideo {
@@ -54,10 +54,105 @@
     background-color: black;
     object-fit: contain;
   }
+
+  .show-controls {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(100%);
+    transition: all 0.2s;
+
+    .show-orange-bar {
+      height: 7px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #FFF;
+
+      .show-orange-juice {
+        height: 7px;
+        background-color: orangered;
+      }
+    }
+  }
+
+  .showBtnLabel {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform:translateY(-50%) translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .showButtons {
+      // padding: 10px;
+      // display: none;
+    }
+
+    .showButtons button{
+      background: none;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      color: #FFF;
+    }
+    .showButtons button:before {
+      content: "▶";
+      width: 120px;
+      height: 120px;
+      display: inline-block;
+      font-size: 28px;
+      color: #fff;
+      border: 2px solid #FFF;
+      border-radius: 50%;
+      line-height: 120px;
+
+    }
+    .showButtons button.play:before {
+      content: "▶";
+    }
+    .showButtons button.pause:before {
+      content: "■";
+      width: 120px;
+      height: 120px;
+      display: inline-block;
+      font-size: 28px;
+      color: #fff;
+      border: 3px solid #FFF;
+      border-radius: 50%;
+      line-height: 120px;
+    }
+  }
+
+  .showMuteBtn {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+
+    i {
+      font-size: 80px;
+      outline: none;
+      border: none;
+      color: #F47837;
+    }
+  }
   
   .scallProfileLink {
     position: absolute;
-    top: 120px;
+    top: 30px;
     left: 30px;
     text-decoration: none;
     outline: none;
@@ -106,9 +201,6 @@
       font-size: 25px;
       font-weight: bold;
       color: #FFF;
-      // position: absolute;
-      // right: 40px;
-      // bottom: 350px;
     }
   }
   .commentLink {

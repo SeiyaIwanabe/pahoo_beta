@@ -5,12 +5,7 @@ $(document).ready(function() {
   // const mute = document.getElementById('mute');
   const juice = document.querySelector('.orange-juice');
   
-
   
-  
-  
-  
-
   // 最初の動画を自動再生
   // video.play();
 

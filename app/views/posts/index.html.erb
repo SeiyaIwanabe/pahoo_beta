@@ -19,6 +19,7 @@
           <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "user-post-list-link" %>
         <% end %>
       </div>
+      
       <% if params[:post_tag_id] %>
         <div class="defaultPostedArea">
           <% @connect_posts.each do |post| %>

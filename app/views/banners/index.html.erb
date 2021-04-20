@@ -15,18 +15,25 @@
     <div class="search-tab-contents-item" data-content="0">
 
        <div class="tagArea">
-          <% @banners_tag_lists.each do |banner_list| %>
-            <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "banner-list-link" %>
-          <% end %>
+        <% @banners_tag_lists.each do |banner_list| %>
+          <%= link_to banner_list.banner_tag_name, banners_path(banner_tag_id: banner_list.id), class: "banner-list-link" %>
+        <% end %>
       </div>
 
       <% if params[:banner_tag_id] %>
         <ul class="bannersIndex">
           <% @connect_banners.each do |banner| %>
-            <li class="bannerList">
+             <li class="bannerList">
               <%= link_to banner_path(id: banner.id), class: "bannerShowLink" do %>
                 <%= image_tag banner.banner_image.url, class: "bannerIndexImage" %>
               <% end %>
+              <div class="banner-right-area">
+                <p class="banner-title"><%= banner.banner_name %></p>
+                <div class="right-inner-area">
+                  <p class="banner-genre">hiphop</p>
+                  <p class="banner-limit">募集〆切 - 8/15</p>
+                </div>
+              </div>
             </li>
           <% end %>
         </ul>
@@ -48,6 +55,7 @@
           <% end %>
         </ul>
       <% end %>
+    </div>
 
     <div class="search-tab-contents-item" data-content="1">
 

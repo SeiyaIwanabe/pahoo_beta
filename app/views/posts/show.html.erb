@@ -5,7 +5,7 @@
 </div>
 
 <div class="PickupContent">
-  <%= video_tag(@post.post_video.to_s, controls: true, playsinline: true, class: "scallPostVideo") %>
+  <%= video_tag(@post.post_video.to_s, class: "scallPostVideo") %>
   <%= link_to user_path(@post.user.id), class: "scallProfileLink" do %>
     <% if @post.user.icon? %>
       <%= image_tag @post.user.icon.url, class: "user-icon"%>
@@ -14,6 +14,20 @@
     <% end %>
     <p class="user-nickname"><%= @post.user.nickname %></p>
   <% end %>
+
+  <!-- コントロールパネル -->
+  <div class="show-controls">
+    <div class="show-orange-bar">
+      <div class="show-orange-juice"></div>
+    </div>
+  </div>
+  <label class="showBtnLabel" ">
+    <div class="showButtons">
+      <button id="showPlayPause"></button>
+    </div>
+  </label>
+
+  <label id="showMute" class="showMuteBtn"><i class="fas fa-volume-off"></i></label>
 
   <!--いいねリンク -->
   <div id="favorite_area_<%= @post.id %>", class="favoriteArea">
@@ -87,3 +101,4 @@
 <%= render partial: "modules/footer" %>
 <%= javascript_include_tag 'shareLink' %>
 <%= javascript_include_tag 'post-comment' %>
+<%= javascript_include_tag 'post-show-video' %>

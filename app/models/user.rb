@@ -15,9 +15,6 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-
-
-
   #登録時にメールアドレスを不要とする
   def email_required?
     false
