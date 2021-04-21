@@ -66,9 +66,13 @@
     </div>
 
     <div class="rightArea">
-      <p>投稿数</p>
-      <p>フォロー(仮)</p>
-      <p>フォロワー(仮)</p>
+     <div class="userPostCountArea">
+      <p class="countTitle">投稿数</p>
+      <p><%= @user.posts.count %></p> 
+     </div>
+     <div id="unityArea_<%= @user.id %>">
+       <%= render partial: 'modules/follow', locals: { user: @user } %>
+     </div>
     </div>
   </div>
 
@@ -78,6 +82,7 @@
       <%= link_to "プロフィール編集", edit_user_path, class: "userEditLink" %>
     </div>
   <% end %>
+
   
   <div class="tagArea">
     <h2 class="tagTitle">興味のあるジャンル</h2>

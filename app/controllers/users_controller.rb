@@ -54,6 +54,18 @@ class UsersController < ApplicationController
     redirect_to action: :show, notice: "プロフィールを更新しました！"
   end
 
+  def follow
+    @user = User.find(params[:user_id])
+    current_user.follow(@user)
+    redirect_to user_path(@user)
+  end
+
+  def unfollow
+    @user = User.find(params[:user_id])
+    current_user.stop_following(@user)
+    redirect_to user_path(@user)
+  end
+
   private
   def user_params
     params.require(:user).permit(:nickname, :id_name, :password, :password_confirmation, :icon, { tag_ids: [] })

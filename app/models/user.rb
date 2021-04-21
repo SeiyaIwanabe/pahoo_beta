@@ -7,6 +7,10 @@ class User < ApplicationRecord
   # CarrierWaveでアイコンをアップロード
   mount_uploader :icon, UserIconUploader
 
+  # マッチング
+  acts_as_followable 
+  acts_as_follower
+
   # アソシエーション
   has_many :posts, dependent: :destroy
   has_many :banners, dependent: :destroy

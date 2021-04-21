@@ -72,3 +72,6 @@ gem 'pry-rails'
 
 # devise
 gem 'devise'
+
+# マッチング機能
+gem "acts_as_follower", github: "tcocca/acts_as_follower"

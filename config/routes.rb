@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/index'
   
-  # ログイン関連
-  # get 'login', to: "sessions#new"
-  # post 'login', to: "sessions#create"
-  # delete 'logout', to: "sessions#destroy"
+  # マッチング
+  put 'users/follow/:user_id', to: 'users#follow'
+  put 'users/unfollow/:user_id', to: 'users#unfollow'
   
   # 検索画面
   get 'search', to: 'search#index'
