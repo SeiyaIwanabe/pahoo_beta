@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_101120) do
+ActiveRecord::Schema.define(version: 2021_04_22_082603) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 2021_04_21_101120) do
     t.index ["post_tag_id"], name: "index_connects_on_post_tag_id"
   end
 
+  create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -71,6 +80,16 @@ ActiveRecord::Schema.define(version: 2021_04_21_101120) do
     t.index ["follower_type", "follower_id"], name: "index_follows_on_follower_type_and_follower_id"
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.string "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_tag_name", null: false
     t.datetime "created_at", null: false
@@ -84,6 +103,13 @@ ActiveRecord::Schema.define(version: 2021_04_21_101120) do
     t.string "post_video"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "tag_maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -124,9 +150,14 @@ ActiveRecord::Schema.define(version: 2021_04_21_101120) do
   add_foreign_key "comments", "users"
   add_foreign_key "connects", "post_tags"
   add_foreign_key "connects", "posts"
+  add_foreign_key "entries", "rooms"
+  add_foreign_key "entries", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "rooms", "users"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "tag_maps", "users"
 end
