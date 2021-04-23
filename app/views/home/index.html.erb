@@ -8,9 +8,15 @@
 
 <header class="header">
   <p id="pahoo">Pahoo</p>
+  <% if unchecked_notifications.any? %>
+    <i class="fa fa-circle notification-circle"></i>
+  <% end %>
+  <%= link_to notifications_path, class: "notificationLink" do %>
+    <i class="fas fa-envelope"></i>
+  <% end %>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
-  <% end %>
+  <% end %> 
 </header>
 
 <div class="post-area">
@@ -23,8 +29,8 @@
         <nav id="commentNav">
           <% if @comments %>
             <div class="commentOutline">
-              <p class="commentCount"><%= @comments.count %>件のコメント</p>
-              <%= render partial: "modules/comment", locals: { comments: @comments }%>
+              <p class="commentCount"><%= post.comments.count %>件のコメント</p>
+              <%= render partial: "modules/comment", locals: { comments: @comments } %>
             </div>
           <% else %>
             <p>コメントはまだありません</p>
