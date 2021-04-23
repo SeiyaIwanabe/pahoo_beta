@@ -1,9 +1,3 @@
-<!--<div class="notifications">
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: key)%>
-  <% end %>
-</div>-->
-
 <label id="js-nav-close"></label>
 <nav id="menuNav">
   <li>
@@ -66,13 +60,28 @@
     </div>
 
     <div class="rightArea">
-     <div class="userPostCountArea">
-      <p class="countTitle">投稿数</p>
-      <p><%= @user.posts.count %></p> 
-     </div>
-     <div id="unityArea_<%= @user.id %>">
-       <%= render partial: 'modules/follow', locals: { user: @user } %>
-     </div>
+      <div class="userPostCountArea">
+        <p class="countTitle">投稿数</p>
+        <p><%= @user.posts.count %></p> 
+      </div>
+      <div id="unityArea_<%= @user.id %>">
+        <%= render partial: 'modules/follow', locals: { user: @user } %>
+      </div>
+
+      <% unless @user.id == current_user.id %>
+        <% if (current_user.followed_by? @user) && (@user.followed_by? current_user)  %>
+          <% if @isRoom == true %>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">メッセージを送る♥</a>
+          <% else %>
+            <%= form_for @room do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, value: @user.id %>
+              <% end %>
+              <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 

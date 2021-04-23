@@ -106,10 +106,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_082603) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "tag_maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -157,7 +155,6 @@ ActiveRecord::Schema.define(version: 2021_04_22_082603) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
-  add_foreign_key "rooms", "users"
   add_foreign_key "tag_maps", "tags"
   add_foreign_key "tag_maps", "users"
 end

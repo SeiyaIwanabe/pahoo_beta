@@ -20,8 +20,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   # DM機能
-  has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   #登録時にメールアドレスを不要とする
   def email_required?
