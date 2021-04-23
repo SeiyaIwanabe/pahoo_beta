@@ -8,9 +8,10 @@
 
 <header class="header">
   <p id="pahoo">Pahoo</p>
+  
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
-  <% end %>
+  <% end %> 
 </header>
 
 <div class="post-area">
@@ -23,8 +24,8 @@
         <nav id="commentNav">
           <% if @comments %>
             <div class="commentOutline">
-              <p class="commentCount"><%= @comments.count %>件のコメント</p>
-              <%= render partial: "modules/comment", locals: { comments: @comments }%>
+              <p class="commentCount"><%= post.comments.count %>件のコメント</p>
+              <%= render partial: "modules/comment", locals: { post: post } %>
             </div>
           <% else %>
             <p>コメントはまだありません</p>

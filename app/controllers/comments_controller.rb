@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
         format.js  # create.js.erbが呼び出される
       else
         format.html { redirect_back(fallback_location: root_path) } # 前のページに遷移
-        format.js { render :errors } # 一番最後に実装の解説あります
       end
     end
   end
