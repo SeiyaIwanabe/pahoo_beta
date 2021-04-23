@@ -4,6 +4,8 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.create(user_id: current_user.id, post_id: @post.id)
     @favorite.save
+    # いいね通知のメソッド呼び出し
+    @post.create_notification_favorite!(current_user)
   end
 
   def destroy

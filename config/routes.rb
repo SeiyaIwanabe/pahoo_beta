@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show]
 
+  # 通知機能
+  resources :notifications, only: :index
+
 
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
     resource :favorites, only: [:create, :destroy]
