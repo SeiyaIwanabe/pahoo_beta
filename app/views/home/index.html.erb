@@ -8,11 +8,11 @@
 
 <header class="header">
   <p id="pahoo">Pahoo</p>
-  <% if unchecked_notifications.any? %>
-    <i class="fa fa-circle notification-circle"></i>
-  <% end %>
   <%= link_to notifications_path, class: "notificationLink" do %>
     <i class="fas fa-envelope"></i>
+    <% if unchecked_notifications.any? %>
+      <i class="fa fa-circle notification-circle"></i>
+    <% end %>
   <% end %>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>

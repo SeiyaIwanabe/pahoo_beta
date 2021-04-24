@@ -1,10 +1,18 @@
-<div>
-  <h4 class="sub-title">通知</h4>
-  <% if @notifications.exists? %>
-    <div class="users-index">
-      <%= render @notifications %>
-    </div>
-  <% else %>
-    <p>通知はありません</p>
-  <% end %>
+<div class="notificationArea">
+
+  <div class="notificationHeader">
+    <%= link_to :back, class: "backLink" do %><button></button><% end %>
+    <h4 class="sub-title">通知</h4>
+  </div>
+  <div class="notificationIndex">
+    <% if @notifications.exists? %>
+      <div class="users-index">
+        <%= render @notifications %>
+      </div>
+    <% else %>
+      <p>通知はありません</p>
+    <% end %>
+  </div>
+
+  <%= render partial: "modules/footer" %>
 </div>

@@ -1,15 +1,17 @@
 <% visitor = notification.visitor %>
 <% post = notification.post %>
 
-<div class="user-view clearfix ">
-  <%= link_to user_path(notification.visitor) do %>
+<div class="notificationList">
+  <%= link_to user_path(notification.visitor), class: "visitorLink" do %>
     <% if notification.visitor.icon? %>
-      <%=  image_tag notification.visitor.icon.url, class:"user-thumb", style:"width: 60px;"%>
+      <%=  image_tag notification.visitor.icon.url, class: "user-thumb" %>
+    <% else %>
+      <i class="fas fa-user-circle"></i>
     <% end %>
   <% end %>
-  <%== notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
+  <p class="methodMessage"><%== notification_form(notification) %></p>
   <br>
-  <% if !@comment.nil? %>
+  <!--<% if !@comment.nil? %>
     <p class="moderate-font"><%= @comment %></p>
-  <% end %>
+  <% end %>-->
 </div>

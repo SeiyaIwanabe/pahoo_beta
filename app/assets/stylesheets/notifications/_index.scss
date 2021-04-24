@@ -1,0 +1,77 @@
+.notificationArea {
+  height: auto;
+
+  .notificationHeader {
+    height: 80px;
+
+    .backLink {
+      text-decoration: none;
+      border: none;
+      outline: none;
+      position: absolute;
+      top: 30px;
+      left: 70px;
+  
+      button {
+        display: block;
+        outline: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border: 5px solid;
+        border-color:  transparent transparent #565656 #565656;
+        transform: rotate(45deg);
+        background-color: #FFF;
+      }
+    }
+    .sub-title {
+      width: 100px;
+      margin: 0 auto;
+      padding-top: 20px;
+      font-size: 45px;
+      font-weight: bold;
+      color: #222222;
+    }
+  }
+
+  .notificationIndex {
+    padding-top: 80px;
+    padding-left: 30px;
+    height: 1300px;
+    overflow: scroll;
+
+    .notificationList {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+
+      .visitorLink {
+        text-decoration: none;
+        margin-right: 20px;
+
+        .user-thumb {
+          display: block;
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        i {
+          font-size: 110px;
+          color: #222222;
+        }
+      }
+      .visitorName {
+        text-decoration: none;
+        color: #222222;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .methodMessage {
+        color: #222222;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+}
