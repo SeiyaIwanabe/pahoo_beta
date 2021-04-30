@@ -332,3 +332,197 @@
     }
   }
 }
+
+@media (min-width: 480px) {
+  .mypage-header {
+    display: none;
+  }
+
+  .profileArea {
+    width: 80vw;
+    height: auto;
+    padding-top: 80px;
+    margin: 0 auto 50px auto;
+
+  
+  
+    .profileTop {
+      height: 200px;
+      display: flex;
+      border-bottom: 1px solid lightgray;
+  
+      .leftArea {
+        width: 30%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  
+        .profileIcon {
+          display: block;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          margin-bottom: 10px;
+          object-fit: cover;
+        }
+  
+        i {
+          font-size: 150px;
+          color: black;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 15px;
+          text-align: center;
+        }
+      }
+      .rightArea {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 70%;
+        padding-bottom: 80px;
+  
+        .userPostCountArea {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        p {
+          font-size: 20px;
+          padding-right: 40px;
+        }
+      }
+    }
+  
+    .profileMiddle {
+      width: 100%;
+      height: 150px;
+      padding-left: 70px;
+      padding-top: 40px;
+    }
+  
+    .tagArea {
+      padding-left: 70px;
+      .tagTitle {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .tab {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+
+    .tab-nav {
+      .tab-nav-item {
+        font-size: 40px;
+      }
+    }
+    .tab-contens {
+      .tab-contents-item {  
+        .userPostedArea {
+          height: auto;
+          padding: 10px;
+        
+          h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+  
+          .postScallLink {
+            text-decoration: none;
+            
+            .myPostesContent {
+              width: 315px;
+              height: 315px;
+              object-fit: cover;
+            }
+          }
+        }
+  
+        .userBannerArea {
+          height: auto;
+          padding: 60px;
+          display: flex;
+          flex-wrap: wrap;
+  
+          .userBannerLink {
+            display: block;
+            text-decoration: none;
+            position: relative;
+            margin-right: 30px;
+            margin-bottom: 30px;
+  
+            .userBannerImage {
+              width: 250px;
+              height: 250px;
+              border-radius: 50%;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+            }
+            .bannerPop {
+              padding-top: 5px;
+              position: absolute;
+              top: -30px;
+              left: 25px;
+              min-width: 200px;
+              color: #555;
+              background: #FFF;
+              border: solid 3px #555;
+              box-sizing: border-box;
+              border-radius: 15px;
+              margin-bottom: 100px;
+              overflow: visible;
+      
+              // 長いタイトルは省略
+              // overflow: hidden;
+              // text-overflow: ellipsis;
+              // white-space: nowrap;
+      
+              .bannerTitle {
+                text-align: center;
+                font-size: 32px;
+                font-weight: bold;
+              }
+              .bannerTag {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+              }
+            }
+            .bannerPop:before {
+              content: "";
+              position: absolute;
+              bottom: -24px;
+              left: 50%;
+              margin-left: -15px;
+              border: 12px solid transparent;
+              border-top: 12px solid #FFF;
+              z-index: 2;
+            }
+            
+            .bannerPop:after {
+              content: "";
+              position: absolute;
+              bottom: -30px;
+              left: 50%;
+              margin-left: -17px;
+              border: 14px solid transparent;
+              border-top: 14px solid #555;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
