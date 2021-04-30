@@ -403,10 +403,10 @@
     align-items: center;
     justify-content: space-around;
     z-index: 15;
-    background-color: lightgreen;
+    border-bottom: 1px solid lightgray;
 
     .titleName {
-      font-size: 30px;
+      font-size: 25px;
       font-weight: bold;
       font-family: 'Courier New', Courier, monospace;
     }
@@ -419,118 +419,332 @@
         color: black;
   
         i {
-          margin-right: 20px;
+          margin-right: 30px;
           display: block;
-          font-size: 30px;
+          font-size: 25px;
         }
       }
     }
   }
 
-  .mobilBannerArea {
-    width: 60vw;
-    height: 200px;
-    // 範囲内に収まらないコンテンツを水平方向に表示
-    overflow-x: auto;
-    // はみ出コンテンツを折り返さないように横並びに指定
-    display: flex;
-    align-items: center;
-    // スクロールを滑らかにする
-    overflow-scrolling: touch;
-    // スクロールを滑らかにする
-    -webkit-overflow-scrolling: touch;
-    // グラデーションの設定
-    background: -moz-linear-gradient(top, transparent, rgba(0,0,0,0.1));
-    background: -webkit-linear-gradient(top, transparent, rgba(0,0,0,0.6));
-    background: linear-gradient(to bottom, transparent, #000);
-    scroll-snap-type: x mandatory;
-    z-index: 2;
-    margin-top: 100px;
+  .main-outline {
+    padding-top: 100px;
+    background-color: #FAFAFA;
+    
+    .mobilBannerArea {
+      width: 50vw;
+      height: 150px;
+      border-radius: 10px;
+      border: 1px solid lightgray;
+      padding-top: 35px;
+      
+      .bannerContent {
+        //横並びにする指定
+        display: inline-block;  
+        list-style: none;
+        margin-right: 80px;
+        margin-left: 40px;
+        transition: 0.3s ease;
+    
+        .bannerLink {
+          text-decoration: none;
+          outline: none;
+          position: relative;
+    
+          .bannerImage {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid lightgray;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+          .bannerPop {
+            padding-top: 5px;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            min-width: 150px;
+            color: #555;
+            background: #FFF;
+            border: solid 3px #555;
+            box-sizing: border-box;
+            border-radius: 15px;
+            margin-bottom: 100px;
+            overflow: visible;
+    
+            // 長いタイトルは省略
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // white-space: nowrap;
+    
+            .bannerTitle {
+              text-align: center;
+              font-size: 20px;
+              font-weight: bold;
+            }
+            .bannerTag {
+              font-size: 20px;
+              font-weight: bold;
+              text-align: center;
+            }
+          }
+          
+          .bannerPop:before {
+            content: "";
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+            margin-left: -15px;
+            border: 12px solid transparent;
+            border-top: 12px solid #FFF;
+            z-index: 2;
+          }
+          
+          .bannerPop:after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            margin-left: -17px;
+            border: 14px solid transparent;
+            border-top: 14px solid #555;
+            z-index: 1;
+          }
+        }
+      }
+      .bannerContent.show {
+        transform: scale( 1.4 );
+      }
+    }
   
-  
-    .bannerContent {
-      //横並びにする指定
-      display: inline-block;  
-      list-style: none;
-      margin-right: 80px;
-      margin-left: 40px;
-      transition: 0.3s ease;
-  
-      .bannerLink {
-        text-decoration: none;
-        outline: none;
+    .post-area {
+      width: 50vw;
+      height: auto;
+      overflow: scroll;
+      padding-top: 80px;
+      .post-contents {
+        width: 100%;
+        height: auto;
+        // margin-bottom: 50px;
         position: relative;
-  
-        .bannerImage {
-          display: block;
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
-        }
-        .bannerPop {
-          padding-top: 5px;
-          position: absolute;
-          top: -30px;
-          left: -20px;
-          min-width: 300px;
-          color: #555;
-          background: #FFF;
-          border: solid 3px #555;
-          box-sizing: border-box;
-          border-radius: 15px;
-          margin-bottom: 100px;
-          overflow: visible;
-  
-          // 長いタイトルは省略
-          // overflow: hidden;
-          // text-overflow: ellipsis;
-          // white-space: nowrap;
-  
-          .bannerTitle {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
+        overflow: hidden;
+    
+        .post-content {
+          position: relative;
+    
+          .postVideo {
+            width: 50vw;
+            max-height: 600px;
+            background-color: black;
+            object-fit: contain;
+            // min-height: 700px;
           }
-          .bannerTag {
+    
+          .controls {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.7);
+            transform: translateY(100%);
+            transition: all 0.2s;
+      
+            .orange-bar {
+              height: 7px;
+              top: 0;
+              left: 0;
+              width: 100%;
+              background-color: #FFF;
+      
+              .orange-juice {
+                height: 7px;
+                background-color: orangered;
+              }
+            }
+          }
+    
+          .btnLabel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+      
+            .buttons {
+              // padding: 10px;
+              display: none;
+            }
+        
+        
+            .buttons button{
+              background: none;
+              border: 0;
+              outline: 0;
+              cursor: pointer;
+            }
+            .buttons button:before {
+              content: "▶";
+              width: 50px;
+              height: 50px;
+              display: inline-block;
+              font-size: 28px;
+              color: #fff;
+            }
+            .buttons button.play:before {
+              content: "▶";
+            }
+            .buttons button.pause:before {
+              content: "■";
+              width: 50px;
+              height: 50px;
+              display: inline-block;
+              font-size: 28px;
+              color: #fff;
+            }
+          }
+          
+          .muteBtn {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+      
+            i {
+              font-size: 40px;
+            }
+          }
+    
+          #shareNav {
+            background-color: #fff;
+            width: 100vw;
+            height: 500px;
+            border-radius: 20px;
+            position: fixed;
+            bottom: 0;
+            z-index: 200; /*最前面に*/
+            margin-bottom: -500px;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+          }
+          
+          .menuLink {
+            position: absolute;
+            right: 40px;
+            bottom: 450px;
+            i {
+              color: #fff;
+              font-size: 60px;
+            }
+          }
+          .profileLink {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-decoration: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+    
+            .user-icon {
+              display: block;
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 20px;
+            }
+            i {
+              color: #fff;
+              font-size: 60px;
+              margin-right: 20px;
+            }
+            .user-nickname {
+              color: #fff;
+              font-size: 20px;
+              font-weight: bold;
+            }
+          }
+          .favoriteArea {
+            position: absolute;
+            right: 40px;
+            bottom: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+            .goodLink {
+              display: block;
+              position: relative;
+              z-index: 10;
+              .far {
+                font-size: 40px;
+                color: #FFF;
+              }
+              .fas {
+                color: orangered;
+                font-size: 40px;
+              }
+            }
+            .favoriteCount {
+              font-size: 15px;
+              font-weight: bold;
+              color: #FFF;
+            }
+          }
+          .commentLink {
+            position: absolute;
+            right: 40px;
+            bottom: 150px;
+            z-index: 10;
+            i {
+              color: #fff;
+              font-size: 40px;
+            }
+          }
+          .shareLink {
+            position: absolute;
+            right: 40px;
+            bottom: 50px;
+            i {
+              color: #fff;
+              font-size: 40px;
+            }
+          }
+          .postText {
+            width: 50%;
+            position: absolute;
+            bottom: 20%;
+            left: 5%;
+            color: #FFF;
             font-size: 20px;
+          }
+          .postDeleteBtn {
+            display: block;
+            width: 400px;
+            height: 50px;
+            background-color: #e4e6ea;
+            border-radius: 10px;
+            border: none;
+            color: #65676b;
+            cursor: pointer;
             font-weight: bold;
             text-align: center;
           }
         }
-        
-        .bannerPop:before {
-          content: "";
-          position: absolute;
-          bottom: -24px;
-          left: 50%;
-          margin-left: -15px;
-          border: 12px solid transparent;
-          border-top: 12px solid #FFF;
-          z-index: 2;
-        }
-        
-        .bannerPop:after {
-          content: "";
-          position: absolute;
-          bottom: -30px;
-          left: 50%;
-          margin-left: -17px;
-          border: 14px solid transparent;
-          border-top: 14px solid #555;
-          z-index: 1;
-        }
-        // .bannerPop.is-active {
-  
-        // }
+      }
+      .post-contents:hover .controls {
+        transform: translateY(0);
       }
     }
-  }
-
-  .post-area {
-    width: 60vw;
-    margin-top: 100px;
   }
  }

@@ -20,129 +20,109 @@
 </header>
 
 <!-- パソコン用ヘッダー -->
-<div class="mobilHeader">
-  <p class="titleName">Pahoo</p>
-  <div class="linkSection">
-    <%= link_to root_path, class: "bottomNavLink" do%>
-      <i class="fas fa-home"></i>
-    <% end %>
+<%= render partial: 'modules/mobil-header' %>
 
-    <%= link_to posts_path, class: "bottomNavLink" do%>
-      <i class="fas fa-search"></i>
-    <% end %>
-
-    <%= link_to new_post_path, class: "bottomNavLink" do%>
-      <i class="fas fa-plus-circle"></i>
-    <% end %>
-
-    <%= link_to root_path, class: "bottomNavLink" do%>
-      <i class="fas fa-heart"></i>
-    <% end %>
-    
-    <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>
-      <i class="fas fa-user-circle"></i>
-    <% end %>
-  </div>
-</div>
 
 <!-- パソコン用バナーエリア -->
-<ul class="mobilBannerArea">
-  <% @banners.each do |banner| %>
-    <li class="bannerContent">
-      <%= link_to banner_path(banner.id), class: "bannerLink" do %>
-        <%= image_tag banner.banner_image.url, class: "bannerImage" %>
-        <div class="bannerPop">
-          <p class="bannerTitle"><%= banner.banner_name %></p>
-        </div>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<div class="post-area">
-  <ul class="post-contents">
-    <% @posts.each do |post| %>
-      <li class="post-content">
-        <%= video_tag(post.post_video.to_s, class: "postVideo") %>
-
-        <!-- コメントナビゲーション -->
-        <nav id="commentNav">
-          <% if @comments %>
-            <div class="commentOutline">
-              <p class="commentCount"><%= post.comments.count %>件のコメント</p>
-              <%= render partial: "modules/comment", locals: { comments: @comments } %>
-            </div>
-          <% else %>
-            <p>コメントはまだありません</p>
-          <% end %>
-
-          <div class="bottomInput">
-            <%= form_with(model: [post, @comment], id: "new-comment") do |f| %>
-              <%= f.text_field :content, class: "inputComment"%>
-              <%= f.submit "コメントする", class: "submitComment" %>
-            <% end %>
+<div class="main-outline">
+  <ul class="mobilBannerArea">
+    <% @banners.each do |banner| %>
+      <li class="bannerContent">
+        <%= link_to banner_path(banner.id), class: "bannerLink" do %>
+          <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+          <div class="bannerPop">
+            <p class="bannerTitle"><%= banner.banner_name %></p>
           </div>
-        </nav>  
-
-        <!-- コメントイベントの発火 -->
-        <%= link_to "#", class: "commentLink" do%>
-          <i class="far fa-comment-dots"></i>
         <% end %>
-
-        <!-- プロフィールリンク -->
-        <%= link_to user_path(post.user.id), class: "profileLink" do%>
-          <% if post.user.icon? %>
-            <%= image_tag post.user.icon.url, class: "user-icon"%>
-          <% else %>
-            <i class="fas fa-user-circle"></i>
-          <% end %>
-          <p class="user-nickname"><%= post.user.nickname %></p>
-        <% end %>
-
-        <!-- いいねリンク -->
-        <div id="favorite_area_<%= post.id %>", class="favoriteArea">
-          <%= render partial: "modules/favorite", locals: { post: post } %>
-        </div>
-
-        <!-- 他SNSへのシェアイベントの発火 -->
-        <%= link_to "#", class: "shareLink" do%>
-          <i class="fas fa-share"></i>
-        <% end %>
-
-        <!-- シェアナビゲーション -->
-        <nav id="shareNav">
-          <li>
-            <i class="fab fa-twitter"></i>
-            <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank' %>
-          </li>
-          <li>
-            <i class="fab fa-line"></i>
-          </li>
-          <li>
-          </li>
-        </nav>
-        <div class="postText"><%= post.post_text %></div>
-        <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
-
-        <!--<div class="controls">
-          <div class="orange-bar">
-            <div class="orange-juice"></div>
-          </div>
-        </div>-->
-        <label class="btnLabel" ">
-          <div class="buttons">
-            <button id="playPause"></button>
-          </div>
-        </label>
-
-        <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label>
-
-        <!--<%= link_to "#", class: "menuLink" do%>
-          <i class="fas fa-ellipsis-h"></i>
-        <% end %>-->
       </li>
     <% end %>
   </ul>
+
+  <div class="post-area">
+    <ul class="post-contents">
+      <% @posts.each do |post| %>
+        <li class="post-content">
+          <%= video_tag(post.post_video.to_s, class: "postVideo") %>
+
+          <!-- コメントナビゲーション -->
+          <nav id="commentNav">
+            <% if @comments %>
+              <div class="commentOutline">
+                <p class="commentCount"><%= post.comments.count %>件のコメント</p>
+                <%= render partial: "modules/comment", locals: { comments: @comments } %>
+              </div>
+            <% else %>
+              <p>コメントはまだありません</p>
+            <% end %>
+
+            <div class="bottomInput">
+              <%= form_with(model: [post, @comment], id: "new-comment") do |f| %>
+                <%= f.text_field :content, class: "inputComment"%>
+                <%= f.submit "コメントする", class: "submitComment" %>
+              <% end %>
+            </div>
+          </nav>  
+
+          <!-- コメントイベントの発火 -->
+          <%= link_to "#", class: "commentLink" do%>
+            <i class="far fa-comment-dots"></i>
+          <% end %>
+
+          <!-- プロフィールリンク -->
+          <%= link_to user_path(post.user.id), class: "profileLink" do%>
+            <% if post.user.icon? %>
+              <%= image_tag post.user.icon.url, class: "user-icon"%>
+            <% else %>
+              <i class="fas fa-user-circle"></i>
+            <% end %>
+            <p class="user-nickname"><%= post.user.nickname %></p>
+          <% end %>
+
+          <!-- いいねリンク -->
+          <div id="favorite_area_<%= post.id %>", class="favoriteArea">
+            <%= render partial: "modules/favorite", locals: { post: post } %>
+          </div>
+
+          <!-- 他SNSへのシェアイベントの発火 -->
+          <%= link_to "#", class: "shareLink" do%>
+            <i class="fas fa-share"></i>
+          <% end %>
+
+          <!-- シェアナビゲーション -->
+          <nav id="shareNav">
+            <li>
+              <i class="fab fa-twitter"></i>
+              <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank' %>
+            </li>
+            <li>
+              <i class="fab fa-line"></i>
+            </li>
+            <li>
+            </li>
+          </nav>
+          <div class="postText"><%= post.post_text %></div>
+          <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
+
+          <!--<div class="controls">
+            <div class="orange-bar">
+              <div class="orange-juice"></div>
+            </div>
+          </div>-->
+          <label class="btnLabel">
+            <div class="buttons">
+              <button id="playPause"></button>
+            </div>
+          </label>
+
+          <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label>
+
+          <!--<%= link_to "#", class: "menuLink" do%>
+            <i class="fas fa-ellipsis-h"></i>
+          <% end %>-->
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <ul class="bannerArea">
