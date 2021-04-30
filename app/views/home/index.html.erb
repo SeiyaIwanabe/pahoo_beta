@@ -19,6 +19,46 @@
   <% end %> 
 </header>
 
+<!-- パソコン用ヘッダー -->
+<div class="mobilHeader">
+  <p class="titleName">Pahoo</p>
+  <div class="linkSection">
+    <%= link_to root_path, class: "bottomNavLink" do%>
+      <i class="fas fa-home"></i>
+    <% end %>
+
+    <%= link_to posts_path, class: "bottomNavLink" do%>
+      <i class="fas fa-search"></i>
+    <% end %>
+
+    <%= link_to new_post_path, class: "bottomNavLink" do%>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+
+    <%= link_to root_path, class: "bottomNavLink" do%>
+      <i class="fas fa-heart"></i>
+    <% end %>
+    
+    <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>
+      <i class="fas fa-user-circle"></i>
+    <% end %>
+  </div>
+</div>
+
+<!-- パソコン用バナーエリア -->
+<ul class="mobilBannerArea">
+  <% @banners.each do |banner| %>
+    <li class="bannerContent">
+      <%= link_to banner_path(banner.id), class: "bannerLink" do %>
+        <%= image_tag banner.banner_image.url, class: "bannerImage" %>
+        <div class="bannerPop">
+          <p class="bannerTitle"><%= banner.banner_name %></p>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
 <div class="post-area">
   <ul class="post-contents">
     <% @posts.each do |post| %>

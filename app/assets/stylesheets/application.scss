@@ -86,7 +86,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    z-index: 2;
+    z-index: 15;
 
     .bottomNavLink {
       display: block;
@@ -98,5 +98,16 @@ body {
         font-size: 70px;
       }
     }
+  }
+}
+
+@media screen and (min-width: 480px) {
+ .footer {
+   display: none !important;
+ }
+
+  body {
+    padding-left: 100px;
+    background-color: #FAFAFA;
   }
 }
