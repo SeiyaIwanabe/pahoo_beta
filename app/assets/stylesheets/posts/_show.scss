@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,15 +17,15 @@
     border: none;
     outline: none;
     position: absolute;
-    top: 30px;
-    left: 70px;
+    top: 20px;
+    left: 60px;
 
     button {
       display: block;
       outline: none;
       border: none;
-      width: 40px;
-      height: 40px;
+      width: 20px;
+      height: 20px;
       border: 5px solid;
       border-color:  transparent transparent #565656 #565656;
       transform: rotate(45deg);
@@ -35,12 +35,12 @@
   .postOwnerName {
     color: gray;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
   }
 
   h1 {
     font-weight: bold;
-    font-size: 35px;
+    font-size: 20px;
   }
 }
 
@@ -66,14 +66,14 @@
     transition: all 0.2s;
 
     .show-orange-bar {
-      height: 7px;
+      height: 3px;
       top: 0;
       left: 0;
       width: 100%;
       background-color: #FFF;
 
       .show-orange-juice {
-        height: 7px;
+        height: 3px;
         background-color: orangered;
       }
     }
@@ -107,14 +107,14 @@
     }
     .showButtons button:before {
       content: "▶";
-      width: 120px;
-      height: 120px;
+      width: 40px;
+      height: 40px;
       display: inline-block;
-      font-size: 28px;
+      font-size: 20px;
       color: #fff;
       border: 2px solid #FFF;
       border-radius: 50%;
-      line-height: 120px;
+      line-height: 40px;
 
     }
     .showButtons button.play:before {
@@ -122,28 +122,28 @@
     }
     .showButtons button.pause:before {
       content: "■";
-      width: 120px;
-      height: 120px;
+      width: 40px;
+      height: 40px;
       display: inline-block;
-      font-size: 28px;
+      font-size: 20px;
       color: #fff;
       border: 3px solid #FFF;
       border-radius: 50%;
-      line-height: 120px;
+      line-height: 40px;
     }
   }
 
   .showMuteBtn {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: 0;
+    left: 20px;
     outline: none;
     border: none;
     width: 50px;
     height: 50px;
 
     i {
-      font-size: 80px;
+      font-size: 30px;
       outline: none;
       border: none;
       color: #F47837;
@@ -152,8 +152,8 @@
   
   .scallProfileLink {
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 20px;
+    left: 20px;
     text-decoration: none;
     outline: none;
     display: flex;
@@ -161,27 +161,27 @@
 
     .user-icon {
       display: block;
-      width: 80px;
-      height: 80px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       object-fit: cover;
       margin-right: 20px;
     }
     i {
       color: #fff;
-      font-size: 60px;
+      font-size: 40px;
       margin-right: 20px;
     }
     .user-nickname {
       color: #FFF;
-      font-size: 30px;
+      font-size: 10px;
       font-weight: bold;
     }
   }
   .favoriteArea {
     position: absolute;
-    right: 40px;
-    bottom: 370px;
+    right: 30px;
+    bottom: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,45 +189,45 @@
     .goodLink {
       display: block;
       .far {
-        font-size: 60px;
+        font-size: 30px;
         color: #FFF;
       }
       .fas {
         color: orangered;
-        font-size: 60px;
+        font-size: 30px;
       }
     }
     .favoriteCount {
-      font-size: 25px;
+      font-size: 15px;
       font-weight: bold;
       color: #FFF;
     }
   }
   .commentLink {
     position: absolute;
-    right: 40px;
-    bottom: 250px;
+    right: 30px;
+    bottom: 30px;
     i {
       color: #fff;
-      font-size: 60px;
+      font-size: 30px;
     }
   }
   .shareLink {
     position: absolute;
-    right: 40px;
-    bottom: 120px;
+    right: 30px;
+    bottom: 80px;
     i {
       color: #fff;
-      font-size: 60px;
+      font-size: 30px;
     }
   }
   .postText {
     width: 50%;
     position: absolute;
-    bottom: 20%;
+    bottom: 50px;
     left: 5%;
     color: #FFF;
-    font-size: 20px;
+    font-size: 10px;
   }
 }
 
@@ -402,20 +402,18 @@
 
 
 .userOthersPosted {
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 10px;
 
   p {
-    font-size: 30px;
+    font-size: 10px;
   }
 
   .postScallLink {
 
     .otherContents {
-      width: 315px;
-      height: 315px;
-      // max-height: 315px;
-      // max-width: 315px;
+      width: 112px;
+      height: 112px;
       object-fit: cover;
       background-color: #000;
       // margin-right: 10px;

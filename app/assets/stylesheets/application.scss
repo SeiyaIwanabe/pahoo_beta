@@ -103,7 +103,7 @@ body {
 
 @media (min-width: 980px) {
  .footer {
-   display: none;
+   display: none !important;
  }
 
   body {

@@ -70,7 +70,7 @@
       <% unless @user.id == current_user.id %>
         <% if (current_user.followed_by? @user) && (@user.followed_by? current_user)  %>
           <% if @isRoom == true %>
-            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">メッセージを送る♥</a>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="toRoom">メッセージを贈る</a>
           <% else %>
             <%= form_for @room do |f| %>
               <%= fields_for @entry do |e| %>
