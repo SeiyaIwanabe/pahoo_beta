@@ -8,12 +8,6 @@
 
 <header class="header">
   <p id="pahoo">Pahoo</p>
-  <%= link_to notifications_path, class: "notificationLink" do %>
-    <i class="fas fa-envelope"></i>
-    <% if unchecked_notifications.any? %>
-      <i class="fa fa-circle notification-circle"></i>
-    <% end %>
-  <% end %>
   <%= link_to new_banner_path, class: "CreateBannerLink" do %>
     <i class="fas fa-plus-square"></i>
   <% end %> 
@@ -23,8 +17,9 @@
 <%= render partial: 'modules/mobil-header' %>
 
 
-<!-- パソコン用バナーエリア -->
 <div class="main-outline">
+
+  <!-- パソコン用バナーエリア -->
   <ul class="mobilBannerArea">
     <% @banners.each do |banner| %>
       <li class="bannerContent">
@@ -147,5 +142,3 @@
 <%= javascript_include_tag 'banner' %>
 <%= javascript_include_tag 'home-post-comment' %>
 <%= javascript_include_tag 'post_video' %>
-
-

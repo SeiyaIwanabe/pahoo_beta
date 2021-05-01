@@ -16,16 +16,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-around;
   z-index: 2;
-  border: 2px solid lightgray;
+  border: 1px solid lightgray;
 
   h1 {
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
   }
 
@@ -41,7 +41,7 @@
       text-decoration: none;
       margin-right: 80px;
       i {
-        font-size: 50px;
+        font-size: 20px;
         color: #000;
       }
     }
@@ -49,8 +49,8 @@
       cursor: pointer;
 
       .menu-item {
-        height: 10px;
-        width: 60px;
+        height: 5px;
+        width: 30px;
         background-color: #000;
         border-radius: 25%;
         margin-bottom: 10px;
@@ -72,18 +72,18 @@
 
 .profileArea {
   height: auto;
-  padding-top: 80px;
+  padding-top: 60px;
 
 
   .profileTop {
-    height: 320px;
-    // background-color: lightgreen;
+    height: 120px;
     display: flex;
+    align-items: center;
     border-bottom: 1px solid lightgray;
 
     .leftArea {
       width: 30%;
-      padding: 40px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -91,20 +91,20 @@
 
       .profileIcon {
         display: block;
-        width: 200px;
-        height: 200px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
-        margin-bottom: 10px;
         object-fit: cover;
+        margin-bottom: 10px;
       }
-
       i {
-        font-size: 200px;
+        font-size: 80px;
         color: black;
         margin-bottom: 10px;
       }
       p {
-        font-size: 20px;
+        min-width: 100px;
+        font-size: 10px;
         text-align: center;
       }
     }
@@ -113,7 +113,7 @@
       align-items: center;
       justify-content: space-evenly;
       width: 70%;
-      padding-bottom: 80px;
+      // padding-bottom: 80px;
 
       .userPostCountArea {
         display: flex;
@@ -123,7 +123,7 @@
       }
 
       p {
-        font-size: 30px;
+        font-size: 10px;
         // border-right: 2px solid lightgray;
         padding-right: 40px;
       }
@@ -132,32 +132,34 @@
 
   .profileMiddle {
     width: 100%;
-    height: 200px;
-    padding: 40px;
+    height: 100px;
+    padding: 20px;
 
     .userEditLink {
       text-decoration: none;
       display: block;
-      width: 200px;
-      height: 50px;
+      width: 100px;
+      font-size: 10px;
+      height: 30px;
       border: 1px solid lightgray;
       text-align: center;
       color: gray;
-      padding-top: 10px;
+      padding-top: 5px;
       border-radius: 5px;
     }
   }
 
   .tagArea {
-    padding-left: 40px;
+    padding-left: 20px;
     .tagTitle {
-      font-size: 20px;
+      font-size: 10px;
       font-weight: bold;
       margin-bottom: 30px;
       .genre {
         display: flex;
         .genreName {
           width: 100px;
+          font-size: 10px;
         }
       }
     }
@@ -174,7 +176,7 @@
       display: block;
       width: 50%;
       text-decoration: none;
-      font-size: 80px;
+      font-size: 30px;
       color: lightgray;
       text-align: center;
       // border-bottom: 1px solid lightgray;
@@ -196,7 +198,7 @@
         height: auto;
         padding: 10px;
         // width: 100%;
-        // overflow: scroll;
+        overflow: scroll;
       
         h1 {
           font-size: 30px;
@@ -208,8 +210,8 @@
           text-decoration: none;
           
           .myPostesContent {
-            width: 315px;
-            height: 315px;
+            width: 110px;
+            height: 110px;
             object-fit: cover;
           }
         }
@@ -217,7 +219,7 @@
 
       .userBannerArea {
         height: auto;
-        padding: 60px;
+        padding: 40px;
         display: flex;
         flex-wrap: wrap;
 
@@ -229,19 +231,21 @@
           margin-bottom: 30px;
 
           .userBannerImage {
-            width: 250px;
-            height: 250px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            // background-size: cover;
+            object-fit: cover;
+            border: 1px solid lightgray;
           }
           .bannerPop {
             padding-top: 5px;
             position: absolute;
-            top: -30px;
-            left: 25px;
-            min-width: 200px;
+            top: -20px;
+            left: -8px;
+            min-width: 100px;
             color: #555;
             background: #FFF;
             border: solid 3px #555;
@@ -257,7 +261,7 @@
     
             .bannerTitle {
               text-align: center;
-              font-size: 32px;
+              font-size: 10px;
               font-weight: bold;
             }
             .bannerTag {
@@ -298,7 +302,7 @@
 #menuNav {
   background-color: #fff;
   width: 100vw;
-  height: 800px;
+  height: 300px;
   // margin: 0 auto;
   border-radius: 20px;
   position: fixed;
@@ -319,14 +323,14 @@
     align-items: center;
 
     i {
-      font-size: 40px;
+      font-size: 20px;
       margin-right: 20px;
     }
 
     .logoutLink {
       text-decoration: none;
       color: #000;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
     }

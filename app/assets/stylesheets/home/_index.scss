@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -11,9 +11,9 @@
   z-index: 15;
 
   p {
-    width: 550px;
+    width: 200px;
     margin-left: 23%;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
   }
@@ -35,249 +35,260 @@
   i {
     display: block;
     margin-right: 50px;
-    font-size: 50px;
+    font-size: 20px;
     color: #000;
   }
 }
 
-.post-area {
-  height: auto;
-  overflow: scroll;
-  padding-top: 80px;
-  .post-contents {
-    width: 100%;
-    height: auto;
-    // margin-bottom: 50px;
-    border: 1px solid lightgrey;
-    position: relative;
-    overflow: hidden;
+.mobilHeader {
+  display: none;
+}
 
-    .post-content {
-      position: relative;
+.main-outline {
 
-      .postVideo {
-        width: 100vw;
-        max-height: 800px;
-        background-color: black;
-        object-fit: contain;
-        // min-height: 700px;
-      }
-
-      .controls {
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        flex-wrap: wrap;
-        background: rgba(0, 0, 0, 0.7);
-        transform: translateY(100%);
-        transition: all 0.2s;
+  .mobilBannerArea {
+    display: none;
+  }
   
-        .orange-bar {
-          height: 7px;
+  .post-area {
+    height: auto;
+    overflow: scroll;
+    padding-top: 60px;
+    .post-contents {
+      width: 100%;
+      height: auto;
+      // margin-bottom: 50px;
+      border: 1px solid lightgrey;
+      position: relative;
+      overflow: hidden;
+  
+      .post-content {
+        position: relative;
+  
+        .postVideo {
+          width: 100vw;
+          max-height: 800px;
+          background-color: black;
+          object-fit: contain;
+          // min-height: 700px;
+        }
+  
+        .controls {
+          display: flex;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          flex-wrap: wrap;
+          background: rgba(0, 0, 0, 0.7);
+          transform: translateY(100%);
+          transition: all 0.2s;
+    
+          .orange-bar {
+            height: 7px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #FFF;
+    
+            .orange-juice {
+              height: 7px;
+              background-color: orangered;
+            }
+          }
+        }
+  
+        .btnLabel {
+          width: 100%;
+          height: 100%;
+          position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          background-color: #FFF;
-  
-          .orange-juice {
-            height: 7px;
-            background-color: orangered;
+          right: 0;
+          bottom: 0;
+    
+          .buttons {
+            // padding: 10px;
+            display: none;
+          }
+      
+      
+          .buttons button{
+            background: none;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+          }
+          .buttons button:before {
+            content: "▶";
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            font-size: 28px;
+            color: #fff;
+          }
+          .buttons button.play:before {
+            content: "▶";
+          }
+          .buttons button.pause:before {
+            content: "■";
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            font-size: 28px;
+            color: #fff;
           }
         }
-      }
-
-      .btnLabel {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-  
-        .buttons {
-          // padding: 10px;
-          display: none;
-        }
-    
-    
-        .buttons button{
-          background: none;
-          border: 0;
-          outline: 0;
-          cursor: pointer;
-        }
-        .buttons button:before {
-          content: "▶";
-          width: 50px;
-          height: 50px;
-          display: inline-block;
-          font-size: 28px;
-          color: #fff;
-        }
-        .buttons button.play:before {
-          content: "▶";
-        }
-        .buttons button.pause:before {
-          content: "■";
-          width: 50px;
-          height: 50px;
-          display: inline-block;
-          font-size: 28px;
-          color: #fff;
-        }
-      }
-      
-      .muteBtn {
-        position: absolute;
-        bottom: 50px;
-        left: 50px;
-        outline: none;
-        border: none;
-        width: 50px;
-        height: 50px;
-  
-        i {
-          font-size: 80px;
+        
+        .muteBtn {
+          position: absolute;
+          bottom: 0;
+          left: 10px;
           outline: none;
           border: none;
-          // background-color: red;
-          color: orangered;
-        }
-      }
-
-      #shareNav {
-        background-color: #fff;
-        width: 100vw;
-        height: 500px;
-        // margin: 0 auto;
-        border-radius: 20px;
-        position: fixed;
-        bottom: 0;
-        z-index: 200; /*最前面に*/
-        margin-bottom: -500px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-      }
-      
-      .menuLink {
-        position: absolute;
-        right: 40px;
-        bottom: 450px;
-        i {
-          color: #fff;
-          font-size: 60px;
-        }
-      }
-      .profileLink {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        text-decoration: none;
-        outline: none;
-        display: flex;
-        align-items: center;
-        z-index: 10;
-
-        .user-icon {
-          display: block;
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-right: 20px;
-        }
-        i {
-          color: #fff;
-          font-size: 60px;
-          margin-right: 20px;
-        }
-        .user-nickname {
-          color: #fff;
-          font-size: 30px;
-          font-weight: bold;
-        }
-      }
-      .favoriteArea {
-        position: absolute;
-        right: 40px;
-        bottom: 370px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+          width: 50px;
+          height: 50px;
     
-        .goodLink {
-          display: block;
-          position: relative;
-          z-index: 10;
-          .far {
+          i {
+            font-size: 30px;
+            outline: none;
+            border: none;
+            // background-color: red;
+            color: orangered;
+          }
+        }
+  
+        #shareNav {
+          background-color: #fff;
+          width: 100vw;
+          height: 500px;
+          // margin: 0 auto;
+          border-radius: 20px;
+          position: fixed;
+          bottom: 0;
+          z-index: 200; /*最前面に*/
+          margin-bottom: -500px;
+  
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+        
+        .menuLink {
+          position: absolute;
+          right: 40px;
+          bottom: 450px;
+          i {
+            color: #fff;
             font-size: 60px;
+          }
+        }
+        .profileLink {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          text-decoration: none;
+          outline: none;
+          display: flex;
+          align-items: center;
+          z-index: 10;
+  
+          .user-icon {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+          }
+          i {
+            color: #fff;
+            font-size: 60px;
+            margin-right: 20px;
+          }
+          .user-nickname {
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+        .favoriteArea {
+          position: absolute;
+          right: 30px;
+          bottom: 370px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      
+          .goodLink {
+            display: block;
+            position: relative;
+            z-index: 2;
+            .far {
+              font-size: 30px;
+              color: #FFF;
+            }
+            .fas {
+              color: orangered;
+              font-size: 30px;
+            }
+          }
+          .favoriteCount {
+            font-size: 15px;
+            font-weight: bold;
             color: #FFF;
           }
-          .fas {
-            color: orangered;
-            font-size: 60px;
+        }
+        .commentLink {
+          position: absolute;
+          right: 30px;
+          bottom: 250px;
+          z-index: 10;
+          i {
+            color: #fff;
+            font-size: 30px;
           }
         }
-        .favoriteCount {
-          font-size: 25px;
-          font-weight: bold;
+        .shareLink {
+          position: absolute;
+          right: 30px;
+          bottom: 100px;
+          i {
+            color: #fff;
+            font-size: 30px;
+          }
+        }
+        .postText {
+          width: 50%;
+          position: absolute;
+          bottom: 25%;
+          left: 5%;
           color: #FFF;
+          font-size: 10px;
+        }
+        .postDeleteBtn {
+          display: block;
+          width: 400px;
+          height: 50px;
+          background-color: #e4e6ea;
+          border-radius: 10px;
+          border: none;
+          color: #65676b;
+          cursor: pointer;
+          font-weight: bold;
+          text-align: center;
         }
       }
-      .commentLink {
-        position: absolute;
-        right: 40px;
-        bottom: 250px;
-        z-index: 10;
-        i {
-          color: #fff;
-          font-size: 60px;
-        }
-      }
-      .shareLink {
-        position: absolute;
-        right: 40px;
-        bottom: 120px;
-        i {
-          color: #fff;
-          font-size: 60px;
-        }
-      }
-      .postText {
-        width: 50%;
-        position: absolute;
-        bottom: 20%;
-        left: 5%;
-        color: #FFF;
-        font-size: 20px;
-      }
-      .postDeleteBtn {
-        display: block;
-        width: 400px;
-        height: 50px;
-        background-color: #e4e6ea;
-        border-radius: 10px;
-        border: none;
-        color: #65676b;
-        cursor: pointer;
-        font-weight: bold;
-        text-align: center;
-      }
+      
     }
-    
-  }
-  .post-contents:hover .controls {
-    transform: translateY(0);
+    .post-contents:hover .controls {
+      transform: translateY(0);
+    }
   }
 }
 
 .bannerArea {
   width: 100%;
-  height: 400px;
+  height: 170px;
   // 範囲内に収まらないコンテンツを水平方向に表示
   overflow-x: auto;
   // はみ出コンテンツを折り返さないように横並びに指定
@@ -288,13 +299,13 @@
   // スクロールを滑らかにする
   -webkit-overflow-scrolling: touch;
   position: fixed;
-  bottom: 120px;
+  bottom: 44px;
   // グラデーションの設定
   background: -moz-linear-gradient(top, transparent, rgba(0,0,0,0.1));
   background: -webkit-linear-gradient(top, transparent, rgba(0,0,0,0.6));
   background: linear-gradient(to bottom, transparent, #000);
   scroll-snap-type: x mandatory;
-  z-index: 2;
+  z-index: 10;
   padding-top: 50px;
 
 
@@ -313,19 +324,20 @@
 
       .bannerImage {
         display: block;
-        width: 250px;
-        height: 250px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: center;
+        // background-size: cover;
+        object-fit: cover;
       }
       .bannerPop {
         padding-top: 5px;
         position: absolute;
-        top: -30px;
-        left: -20px;
-        min-width: 300px;
+        top: -20px;
+        left: 3px;
+        min-width: 100px;
         color: #555;
         background: #FFF;
         border: solid 3px #555;
@@ -341,7 +353,7 @@
 
         .bannerTitle {
           text-align: center;
-          font-size: 32px;
+          font-size: 10px;
           font-weight: bold;
         }
         .bannerTag {
@@ -382,8 +394,9 @@
   }
 }
 
+
 /* レスポンシブデザイン */
-@media screen and (min-width: 480px) {
+@media (min-width: 980px) {
   .header {
     display: none;
   }
