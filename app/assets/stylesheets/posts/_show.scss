@@ -189,12 +189,12 @@
     .goodLink {
       display: block;
       .far {
-        font-size: 30px;
+        font-size: 25px;
         color: #FFF;
       }
       .fas {
         color: orangered;
-        font-size: 30px;
+        font-size: 25px;
       }
     }
     .favoriteCount {
@@ -209,7 +209,7 @@
     bottom: 30px;
     i {
       color: #fff;
-      font-size: 30px;
+      font-size: 25px;
     }
   }
   .shareLink {
@@ -218,7 +218,7 @@
     bottom: 80px;
     i {
       color: #fff;
-      font-size: 30px;
+      font-size: 25px;
     }
   }
   .postText {
@@ -234,13 +234,13 @@
 #shareNav {
   background-color: #fff;
   width: 100vw;
-  height: 500px;
+  height: 300px;
   // margin: 0 auto;
   border-radius: 20px;
   position: fixed;
   bottom: 0;
   z-index: 200; /*最前面に*/
-  margin-bottom: -500px;
+  margin-bottom: -300px;
 
   display: flex;
   flex-direction: column;
@@ -255,13 +255,13 @@
     align-items: center;
 
     i {
-      font-size: 40px;
+      font-size: 20px;
       margin-right: 20px;
     }
     .postShareLink {
       text-decoration: none;
       color: #000;
-      font-size: 30px;
+      font-size: 15px;
       font-weight: bold;
       text-align: center; 
     }
@@ -275,13 +275,13 @@
 #commentNav {
   background-color: #fff;
   width: 100vw;
-  height: 900px;
+  height: 400px;
   // margin: 0 auto;
   border-radius: 20px;
   position: fixed;
   bottom: 0;
   z-index: 200; /*最前面に*/
-  margin-bottom: -900px;
+  margin-bottom: -400px;
   // overflow: scroll;
   padding: 30px;
   display: flex;
@@ -295,7 +295,7 @@
     .commentCount {
       text-align: center;
       font-weight: bold;
-      font-size: 30px;
+      font-size: 15px;
     }
     
     li {
@@ -314,8 +314,8 @@
   
           .commentUserIcon {
             display: block;
-            width: 70px;
-            height: 70px;
+            width: 30px;
+            height: 30px;
             object-fit: cover;
             border-radius: 50%;
             margin-right: 20px;
@@ -326,17 +326,17 @@
             color: #000;
           }
           .commentUserName {
-            font-size: 20px;
+            font-size: 10px;
             color: gray;
             font-weight: bold;
-            line-height: 50px;
+            line-height: 10px;
           }
         }
         .deleteCommentLink {
           text-decoration: none;
 
           i {
-            font-size: 25px;
+            font-size: 10px;
             color: #000;
           }
         }
@@ -346,13 +346,13 @@
         align-items: center;
   
         .commentContent {
-          font-size: 20px;
+          font-size: 10px;
           font-weight: bold;
           margin-right: 20px;
         }
         .commentDatetime {
           color: gray;
-          font-size: 15px;
+          font-size: 10px;
         }
       }
     }
@@ -372,9 +372,9 @@
       align-items: center;
 
       .inputComment {
-        height: 60px;
+        height: 30px;
         margin-right: 20px;
-        width: 70%;
+        width: 80%;
         border-radius: 15px;
         outline: none;
       }
@@ -383,15 +383,15 @@
         display: block;
         background-color: #3ccace;
         color: #ffffff;
-        width: 250px;
-        height: 60px;
-        font-size: 25px;
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
         border-radius: 100px;
         font-weight: 600;
         border: 1px solid transparent;
         cursor: pointer;
         text-align: center;
-        line-height: 60px;
+        line-height: 30px;
       }
       .submitComment:hover {
         opacity: 0.7;
