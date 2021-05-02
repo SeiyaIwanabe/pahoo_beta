@@ -27,6 +27,7 @@
   h1 {
     font-size: 20px;
     font-weight: bold;
+    margin-left: 20px;
   }
 
   .right-header {
@@ -53,18 +54,18 @@
         width: 30px;
         background-color: #000;
         border-radius: 25%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         transition: all 0.3s ease;
       }
       .show-animate.line1 {
-        transform: translateY(20px) rotate(-45deg);
+        transform: translateY(10px) rotate(-45deg);
       }
       .show-animate.line2 {
         opacity: 0;
         transform: translateX(50%);
       }
       .show-animate.line3 {
-        transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-10px) rotate(45deg);
       }
     }
   }
