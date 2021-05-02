@@ -102,7 +102,7 @@
           display: flex;
           padding-left: 30px;
           align-items: center;
-          margin-bottom: 20px;
+          // margin-bottom: 20px;
       
           .userShowLink {
             text-decoration: none;
@@ -112,14 +112,14 @@
             
             .left-icon {
               .userIcon {
-                width: 80px;
-                height: 80px;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
                 object-fit: cover;
                 margin-right: 30px;
               }
               i {
-                font-size: 80px;
+                font-size: 50px;
                 margin-right: 30px;
                 color: black;
               }
@@ -130,7 +130,7 @@
               justify-content: space-evenly;
         
               .user-nickname {
-                font-size: 20px;
+                font-size: 15px;
                 color: #222222;
                 font-weight: bold;
                 opacity: 0.8;
@@ -155,14 +155,15 @@
 
         .bannerList {
           display: flex;
+          margin-bottom: 20px;
 
           .bannerShowLink {
             // display: block;
 
             .bannerIndexImage {
               display: block;
-              width: 80px;
-              height: 80px;
+              width: 50px;
+              height: 50px;
               border-radius: 50%;
               object-fit: cover
               // background-repeat: no-repeat;
@@ -178,7 +179,7 @@
             
             .banner-title {
               color: #222222;
-              font-size: 20px;
+              font-size: 15px;
               font-weight: bold;
               margin-bottom: 10px;
             }
