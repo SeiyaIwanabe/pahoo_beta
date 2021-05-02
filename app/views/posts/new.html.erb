@@ -1,3 +1,7 @@
+<div class="postNewHeader">
+  <%= link_to :back, class: "backLink" do %><button></button><% end %>
+  <p>新規投稿</p>
+</div>
 <div class="postCreateArea">
   <%= form_with(model: @post, local: true) do |f| %>
     <div class="PostSection">
@@ -7,11 +11,14 @@
 
     <div class="PostSection">
       <%= f.label "動画のアップロード" %>
-      <%= f.file_field :post_video, :accept => 'video/*' %>
+      <label class="videoLabel">
+        <i class="fas fa-photo-video"></i>
+        <%= f.file_field :post_video, :accept => 'video/*', class: "videoFile" %>
+      </label>
     </div>
 
     <div class="checkArea">
-      <p>興味のあるジャンルを選ぼう（複数選択できるヲ）</p>
+      <p>タグ付け</p>
       <%= f.collection_check_boxes(:post_tag_ids, PostTag.all, :id, :post_tag_name, include_hidden: false, class: "checkBox") do |tag| %>
         <label class="genreLabel">
           <%= tag.check_box + tag.text %>
@@ -23,3 +30,5 @@
 
   <% end %>
 </div>
+
+<%= javascript_include_tag 'genre-label' %>
