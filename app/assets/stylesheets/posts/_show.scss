@@ -50,7 +50,7 @@
   
   .scallPostVideo {
     width: 100vw;
-    max-height: 800px;
+    max-height: 300px;
     background-color: black;
     object-fit: contain;
   }
@@ -105,32 +105,32 @@
       height: 100px;
       color: #FFF;
     }
-    .showButtons button:before {
-      content: "▶";
-      width: 40px;
-      height: 40px;
-      display: inline-block;
-      font-size: 20px;
-      color: #fff;
-      border: 2px solid #FFF;
-      border-radius: 50%;
-      line-height: 40px;
+    // .showButtons button:before {
+    //   content: "▶";
+    //   width: 40px;
+    //   height: 40px;
+    //   display: inline-block;
+    //   font-size: 20px;
+    //   color: #fff;
+    //   border: 2px solid #FFF;
+    //   border-radius: 50%;
+    //   line-height: 40px;
 
-    }
-    .showButtons button.play:before {
-      content: "▶";
-    }
-    .showButtons button.pause:before {
-      content: "■";
-      width: 40px;
-      height: 40px;
-      display: inline-block;
-      font-size: 20px;
-      color: #fff;
-      border: 3px solid #FFF;
-      border-radius: 50%;
-      line-height: 40px;
-    }
+    // }
+    // .showButtons button.play:before {
+    //   content: "▶";
+    // }
+    // .showButtons button.pause:before {
+    //   content: "■";
+    //   width: 40px;
+    //   height: 40px;
+    //   display: inline-block;
+    //   font-size: 20px;
+    //   color: #fff;
+    //   border: 3px solid #FFF;
+    //   border-radius: 50%;
+    //   line-height: 40px;
+    // }
   }
 
   .showMuteBtn {

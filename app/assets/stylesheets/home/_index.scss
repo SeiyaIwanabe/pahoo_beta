@@ -67,7 +67,7 @@
   
         .postVideo {
           width: 100vw;
-          max-height: 800px;
+          max-height: 300px;
           background-color: black;
           object-fit: contain;
         }
@@ -212,7 +212,7 @@
         .favoriteArea {
           position: absolute;
           right: 30px;
-          bottom: 370px;
+          bottom: 150px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -239,7 +239,7 @@
         .commentLink {
           position: absolute;
           right: 30px;
-          bottom: 250px;
+          bottom: 30px;
           z-index: 10;
           i {
             color: #fff;
@@ -311,8 +311,8 @@
     //横並びにする指定
     display: inline-block;  
     list-style: none;
-    margin-right: 80px;
-    margin-left: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
     transition: 0.3s ease;
 
     .bannerLink {
