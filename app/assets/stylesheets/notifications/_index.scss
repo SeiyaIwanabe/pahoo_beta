@@ -2,22 +2,22 @@
   height: auto;
 
   .notificationHeader {
-    height: 80px;
+    height: 44px;
 
     .backLink {
       text-decoration: none;
       border: none;
       outline: none;
       position: absolute;
-      top: 30px;
-      left: 70px;
+      top: 20px;
+      left: 40px;
   
       button {
         display: block;
         outline: none;
         border: none;
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
         border: 5px solid;
         border-color:  transparent transparent #565656 #565656;
         transform: rotate(45deg);
@@ -27,21 +27,22 @@
     .sub-title {
       width: 100px;
       margin: 0 auto;
-      padding-top: 20px;
-      font-size: 45px;
+      padding-top: 15px;
+      font-size: 20px;
       font-weight: bold;
       color: #222222;
+      text-align: center;
     }
   }
 
   .notificationIndex {
-    padding-top: 80px;
-    padding-left: 30px;
+    padding-top: 40px;
+    padding-left: 10px;
     height: 1300px;
     overflow: scroll;
 
     .notificationList {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
 
@@ -51,25 +52,25 @@
 
         .user-thumb {
           display: block;
-          width: 110px;
-          height: 110px;
+          width: 80px;
+          height: 80px;
           border-radius: 50%;
           object-fit: cover;
         }
         i {
-          font-size: 110px;
+          font-size: 80px;
           color: #222222;
         }
       }
       .visitorName {
         text-decoration: none;
         color: #222222;
-        font-size: 30px;
+        font-size: 10px;
         font-weight: bold;
       }
       .methodMessage {
         color: #222222;
-        font-size: 30px;
+        font-size: 10px;
         font-weight: bold;
       }
     }
