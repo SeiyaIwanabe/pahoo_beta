@@ -1,10 +1,10 @@
 <% if current_user != post.user %>
   <% if post.user.senderd_by?(current_user) %>
-    <%= link_to user_relationships_path(post.user.id), class: "sendingLink", method: :delete, remote: true do%>
+    <%= link_to user_relationships_path(post.user.id), class: "sendingLink", method: :delete, local: true do%>
       <i class="fas fa-check-circle"></i>
     <% end %>
   <% else %>
-    <%= link_to user_relationships_path(post.user.id), class: "sendingLink", method: :post, remote: true  do%>
+    <%= link_to user_relationships_path(post.user.id), class: "sendingLink", method: :post, local: true  do%>
       <i class="fas fa-plus-circle"></i>
     <% end %>
   <% end %>

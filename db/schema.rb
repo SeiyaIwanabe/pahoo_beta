@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_064827) do
     t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["sender_id", "recipient_id"], name: "index_relationships_on_sender_id_and_recipient_id", unique: true
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

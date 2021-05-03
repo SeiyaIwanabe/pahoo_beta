@@ -29,14 +29,14 @@ class User < ApplicationRecord
 
   # ====================自分がフォローしているユーザーとの関連 ===================================
   #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はsender_id(フォローする側)
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :sender_id
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :sender_id, dependent: :destroy
   # 中間テーブルを介して「follower」モデルのUser(フォローされた側)を集めることを「senders」と定義
   has_many :senders, through: :active_relationships, source: :recipient
   # ========================================================================================
 
   # ====================自分がフォローされるユーザーとの関連 ===================================
   #フォローされる側のUserから見て、フォローしてくる側のUserを(中間テーブルを介して)集める。なので親はrecipient_id(フォローされる側)
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :recipient_id
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :recipient_id, dependent: :destroy
   # 中間テーブルを介して「following」モデルのUser(フォローする側)を集めることを「recipients」と定義
   has_many :recipients, through: :passive_relationships, source: :sender
   # =======================================================================================
