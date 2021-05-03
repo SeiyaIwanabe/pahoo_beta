@@ -27,6 +27,23 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
+  # ====================自分がフォローしているユーザーとの関連 ===================================
+  #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はsender_id(フォローする側)
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :sender_id, dependent: :destroy
+  # 中間テーブルを介して「follower」モデルのUser(フォローされた側)を集めることを「senders」と定義
+  has_many :senders, through: :active_relationships, source: :recipient
+  # ========================================================================================
+
+  # ====================自分がフォローされるユーザーとの関連 ===================================
+  #フォローされる側のUserから見て、フォローしてくる側のUserを(中間テーブルを介して)集める。なので親はrecipient_id(フォローされる側)
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :recipient_id, dependent: :destroy
+  # 中間テーブルを介して「following」モデルのUser(フォローする側)を集めることを「recipients」と定義
+  has_many :recipients, through: :passive_relationships, source: :sender
+  # =======================================================================================
+
+
+
+
   #登録時にメールアドレスを不要とする
   def email_required?
     false
@@ -34,6 +51,12 @@ class User < ApplicationRecord
 
   def email_changed?
     false
+  end
+
+  # フォローしているかどうかの判定メソッド
+  def senderd_by?(user)
+    # 今自分(引数のuser)がフォローしようとしているユーザー(レシーバー)がフォローされているユーザー(つまりpassive)の中から、引数に渡されたユーザー(自分)がいるかどうかを調べる
+    passive_relationships.find_by(sender_id: user.id).present?
   end
 
   # すでにいいねしているかを判定するメソッド

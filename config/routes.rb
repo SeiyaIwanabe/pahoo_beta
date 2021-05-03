@@ -29,7 +29,12 @@ Rails.application.routes.draw do
 
   resources :banners, only: [:index, :new, :create, :show]
 
-  resources :users, only: [:index, :new, :create, :show, :edit, :update]
+  resources :users, only: [:index, :new, :create, :show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+    get :sends, on: :member
+    get :receives, on: :member
+  end
+
   
 
 end
