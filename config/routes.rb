@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'relationships/create'
-  get 'relationships/destroy'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -31,7 +29,12 @@ Rails.application.routes.draw do
 
   resources :banners, only: [:index, :new, :create, :show]
 
-  resources :users, only: [:index, :new, :create, :show, :edit, :update]
+  resources :users, only: [:index, :new, :create, :show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+    get :sends, on: :member
+    get :receives, on: :member
+  end
+
   
 
 end

@@ -73,6 +73,11 @@
             <p class="user-nickname"><%= post.user.nickname %></p>
           <% end %>
 
+          <!-- フォローリンク -->
+          <div id="sendingArea_<%= post.user.id %>", class="sending-area">
+            <%= render partial: 'modules/sending', locals: { post: post } %>
+          </div>
+          
           <!-- いいねリンク -->
           <div id="favorite_area_<%= post.id %>", class="favoriteArea">
             <%= render partial: "modules/favorite", locals: { post: post } %>
