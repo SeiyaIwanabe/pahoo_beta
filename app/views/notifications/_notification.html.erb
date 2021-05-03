@@ -4,13 +4,13 @@
 <div class="notificationList">
   <%= link_to user_path(notification.visitor), class: "visitorLink" do %>
     <% if notification.visitor.icon? %>
-      <%=  image_tag notification.visitor.icon.url, class: "user-thumb" %>
+      <%= image_tag notification.visitor.icon.url, class: "user-thumb" %>
     <% else %>
       <i class="fas fa-user-circle"></i>
     <% end %>
   <% end %>
   <p class="methodMessage"><%== notification_form(notification) %></p>
-  <br>
+  <br>  
   <!--<% if !@comment.nil? %>
     <p class="moderate-font"><%= @comment %></p>
   <% end %>-->

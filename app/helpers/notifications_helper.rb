@@ -3,7 +3,7 @@ module NotificationsHelper
   def notification_form(notification)
     @comment = nil
     visitor = link_to notification.visitor.nickname, notification.visitor, class: "visitorName"
-    your_post = link_to 'あなたの投稿', notification.post, style:"font-weight: bold;"
+    your_post = link_to "あなたの投稿", notification.post, class: "visitedPostLink"
     case notification.action
       when "follow" then
         "#{visitor}さんがあなたにマッチング申請をしました！プロフィールを覗いてみましょう"
