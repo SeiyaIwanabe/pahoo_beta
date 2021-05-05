@@ -12,10 +12,10 @@
   <% end %>
 
   <%= link_to notifications_path, class: "bottomNavLink" do %>
-    <i class="fas fa-heart"></i>
     <% if unchecked_notifications.any? %>
-      <i class="fa fa-circle notification-circle"></i>
+      <p class="notoficationCount"><%= @notifications.count %></p>
     <% end %>
+    <i class="fas fa-heart"></i>
   <% end %>
   
   <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>

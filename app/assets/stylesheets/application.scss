@@ -92,10 +92,21 @@ body {
       display: block;
       text-decoration: none;
       color: black;
+      position: relative;
 
       i {
         display: block;
-        font-size: 25px;
+        font-size: 22px;
+      }
+      .notoficationCount {
+        position: absolute;
+        top: -13px;
+        left: -17px;
+        border: 1px solid #222222;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        text-align: center;
       }
     }
   }
