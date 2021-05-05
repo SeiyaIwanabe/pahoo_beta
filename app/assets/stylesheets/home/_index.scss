@@ -172,15 +172,55 @@
           justify-content: space-evenly;
         }
         
-        .menuLink {
+        .indexPostMenuLink {
           position: absolute;
-          right: 40px;
-          bottom: 450px;
+          right: 30px;
+          bottom: 180px;
+          z-index: 10;
           i {
             color: #fff;
-            font-size: 60px;
+            font-size: 20px;
           }
         }
+
+        #indexPostMenuNav {
+          background-color: #fff;
+          width: 100vw;
+          height: 300px;
+          // margin: 0 auto;
+          border-radius: 20px;
+          position: fixed;
+          bottom: 0;
+          z-index: 200; /*最前面に*/
+          margin-bottom: -300px;
+        
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        
+          li {
+            height: 100px;
+            list-style: none;
+            border-bottom: 1px solid lightgray;
+            padding-left: 50px;
+            display: flex;
+            align-items: center;
+        
+            i {
+              font-size: 20px;
+              margin-right: 20px;
+            }
+        
+            .logoutLink {
+              text-decoration: none;
+              color: #000;
+              font-size: 10px;
+              font-weight: bold;
+              text-align: center;
+            }
+          }
+        }
+
         .profileLink {
           position: absolute;
           top: 20px;
@@ -228,7 +268,7 @@
         .favoriteArea {
           position: absolute;
           right: 30px;
-          bottom: 150px;
+          bottom: 120px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -238,16 +278,16 @@
             position: relative;
             z-index: 2;
             .far {
-              font-size: 25px;
+              font-size: 20px;
               color: #FFF;
             }
             .fas {
               color: orangered;
-              font-size: 25px;
+              font-size: 20px;
             }
           }
           .favoriteCount {
-            font-size: 15px;
+            font-size: 10px;
             font-weight: bold;
             color: #FFF;
           }
@@ -259,16 +299,17 @@
           z-index: 10;
           i {
             color: #fff;
-            font-size: 25px;
+            font-size: 20px;
           }
         }
         .shareLink {
           position: absolute;
           right: 30px;
-          bottom: 100px;
+          bottom: 80px;
+          z-index: 10;
           i {
             color: #fff;
-            font-size: 25px;
+            font-size: 20px;
           }
         }
         .postText {

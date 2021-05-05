@@ -1,19 +1,17 @@
 $(document).ready(function() {
 
-  const $share_link = document.querySelector('.shareLink');
+  const $menu_link = document.querySelector('.postMenuLink');
   
-  console.log($share_link);
-
   //シェアリングを押したらイベント発火
-  $share_link.addEventListener('click', (e) => {
-    // e.preventDefault;
-    $('#shareNav').animate({ "margin-bottom": 0 }, 200);
+  $menu_link.addEventListener('click', (e) => {
+    e.preventDefault;
+    $('#postMenuNav').animate({ "margin-bottom": 0 }, 200);
     $('#js-nav-close').css('display', 'block');
   });
 
   // 周りの黒背景をクリックしたらメニューと黒背景が閉じる
   $('#js-nav-close').click(function() {
-    $('#shareNav').animate({ "margin-bottom": -500 }, 200);
+    $('#postMenuNav').animate({ "margin-bottom": -200 }, 200);
     $(this).css('display', 'none');
   });
 });

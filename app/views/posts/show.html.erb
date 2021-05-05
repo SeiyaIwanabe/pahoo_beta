@@ -27,7 +27,15 @@
     </div>
   </label>
 
+  <!-- 音声アイコン -->
   <label id="showMute" class="showMuteBtn"><i class="fas fa-volume-off"></i></label>
+
+  <!-- メニュアイコン -->
+  <% if @post.user_id == current_user.id %>
+    <%= link_to "#", class: "postMenuLink" do %>
+      <i class="fas fa-ellipsis-h"></i>
+    <% end %>
+  <% end %>
 
   <!--いいねリンク -->
   <div id="favorite_area_<%= @post.id %>", class="favoriteArea">
@@ -68,6 +76,22 @@
   </li>
 </nav>
 
+<!-- メニューナビゲーション -->
+<nav id="postMenuNav">
+  <li>
+    <% if current_user %>
+      <i class="fas fa-edit"></i>
+      <%= link_to "編集", edit_post_path(@post), class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if current_user %>
+      <i class="fas fa-trash"></i>
+      <%= link_to "削除", post_path(@post), method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+</nav>
+
 <!-- コメントナビゲーション -->
 <nav id="commentNav">
   <% if @comments %>
@@ -102,3 +126,5 @@
 <%= javascript_include_tag 'shareLink' %>
 <%= javascript_include_tag 'post-comment' %>
 <%= javascript_include_tag 'post-show-video' %>
+<%= javascript_include_tag 'js-post-menu' %>
+

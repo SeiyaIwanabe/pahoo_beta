@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :notifications, only: :index
 
 
-  resources :posts, only: [:index, :new, :create, :show, :destroy] do
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end

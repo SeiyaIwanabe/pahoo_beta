@@ -1,0 +1,26 @@
+<div class="postNewHeader">
+  <%= link_to :back, class: "backLink" do %><button></button><% end %>
+  <p>編集</p>
+</div>
+<div class="postCreateArea">
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="PostSection">
+      <%= f.label :post_text, "本文入力" %>
+      <%= f.text_area :post_text, class: "postText"%>
+    </div>
+
+    <div class="checkArea">
+      <p>タグ付け</p>
+      <%= f.collection_check_boxes(:post_tag_ids, PostTag.all, :id, :post_tag_name, include_hidden: false, class: "checkBox") do |tag| %>
+        <label class="genreLabel">
+          <%= tag.check_box + tag.text %>
+        </label>
+      <% end %>
+    </div>
+
+    <%= f.submit "投稿", class: "submitBtn" %>
+
+  <% end %>
+</div>
+
+<%= javascript_include_tag 'genre-label' %>

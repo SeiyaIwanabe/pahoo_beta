@@ -1,9 +1,7 @@
 $(document).ready(function() {
-  console.log('test');
 
   const $home_post_comment_link = document.querySelectorAll('.commentLink');
   console.log($home_post_comment_link);
-
 
   const handleClick = (e) => {
     e.preventDefault();

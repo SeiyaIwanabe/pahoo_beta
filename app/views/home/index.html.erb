@@ -77,6 +77,29 @@
           <div id="sendingArea_<%= post.id %>", class="sending-area">
             <%= render partial: 'modules/sending', locals: { post: post } %>
           </div>
+
+          <!-- メニューリンク -->
+          <% if post.user_id == current_user.id %>
+            <%= link_to "#", class: "indexPostMenuLink" do %>
+              <i class="fas fa-ellipsis-h"></i>
+            <% end %>
+          <% end %>
+
+          <!-- メニューナビゲーション -->
+          <nav id="indexPostMenuNav">
+            <li>
+              <% if current_user %>
+                <i class="fas fa-edit"></i>
+                <%= link_to "編集", edit_post_path(post), class: "logoutLink" %>
+              <% end %>
+            </li>
+            <li>
+              <% if current_user %>
+                <i class="fas fa-trash"></i>
+                <%= link_to "削除", post_path(post), method: :delete, class: "logoutLink" %>
+              <% end %>
+            </li>
+          </nav>
           
           <!-- いいねリンク -->
           <div id="favorite_area_<%= post.id %>", class="favoriteArea">
@@ -100,8 +123,8 @@
             <li>
             </li>
           </nav>
+
           <div class="postText"><%= post.post_text %></div>
-          <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
 
           <!--<div class="controls">
             <div class="orange-bar">
@@ -116,9 +139,6 @@
 
           <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label>
 
-          <!--<%= link_to "#", class: "menuLink" do%>
-            <i class="fas fa-ellipsis-h"></i>
-          <% end %>-->
         </li>
       <% end %>
     </ul>
@@ -138,8 +158,6 @@
   <% end %>
 </ul>
 
-
-
 <%= render partial: "modules/footer" %>
 
 <!-- JSファイル読み込み -->
@@ -147,3 +165,4 @@
 <%= javascript_include_tag 'banner' %>
 <%= javascript_include_tag 'home-post-comment' %>
 <%= javascript_include_tag 'post_video' %>
+<%= javascript_include_tag 'home-post-menu' %>
