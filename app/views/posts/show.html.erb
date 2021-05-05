@@ -5,7 +5,7 @@
 </div>
 
 <div class="PickupContent">
-  <%= video_tag(@post.post_video.to_s, class: "scallPostVideo") %>
+  <%= video_tag(@post.post_video.to_s, playsinline: true, class: "scallPostVideo") %>
   <%= link_to user_path(@post.user.id), class: "scallProfileLink" do %>
     <% if @post.user.icon? %>
       <%= image_tag @post.user.icon.url, class: "user-icon"%>

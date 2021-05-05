@@ -41,6 +41,11 @@ class User < ApplicationRecord
   has_many :recipients, through: :passive_relationships, source: :sender
   # =======================================================================================
 
+  # has_many :sender_relationships, foreign_key: "recipient_id", class_name: "Relationship",  dependent: :destroy
+  # has_many :senders, through: :sender_relationships
+  # has_many :recipient_relationships, foreign_key: "sender_id", class_name: "Relationship", dependent: :destroy
+  # has_many :recipients, through: :recipient_relationships
+
 
 
 
@@ -58,6 +63,21 @@ class User < ApplicationRecord
     # 今自分(引数のuser)がフォローしようとしているユーザー(レシーバー)がフォローされているユーザー(つまりpassive)の中から、引数に渡されたユーザー(自分)がいるかどうかを調べる
     passive_relationships.find_by(sender_id: user.id).present?
   end
+
+  # #フォローしているかを確認するメソッド
+  # def sending?(user)
+  #   sender_relationships.find_by(sender_id: user.id)
+  # end
+
+  # #フォローするときのメソッド
+  # def send(user)
+  #   sender_relationships.create!(sender_id: user.id)
+  # end
+
+  # #フォローを外すときのメソッド
+  # def unsend(user)
+  #   sender_relationships.find_by(sender_id: user.id).destroy
+  # end
 
   # すでにいいねしているかを判定するメソッド
   def already_favorited?(post)

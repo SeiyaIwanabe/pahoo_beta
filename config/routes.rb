@@ -31,10 +31,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
-    get :sends, on: :member
-    get :receives, on: :member
+    member do
+      get :sends, :receives
+    end
   end
-
-  
 
 end
