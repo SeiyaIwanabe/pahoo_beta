@@ -41,10 +41,9 @@
 
           <!-- コメントナビゲーション -->
           <nav id="commentNav">
-            <% if @comments %>
+            <% if post.comments %>
               <div class="commentOutline">
-                <p class="commentCount"><%= post.comments.count %>件のコメント</p>
-                <%= render partial: "modules/comment", locals: { comments: @comments } %>
+                <%= render partial: "modules/comment", locals: { comments: post.comments } %>
               </div>
             <% else %>
               <p>コメントはまだありません</p>
@@ -61,7 +60,9 @@
           <!-- コメントイベントの発火 -->
           <%= link_to "#", class: "commentLink" do%>
             <i class="far fa-comment-dots"></i>
+            <p class="commentCount"><%= post.comments.count %></p>
           <% end %>
+          
 
           <!-- プロフィールリンク -->
           <%= link_to user_path(post.user.id), class: "profileLink" do%>

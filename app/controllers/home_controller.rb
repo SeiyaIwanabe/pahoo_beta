@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
     # コメントナビゲーション
     @comment = Comment.new
-    @comments = Comment.all
+    # @comments = Comment.all
 
     @notifications = current_user.passive_notifications
   end

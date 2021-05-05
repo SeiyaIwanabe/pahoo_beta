@@ -185,7 +185,7 @@
     bottom: 180px;
     i {
       color: #fff;
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 
@@ -200,16 +200,16 @@
     .goodLink {
       display: block;
       .far {
-        font-size: 25px;
+        font-size: 20px;
         color: #FFF;
       }
       .fas {
         color: orangered;
-        font-size: 25px;
+        font-size: 20px;
       }
     }
     .favoriteCount {
-      font-size: 15px;
+      font-size: 10px;
       font-weight: bold;
       color: #FFF;
     }
@@ -217,10 +217,17 @@
   .commentLink {
     position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 20px;
+    text-decoration: none;
     i {
       color: #fff;
-      font-size: 25px;
+      font-size: 20px;
+    }
+    .commentCount {
+      color: #fff;
+      font-size: 10px;
+      font-weight: bold;
+      text-align: center;
     }
   }
   .shareLink {
@@ -229,7 +236,7 @@
     bottom: 80px;
     i {
       color: #fff;
-      font-size: 25px;
+      font-size: 20px;
     }
   }
   .postText {

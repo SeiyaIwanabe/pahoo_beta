@@ -45,6 +45,7 @@
   <!--コメントリンク -->
   <%= link_to "#", class: "commentLink" do%>
     <i class="far fa-comment-dots"></i>
+    <p class="commentCount"><%= @comments.count %></p>
   <% end %>
 
   <!--シェアリンク -->
@@ -96,7 +97,6 @@
 <nav id="commentNav">
   <% if @comments %>
     <div class="commentOutline">
-      <p class="commentCount"><%= @comments.count %>件のコメント</p>
       <%= render partial: "modules/comment", locals: { comments: @comments } %>
     </div>
   <% else %>
