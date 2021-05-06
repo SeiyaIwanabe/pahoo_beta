@@ -4,6 +4,8 @@ $(document).ready(function() {
     const $btn = document.getElementById('showPlayPause');
     const $mute = document.getElementById('showMute');
     const $juice = document.querySelector('.show-orange-juice');
+
+    console.log($mute); 
   
     // 動画の再生/停止
     function togglePlayPause() {
@@ -29,7 +31,7 @@ $(document).ready(function() {
       }
     })
 
-    // ミュートのon/off
+    // 音声のon/off
     $mute.addEventListener('click', function(e) {
       $video.muted = !$video.muted;
     });

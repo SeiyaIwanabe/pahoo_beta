@@ -47,6 +47,7 @@ $(document).ready(function() {
         $target_video.pause();
       }
 
+      // 音声のon/off
       $target_mute_btn.addEventListener('click', function(e) {
         $target_video.muted = !$target_video.muted;
       });

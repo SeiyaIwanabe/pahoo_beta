@@ -6,14 +6,26 @@
 
 <div class="PickupContent">
   <%= video_tag(@post.post_video.to_s, playsinline: true, class: "scallPostVideo") %>
-  <%= link_to user_path(@post.user.id), class: "scallProfileLink" do %>
-    <% if @post.user.icon? %>
-      <%= image_tag @post.user.icon.url, class: "user-icon"%>
-    <% else %>
-      <i class="fas fa-user-circle"></i>
+
+  <div class="scallProfileArea">
+
+    <!-- プロフェールリンク -->
+    <%= link_to user_path(@post.user.id), class: "scallProfileLink" do %>
+      <% if @post.user.icon? %>
+        <%= image_tag @post.user.icon.url, class: "user-icon"%>
+      <% else %>
+        <i class="fas fa-user-circle"></i>
+      <% end %>
+      <p class="user-nickname"><%= @post.user.nickname %></p>
     <% end %>
-    <p class="user-nickname"><%= @post.user.nickname %></p>
-  <% end %>
+
+    <!-- フォローリンク -->
+    <div id="sendingArea_<%= @post.id %>", class="sending-area">
+      <%= render partial: 'modules/sending', locals: { post: @post } %>
+    </div>
+
+  </div>
+
 
   <!-- コントロールパネル -->
   <div class="show-controls">
@@ -28,7 +40,9 @@
   </label>
 
   <!-- 音声アイコン -->
-  <label id="showMute" class="showMuteBtn"><i class="fas fa-volume-off"></i></label>
+  <label id="showMute" class="showMuteBtn">
+    <i class="fas fa-volume-off"></i>
+  </label>
 
   <!-- メニュアイコン -->
   <% if @post.user_id == current_user.id %>
@@ -127,4 +141,3 @@
 <%= javascript_include_tag 'post-comment' %>
 <%= javascript_include_tag 'post-show-video' %>
 <%= javascript_include_tag 'js-post-menu' %>
-

@@ -63,20 +63,23 @@
             <p class="commentCount"><%= post.comments.count %></p>
           <% end %>
           
+          <div class="homeProfileArea">
 
-          <!-- プロフィールリンク -->
-          <%= link_to user_path(post.user.id), class: "profileLink" do%>
-            <% if post.user.icon? %>
-              <%= image_tag post.user.icon.url, class: "user-icon"%>
-            <% else %>
-              <i class="fas fa-user-circle"></i>
+            <!-- プロフィールリンク -->
+            <%= link_to user_path(post.user.id), class: "profileLink" do%>
+              <% if post.user.icon? %>
+                <%= image_tag post.user.icon.url, class: "user-icon"%>
+              <% else %>
+                <i class="fas fa-user-circle"></i>
+              <% end %>
+              <p class="user-nickname"><%= post.user.nickname %></p>
             <% end %>
-            <p class="user-nickname"><%= post.user.nickname %></p>
-          <% end %>
 
-          <!-- フォローリンク -->
-          <div id="sendingArea_<%= post.id %>", class="sending-area">
-            <%= render partial: 'modules/sending', locals: { post: post } %>
+            <!-- フォローリンク -->
+            <div id="sendingArea_<%= post.id %>", class="sending-area">
+              <%= render partial: 'modules/sending', locals: { post: post } %>
+            </div>
+            
           </div>
 
           <!-- メニューリンク -->

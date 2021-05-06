@@ -135,12 +135,12 @@
 
   .showMuteBtn {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 20px;
     outline: none;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 
     i {
       font-size: 30px;
@@ -149,36 +149,53 @@
       color: #F47837;
     }
   }
-  
-  .scallProfileLink {
+
+  .scallProfileArea {
     position: absolute;
     top: 20px;
     left: 20px;
-    text-decoration: none;
-    outline: none;
     display: flex;
     align-items: center;
 
-    .user-icon {
-      display: block;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 20px;
+    .scallProfileLink {
+      text-decoration: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+  
+      .user-icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+      i {
+        color: #fff;
+        font-size: 40px;
+        margin-right: 20px;
+      }
+      .user-nickname {
+        color: #FFF;
+        font-size: 10px;
+        font-weight: bold;
+      }
     }
-    i {
-      color: #fff;
-      font-size: 40px;
-      margin-right: 20px;
-    }
-    .user-nickname {
-      color: #FFF;
-      font-size: 10px;
-      font-weight: bold;
+  
+    .sending-area {
+      z-index: 10;
+      .sendingLink {
+        display: block;
+        text-decoration: none;
+        i {
+          color: orangered;
+        }
+      }
     }
   }
-
+  
   .postMenuLink {
     position: absolute;
     right: 30px;

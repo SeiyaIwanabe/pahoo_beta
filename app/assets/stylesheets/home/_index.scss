@@ -58,7 +58,6 @@
     .post-contents {
       width: 100%;
       height: auto;
-      // margin-bottom: 50px;
       border: 1px solid lightgrey;
       position: relative;
       overflow: hidden;
@@ -186,13 +185,13 @@
         #indexPostMenuNav {
           background-color: #fff;
           width: 100vw;
-          height: 300px;
+          height: 200px;
           // margin: 0 auto;
           border-radius: 20px;
           position: fixed;
           bottom: 0;
           z-index: 200; /*最前面に*/
-          margin-bottom: -300px;
+          margin-bottom: -200px;  
         
           display: flex;
           flex-direction: column;
@@ -221,49 +220,53 @@
           }
         }
 
-        .profileLink {
+        .homeProfileArea {
           position: absolute;
           top: 20px;
           left: 20px;
-          text-decoration: none;
-          outline: none;
           display: flex;
           align-items: center;
-          z-index: 10;
-  
-          .user-icon {
-            display: block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-          }
-          i {
-            color: #fff;
-            font-size: 40px;
-            margin-right: 10px;
-          }
-          .user-nickname {
-            color: #fff;
-            font-size: 10px;
-            font-weight: bold;
-          }
-        }
 
-        .sending-area {
-          position: absolute;
-          top: 26px;
-          left: 130px;
-          z-index: 10;
-          .sendingLink {
-            display: block;
+          .profileLink {
             text-decoration: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            margin-right: 10px;
+    
+            .user-icon {
+              display: block;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 10px;
+            }
             i {
-              color: orangered;
+              color: #fff;
+              font-size: 40px;
+              margin-right: 10px;
+            }
+            .user-nickname {
+              color: #fff;
+              font-size: 10px;
+              font-weight: bold;
+            }
+          }
+  
+          .sending-area {
+            z-index: 10;
+            .sendingLink {
+              display: block;
+              text-decoration: none;
+              i {
+                color: orangered;
+              }
             }
           }
         }
+
 
         .favoriteArea {
           position: absolute;
