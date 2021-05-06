@@ -8,9 +8,9 @@ class User < ApplicationRecord
   generate_public_uid
 
   # 5-12文字の半角英数字（更新時のみのバリデーション※新規登録時には自動でランダム登録）
-  validates :unique_code, presence: true, on: :update
-  validates :unique_code, format: { with: /\A[a-z0-9]+\z/i }, on: :update
-  validates :unique_code, length: { minimum: 5, maximum: 12 }, on: :update
+  validates :public_uid, presence: true, on: :update
+  validates :public_uid, format: { with: /\A[a-z0-9]+\z/i }, on: :update
+  validates :public_uid, length: { minimum: 5, maximum: 12 }, on: :update
 
   # CarrierWaveでアイコンをアップロード
   mount_uploader :icon, UserIconUploader

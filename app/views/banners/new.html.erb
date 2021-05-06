@@ -12,7 +12,7 @@
     </div>
 
     <div class="checkArea">
-      <p>バナーにつけるタグを選ぼう！</p>
+      <p>バナーにタグをつけよう！</p>
       <%= f.collection_select(:banner_tag_id, BannerTag.all, :id, :banner_tag_name, {prompt: "タグを選択してください"} ) %>
     </div>
 

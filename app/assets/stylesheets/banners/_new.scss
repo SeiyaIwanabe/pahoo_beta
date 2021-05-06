@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #f0f2f5;
-  padding: 50px 10px 50px 10px;
+  padding: 10px;
   display: flex;
   align-items: center;
 
@@ -26,29 +26,30 @@
       label {
         color: #65676b;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 15px;
       }
 
       input {
-        height: 80px;
+        height: 20px;
         border: none;
         outline: none;
         border: 1px solid lightgray;
         border-radius: 10px;
-        font-size: 30px;
+        font-size: 15px;
       }
     }
     .submitBtn {
       display: block;
-      margin: 0 auto;
-      width: 200px;
-      height: 50px;
+      margin: 50px auto 0 auto;
+      width: 150px;
+      height: 30px;
       background-color: #e4e6ea;
       border-radius: 10px;
       border: none;
       color: #65676b;
       cursor: pointer;
       font-weight: bold;
+      font-size: 10px;
     }
   }
 }
