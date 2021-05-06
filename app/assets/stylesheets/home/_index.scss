@@ -403,11 +403,11 @@
         padding-top: 5px;
         position: absolute;
         top: -20px;
-        left: 3px;
-        min-width: 100px;
+        left: -2px;
+        min-width: 110px;
         color: #555;
         background: #FFF;
-        border: solid 3px #555;
+        border: solid 2px #555;
         box-sizing: border-box;
         border-radius: 15px;
         margin-bottom: 100px;
@@ -420,11 +420,11 @@
 
         .bannerTitle {
           text-align: center;
-          font-size: 10px;
+          font-size: 8px;
           font-weight: bold;
         }
         .bannerTag {
-          font-size: 20px;
+          font-size: 6px;
           font-weight: bold;
           text-align: center;
         }
