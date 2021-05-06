@@ -118,12 +118,15 @@
           <nav id="shareNav">
             <li>
               <i class="fab fa-twitter"></i>
-              <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank' %>
+              <%= link_to 'Twitterで共有', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank', class: "listLink" %>
             </li>
             <li>
               <i class="fab fa-line"></i>
+              <%= link_to 'Lineで共有(仮)', '#', class: "listLink" %>
             </li>
             <li>
+              <i class="fab fa-facebook-square"></i>
+              <%= link_to 'facebookで共有(仮)', '#', class: "listLink" %>
             </li>
           </nav>
 
@@ -169,3 +172,4 @@
 <%= javascript_include_tag 'home-post-comment' %>
 <%= javascript_include_tag 'post_video' %>
 <%= javascript_include_tag 'home-post-menu' %>
+<%= javascript_include_tag 'home-post-share' %>
