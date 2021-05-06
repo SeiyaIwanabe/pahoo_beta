@@ -54,13 +54,20 @@
                 <%= f.submit "コメントする", class: "submitComment" %>
               <% end %>
             </div>
-          </nav>  
+          </nav>
 
           <!-- コメントイベントの発火 -->
           <%= link_to "#", class: "commentLink" do%>
             <i class="far fa-comment-dots"></i>
             <p class="commentCount"><%= post.comments.count %></p>
           <% end %>
+
+           <!-- プログレスバー -->
+          <div class="controls">
+            <div class="orange-bar">
+              <div class="orange-juice"></div>
+            </div>
+          </div>
           
           <div class="homeProfileArea">
 
@@ -132,17 +139,16 @@
 
           <div class="postText"><%= post.post_text %></div>
 
-          <!--<div class="controls">
-            <div class="orange-bar">
-              <div class="orange-juice"></div>
-            </div>
-          </div>-->
+          
+
+          <!-- 動画の再生/停止ラベル -->
           <label class="btnLabel">
             <div class="buttons">
               <button id="playPause"></button>
             </div>
           </label>
 
+          <!-- 動画の音声on/off -->
           <label id="mute" class="muteBtn"><i class="fas fa-volume-off"></i></label>
 
         </li>

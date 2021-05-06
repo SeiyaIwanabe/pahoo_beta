@@ -58,7 +58,6 @@
     .post-contents {
       width: 100%;
       height: auto;
-      border: 1px solid lightgrey;
       position: relative;
       overflow: hidden;
   
@@ -83,14 +82,14 @@
           transition: all 0.2s;
     
           .orange-bar {
-            height: 7px;
+            height: 3px;
             top: 0;
             left: 0;
             width: 100%;
             background-color: #FFF;
     
             .orange-juice {
-              height: 7px;
+              height: 3px;
               background-color: orangered;
             }
           }
@@ -110,8 +109,6 @@
             // padding: 10px;
             // display: none;
           }
-      
-      
           .buttons button{
             background: none;
             border: 0;
@@ -141,15 +138,15 @@
         
         .muteBtn {
           position: absolute;
-          bottom: 0;
+          bottom: 10px;
           left: 10px;
           outline: none;
           border: none;
-          width: 50px;
-          height: 50px;
+          width: 30px;
+          height: 30px;
     
           i {
-            font-size: 30px;
+            font-size: 25px;
             outline: none;
             border: none;
             color: orangered;
