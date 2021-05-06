@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_064827) do
+ActiveRecord::Schema.define(version: 2021_05_06_034946) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_064827) do
     t.string "uid"
     t.string "meta"
     t.string "email", default: "", null: false
+    t.string "public_uid"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
