@@ -86,3 +86,6 @@ gem 'devise'
 
 # マッチング機能
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
+
+# IDを自動生成
+gem 'public_uid'
