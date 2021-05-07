@@ -4,6 +4,7 @@ $(document).ready(function() {
     console.log($home_post_menu_link);
 
     const handleClick = (e) => {
+      e.preventDefault();
       const $this = e.target;
       const $target_menu_nav = $this.parentElement.nextElementSibling;
 

@@ -96,8 +96,8 @@
         }
   
         .btnLabel {
-          width: 100px;
-          height: 100px;
+          width: 100%;
+          height: 100%;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -181,7 +181,7 @@
           position: absolute;
           right: 30px;
           bottom: 180px;
-          // z-index: 10;
+          z-index: 10;
           i {
             color: #fff;
             font-size: 20px;
@@ -238,7 +238,7 @@
             outline: none;
             display: flex;
             align-items: center;
-            // z-index: 10;
+            z-index: 10;
             margin-right: 10px;
     
             .user-icon {
@@ -280,11 +280,11 @@
           display: flex;
           flex-direction: column;
           align-items: center;
+          z-index: 10;
       
           .goodLink {
             display: block;
             position: relative;
-            // z-index: 2;
             .far {
               font-size: 20px;
               color: #FFF;
@@ -304,6 +304,7 @@
           position: absolute;
           right: 30px;
           bottom: 20px;
+          z-index: 10;
           i {
             color: #fff;
             font-size: 20px;
@@ -319,6 +320,7 @@
           position: absolute;
           right: 30px;
           bottom: 80px;
+          z-index: 10;
           i {
             color: #fff;
             font-size: 20px;
