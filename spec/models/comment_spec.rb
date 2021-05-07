@@ -7,5 +7,11 @@ describe Comment do
       comment.valid?
       expect(comment.errors[:content]).to include('コメントが空欄です。入力してください。')
     end
+
+    it 'コメントが140文字以上の場合はコメントできない' do
+      comment = build(:comment, content: 'a' * 141)
+      expect(comment).to be_invalid
+    end
+
   end
 end

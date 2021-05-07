@@ -55,6 +55,7 @@ ja:
           attributes:
             content:
               blank: コメントが空欄です。入力してください。
+              too_long: コメントは140文字以内です。
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
