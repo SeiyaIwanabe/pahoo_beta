@@ -67,6 +67,7 @@
         .postVideo {
           width: 100vw;
           max-height: 300px;
+          min-height: 220px;
           background-color: black;
           object-fit: contain;
         }
@@ -90,7 +91,7 @@
     
             .orange-juice {
               height: 3px;
-              background-color: orangered;
+              background-color: #F47837;
             }
           }
         }
@@ -150,7 +151,7 @@
             font-size: 25px;
             outline: none;
             border: none;
-            color: orangered;
+            color: #F47837;
           }
         }
   
@@ -267,7 +268,7 @@
               display: block;
               text-decoration: none;
               i {
-                color: orangered;
+                color: #F47837;
               }
             }
           }

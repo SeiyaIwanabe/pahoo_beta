@@ -1,1 +1,25 @@
-バナー詳細画面
+<div class="bannerShowArea">
+
+  <div class="bannerShowHeader">
+    <%= link_to :back, class: "bannerBackLink" do %><button></button><% end %>
+    <div class="bannerOwenerArea">
+      <% if @banner.user.icon? %>
+        <%= image_tag @banner.user.icon.url, class: "bannerOwenerImage" %>
+      <% else %>
+        <i class="fas fa-user-circle"></i>
+      <% end %>
+      <p><%= @banner.user.nickname %></p>
+    </div>
+  </div>
+
+  <%= image_tag @banner.banner_image.url, class: "backgroundImage"%>
+  <div class="bg_rgba"></div>
+
+  <div class="bannerDetailsArea">
+    <h1><%= @banner.banner_name %></h1>
+    <h2>詳細説明</h1>
+    <p><%= @banner.banner_details %></p>
+  </div>
+
+  <%= render partial: 'modules/footer' %>
+</div>

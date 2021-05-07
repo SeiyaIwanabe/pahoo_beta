@@ -2,13 +2,13 @@
   width: 100vw;
   height: 100vh;
   background-color: #f0f2f5;
-  padding: 10px;
   display: flex;
   align-items: center;
+  overflow: scroll;
 
   form {
     background-color: white;
-    width: 70vw;
+    width: 80vw;
     height: auto;
     margin: 0 auto;
     border: 1px solid white;
@@ -16,7 +16,8 @@
     box-shadow: 0 0 8px gray;
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 10px;
+    margin-bottom: 45px;
 
     .bannerSection {
       display: flex;
@@ -36,6 +37,14 @@
         border: 1px solid lightgray;
         border-radius: 10px;
         font-size: 15px;
+      }
+
+      .detailsInput {
+        font-size: 10px;
+        height: 150px;
+        /* 改行反映 */
+        white-space: pre-wrap;
+        word-wrap: break-word;
       }
     }
     .submitBtn {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_06_034946) do
+ActiveRecord::Schema.define(version: 2021_05_07_134131) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_034946) do
     t.string "banner_image"
     t.bigint "banner_tag_id"
     t.bigint "user_id", null: false
+    t.text "banner_details", null: false
     t.index ["banner_tag_id"], name: "index_banners_on_banner_tag_id"
     t.index ["user_id"], name: "index_banners_on_user_id"
   end

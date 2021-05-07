@@ -1,0 +1,106 @@
+.bannerShowArea {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .bannerShowHeader {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+
+    .bannerBackLink {
+      text-decoration: none;
+      border: none;
+      outline: none;
+      position: absolute;
+      top: 20px;
+      left: 60px;
+  
+      button {
+        display: block;
+        outline: none;
+        border: none;
+        width: 20px;
+        height: 20px;
+        border: 5px solid;
+        border-color:  transparent transparent #FFF #FFF;
+        transform: rotate(45deg);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    .bannerOwenerArea {
+      position: absolute;
+      left: 43%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 7px;
+
+      .bannerOwenerImage {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+      i {
+        font-size: 25px;
+        color: #FFF;
+      }
+      p {
+        color: #FFF;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .backgroundImage {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+  }
+  .bg_rgba {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .bannerDetailsArea {
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    z-index: 10;
+    overflow: scroll;
+    padding-bottom: 45px;
+
+    h1 {
+      color: #FFF;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    h2{
+      color: #FFF;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #FFF;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 12px;
+    }
+  }
+}

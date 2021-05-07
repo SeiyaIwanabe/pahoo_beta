@@ -11,6 +11,11 @@
       <%= f.text_field :banner_name, placeholder: "バナーのタイトルを入力"%>
     </div>
 
+    <div class="bannerSection">
+      <%= f.label :banner_details, "バナーの詳細説明"%>
+      <%= f.text_area :banner_details, placeholder: "バナーの詳細を入力", class: "detailsInput"%>
+    </div>
+
     <div class="checkArea">
       <p>バナーにタグをつけよう！</p>
       <%= f.collection_select(:banner_tag_id, BannerTag.all, :id, :banner_tag_name, {prompt: "タグを選択してください"} ) %>
@@ -19,4 +24,5 @@
     <%= f.submit "バナーを作成", class: "submitBtn" %>
 
   <% end %>
+  <%= render partial: 'modules/footer' %>
 </div>
