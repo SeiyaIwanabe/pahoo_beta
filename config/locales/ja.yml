@@ -51,6 +51,10 @@ ja:
               blank: ファイルを選択してください
             user:
               required: 
+        comment:
+          attributes:
+            content:
+              blank: コメントが空欄です。入力してください。
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
