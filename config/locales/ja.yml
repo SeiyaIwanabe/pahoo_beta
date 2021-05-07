@@ -25,8 +25,47 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+
     models:
       user: ユーザー
+
+    errors:
+       models:
+        user:
+          attributes:
+            nickname:
+              blank: 名前が空欄です。入力してください。
+              too_short: 名前は2文字上かつ10文字以内です
+            password:
+              too_short: パスワードは6文字以上です
+            password_confirmation:
+              confirmation: 確認用パスワードの値が違います
+            tag_ids:
+              blank: 興味のあるジャンルを選んでください
+        post:
+          attributes:
+            post_text:
+              blank: 本文が空欄です
+              too_long: 本文は140文字以内です
+            post_video:
+              blank: ファイルを選択してください
+            user:
+              required: 
+        banner:
+          attributes:
+            banner_name:
+              blank: タイトルが空欄です。入力してください。
+              too_long: タイトルは2文字以上20文字以内です。
+              too_short: タイトルは2文字以上20文字以内です。
+            banner_image:
+              blank: 画像を選択してください。
+            banner_tag: 
+              required: タグを選んでください
+        comment:
+          attributes:
+            content:
+              blank: コメントが空欄です。入力してください。
+              too_long: コメントは140文字以内です。
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -141,3 +180,4 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+   

@@ -3,7 +3,7 @@ class Banner < ApplicationRecord
   mount_uploader :banner_image, BannerImageUploader
 
   # バリデーション
-  validates :banner_name, presence: true
+  validates :banner_name, presence: true, length: { in: 2..20 }
   validates :banner_image, presence: true
 
   # アソシエーション
