@@ -84,12 +84,18 @@
     </div>
   </div>
 
-  <!-- ログインユーザーのみプロフィール編集を許可 -->
+  <!-- ログインユーザーのみプロフィール編集を許可。それ以外はフォローボタンに -->
   <% if current_user.id == @user.id %>
     <div class="profileMiddle">
       <%= link_to "プロフィール編集", edit_user_path, class: "userEditLink" %>
     </div>
-  <% end %>
+  <% else %>
+     <% if @user.senderd_by?(current_user) %>
+      <%= link_to 'フォロー解除', user_relationships_path(@user.id), class: "followBtn", method: :delete, local: true %>
+    <% else %>
+      <%= link_to 'フォローする', user_relationships_path(@user.id), class: "followBtn", method: :post, local: true %>
+    <% end %>
+  <% end %> 
 
   
   <div class="tagArea">
