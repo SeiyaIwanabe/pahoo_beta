@@ -46,34 +46,36 @@
 
 .PickupContent {
   position: relative;
+  height: auto;
   
   .scallPostVideo {
     width: 100vw;
     max-height: 300px;
+    min-height: 220px;
     background-color: black;
     object-fit: contain;
-  }
 
-  .show-controls {
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    flex-wrap: wrap;
-    background: rgba(0, 0, 0, 0.7);
-    transform: translateY(100%);
-    transition: all 0.2s;
-
-    .show-orange-bar {
-      height: 3px;
-      top: 0;
-      left: 0;
+    .show-controls {
+      display: flex;
+      position: absolute;
+      bottom: 10px;
       width: 100%;
-      background-color: #FFF;
-
-      .show-orange-juice {
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateY(100%);
+      transition: all 0.2s;
+  
+      .show-orange-bar {
         height: 3px;
-        background-color: orangered;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #FFF;
+  
+        .show-orange-juice {
+          height: 3px;
+          background-color: orangered;
+        }
       }
     }
   }
@@ -195,67 +197,71 @@
       }
     }
   }
-  
-  .postMenuLink {
-    position: absolute;
-    right: 30px;
-    bottom: 180px;
-    i {
-      color: #fff;
-      font-size: 20px;
-    }
-  }
 
-  .favoriteArea {
+  .backGradationArea {
     position: absolute;
-    right: 30px;
-    bottom: 120px;
+    top: 0;
+    right: 0;
+    height: calc(100% - 7px);
+    width: 50px;
+    // background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .goodLink {
-      display: block;
-      .far {
+    justify-content: space-evenly;
+    background: -moz-linear-gradient(left, transparent, rgba(0,0,0,0.1));
+    background: -webkit-linear-gradient(left, transparent, rgba(0,0,0,0.6));
+    background: linear-gradient(to right, transparent, #000);
+    
+    .postMenuLink {
+      i {
+        color: #fff;
         font-size: 20px;
+      }
+    }
+    .favoriteArea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .goodLink {
+        display: block;
+        .far {
+          font-size: 20px;
+          color: #FFF;
+        }
+        .fas {
+          color: orangered;
+          font-size: 20px;
+        }
+      }
+      .favoriteCount {
+        font-size: 10px;
+        font-weight: bold;
         color: #FFF;
       }
-      .fas {
-        color: orangered;
+    }
+    .commentLink {
+      text-decoration: none;
+      i {
+        color: #fff;
+        font-size: 20px;
+      }
+      .commentCount {
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    .shareLink {
+      i {
+        color: #fff;
         font-size: 20px;
       }
     }
-    .favoriteCount {
-      font-size: 10px;
-      font-weight: bold;
-      color: #FFF;
-    }
   }
-  .commentLink {
-    position: absolute;
-    right: 30px;
-    bottom: 20px;
-    text-decoration: none;
-    i {
-      color: #fff;
-      font-size: 20px;
-    }
-    .commentCount {
-      color: #fff;
-      font-size: 10px;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
-  .shareLink {
-    position: absolute;
-    right: 30px;
-    bottom: 80px;
-    i {
-      color: #fff;
-      font-size: 20px;
-    }
-  }
+
   .postText {
     width: 50%;
     position: absolute;
@@ -265,6 +271,7 @@
     font-size: 10px;
   }
 }
+  
 
 #postMenuNav {
   background-color: #fff;
@@ -274,6 +281,7 @@
   border-radius: 20px;
   position: fixed;
   bottom: 0;
+  left: 0;
   z-index: 200; /*最前面に*/
   margin-bottom: -200px;
   display: flex;
@@ -311,6 +319,7 @@
   border-radius: 20px;
   position: fixed;
   bottom: 0;
+  left: 0;
   z-index: 200; /*最前面に*/
   margin-bottom: -300px;
 
@@ -333,7 +342,7 @@
     .postShareLink {
       text-decoration: none;
       color: #000;
-      font-size: 15px;
+      font-size: 10px;
       font-weight: bold;
       text-align: center; 
     }
@@ -352,6 +361,7 @@
   border-radius: 20px;
   position: fixed;
   bottom: 0;
+  left: 0;
   z-index: 200; /*最前面に*/
   margin-bottom: -400px;
   // overflow: scroll;

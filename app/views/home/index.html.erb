@@ -38,39 +38,8 @@
         <li class="post-content">
           <%= video_tag(post.post_video.to_s, class: "postVideo") %>
 
-          <!-- コメントナビゲーション -->
-          <nav id="commentNav">
-            <% if post.comments %>
-              <div class="commentOutline">
-                <%= render partial: "modules/comment", locals: { comments: post.comments } %>
-              </div>
-            <% else %>
-              <p>コメントはまだありません</p>
-            <% end %>
-
-            <div class="bottomInput">
-              <%= form_with(model: [post, @comment], id: "new-comment") do |f| %>
-                <%= f.text_field :content, class: "inputComment"%>
-                <%= f.submit "コメントする", class: "submitComment" %>
-              <% end %>
-            </div>
-          </nav>
-
-          <!-- コメントイベントの発火 -->
-          <%= link_to "#", class: "commentLink" do%>
-            <i class="far fa-comment-dots"></i>
-            <p class="commentCount"><%= post.comments.count %></p>
-          <% end %>
-
-           <!-- プログレスバー -->
-          <div class="controls">
-            <div class="orange-bar">
-              <div class="orange-juice"></div>
-            </div>
-          </div>
-          
+          <!-- プロフィールエリア -->
           <div class="homeProfileArea">
-
             <!-- プロフィールリンク -->
             <%= link_to user_path(post.user.id), class: "profileLink" do%>
               <% if post.user.icon? %>
@@ -85,61 +54,93 @@
             <div id="sendingArea_<%= post.id %>", class="sending-area">
               <%= render partial: 'modules/sending', locals: { post: post } %>
             </div>
-            
           </div>
 
-          <!-- メニューリンク -->
-          <% if post.user_id == current_user.id %>
-            <%= link_to "#", class: "indexPostMenuLink" do %>
-              <i class="fas fa-ellipsis-h"></i>
+          <div class="homeguradationArea">
+            <!-- メニューリンク -->
+            <% if post.user_id == current_user.id %>
+              <%= link_to "#", class: "indexPostMenuLink" do %>
+                <i class="fas fa-ellipsis-h"></i>
+              <% end %>
             <% end %>
-          <% end %>
 
-          <!-- メニューナビゲーション -->
-          <nav id="indexPostMenuNav">
-            <li>
-              <% if current_user %>
-                <i class="fas fa-edit"></i>
-                <%= link_to "編集", edit_post_path(post), class: "logoutLink" %>
+            <!-- メニューナビゲーション -->
+            <nav id="indexPostMenuNav">
+              <li>
+                <% if current_user %>
+                  <i class="fas fa-edit"></i>
+                  <%= link_to "編集", edit_post_path(post), class: "logoutLink" %>
+                <% end %>
+              </li>
+              <li>
+                <% if current_user %>
+                  <i class="fas fa-trash"></i>
+                  <%= link_to "削除", post_path(post), method: :delete, class: "logoutLink" %>
+                <% end %>
+              </li>
+            </nav>
+
+            <!-- いいねリンク -->
+            <div id="favorite_area_<%= post.id %>", class="favoriteArea">
+              <%= render partial: "modules/favorite", locals: { post: post } %>
+            </div>
+
+            <!-- 他SNSへのシェアイベントの発火 -->
+            <%= link_to "#", class: "shareLink" do%>
+              <i class="fas fa-share"></i>
+            <% end %>
+
+            <!-- シェアナビゲーション -->
+            <nav id="shareNav">
+              <li>
+                <i class="fab fa-twitter"></i>
+                <%= link_to 'Twitterで共有', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank', class: "listLink" %>
+              </li>
+              <li>
+                <i class="fab fa-line"></i>
+                <%= link_to 'Lineで共有(仮)', '#', class: "listLink" %>
+              </li>
+              <li>
+                <i class="fab fa-facebook-square"></i>
+                <%= link_to 'facebookで共有(仮)', '#', class: "listLink" %>
+              </li>
+            </nav>
+
+            <!-- コメントリンク -->
+            <%= link_to "#", class: "commentLink" do%>
+              <i class="far fa-comment-dots"></i>
+              <p class="commentCount"><%= post.comments.count %></p>
+            <% end %>
+
+            <!-- コメントナビゲーション -->
+            <nav id="commentNav">
+              <% if post.comments %>
+                <div class="commentOutline">
+                  <%= render partial: "modules/comment", locals: { comments: post.comments } %>
+                </div>
+              <% else %>
+                <p>コメントはまだありません</p>
               <% end %>
-            </li>
-            <li>
-              <% if current_user %>
-                <i class="fas fa-trash"></i>
-                <%= link_to "削除", post_path(post), method: :delete, class: "logoutLink" %>
-              <% end %>
-            </li>
-          </nav>
-          
-          <!-- いいねリンク -->
-          <div id="favorite_area_<%= post.id %>", class="favoriteArea">
-            <%= render partial: "modules/favorite", locals: { post: post } %>
+
+              <div class="bottomInput">
+                <%= form_with(model: [post, @comment], id: "new-comment") do |f| %>
+                  <%= f.text_field :content, class: "inputComment"%>
+                  <%= f.submit "コメントする", class: "submitComment" %>
+                <% end %>
+              </div>
+            </nav>
           </div>
 
-          <!-- 他SNSへのシェアイベントの発火 -->
-          <%= link_to "#", class: "shareLink" do%>
-            <i class="fas fa-share"></i>
-          <% end %>
 
-          <!-- シェアナビゲーション -->
-          <nav id="shareNav">
-            <li>
-              <i class="fab fa-twitter"></i>
-              <%= link_to 'Twitterで共有', "https://twitter.com/share?url=#{request.url}", title: post.post_text, target: '_blank', class: "listLink" %>
-            </li>
-            <li>
-              <i class="fab fa-line"></i>
-              <%= link_to 'Lineで共有(仮)', '#', class: "listLink" %>
-            </li>
-            <li>
-              <i class="fab fa-facebook-square"></i>
-              <%= link_to 'facebookで共有(仮)', '#', class: "listLink" %>
-            </li>
-          </nav>
-
-          <div class="postText"><%= post.post_text %></div>
-
+           <!-- プログレスバー -->
+          <div class="controls">
+            <div class="orange-bar">
+              <div class="orange-juice"></div>
+            </div>
+          </div>
           
+          <!-- 投稿本文 -->
+          <div class="postText"><%= post.post_text %></div>
 
           <!-- 動画の再生/停止ラベル -->
           <label class="btnLabel">

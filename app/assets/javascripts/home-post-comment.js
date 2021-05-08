@@ -8,7 +8,7 @@ $(document).ready(function() {
   
       // クリックされたnavとそのデータを取得
       const $this = e.target;
-      const $target_nav = $this.parentElement.previousElementSibling;
+      const $target_nav = $this.parentElement.nextElementSibling;
       const $target_video = $target_nav.previousElementSibling;
       const $object_position = $target_video.getBoundingClientRect().bottom;
   

@@ -26,7 +26,6 @@
 
   </div>
 
-
   <!-- コントロールパネル -->
   <div class="show-controls">
     <div class="show-orange-bar">
@@ -44,35 +43,35 @@
     <i class="fas fa-volume-off"></i>
   </label>
 
-  <!-- メニュアイコン -->
-  <% if @post.user_id == current_user.id %>
-    <%= link_to "#", class: "postMenuLink" do %>
-      <i class="fas fa-ellipsis-h"></i>
+  <div class="backGradationArea">
+    <!-- メニュアイコン -->
+    <% if @post.user_id == current_user.id %>
+      <%= link_to "#", class: "postMenuLink" do %>
+        <i class="fas fa-ellipsis-h"></i>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <!--いいねリンク -->
-  <div id="favorite_area_<%= @post.id %>", class="favoriteArea">
-    <%= render partial: "modules/favorite", locals: { post: @post } %>
+    <!--いいねリンク -->
+    <div id="favorite_area_<%= @post.id %>", class="favoriteArea">
+      <%= render partial: "modules/favorite", locals: { post: @post } %>
+    </div>
+    
+    <!--コメントリンク -->
+    <%= link_to "#", class: "commentLink" do%>
+      <i class="far fa-comment-dots"></i>
+      <p class="commentCount"><%= @comments.count %></p>
+    <% end %>
+
+    <!--シェアリンク -->
+    <%= link_to "#", class: "shareLink" do%>
+      <i class="fas fa-share"></i>
+    <% end %>
   </div>
-  
-  <!--コメントリンク -->
-  <%= link_to "#", class: "commentLink" do%>
-    <i class="far fa-comment-dots"></i>
-    <p class="commentCount"><%= @comments.count %></p>
-  <% end %>
-
-  <!--シェアリンク -->
-  <%= link_to "#", class: "shareLink" do%>
-    <i class="fas fa-share"></i>
-  <% end %>
   
   <div class="postText"><%= @post.post_text %></div>
   <%# <%= link_to "投稿削除", post_path(post.id), method: :delete, class: "postDeleteBtn" %>
 </div>
 
-<!-- 黒背景 -->
-<label id="js-nav-close"></label>
 
 <!-- シェアナビゲーション -->
 <nav id="shareNav">
@@ -107,6 +106,7 @@
   </li>
 </nav>
 
+
 <!-- コメントナビゲーション -->
 <nav id="commentNav">
   <% if @comments %>
@@ -125,6 +125,8 @@
   </div>
 </nav>
 
+<!-- 黒背景 -->
+<label id="js-nav-close"></label>
 
 <!-- ユーザーの他の投稿一覧 -->
 <div class="userOthersPosted">
