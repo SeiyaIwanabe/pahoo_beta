@@ -96,9 +96,10 @@
       .usersIndex {
         height: auto;
         padding-top: 30px;
+        padding-bottom: 45px;
       
         .userList {
-          height: 100px;
+          height: 80px;
           display: flex;
           padding-left: 30px;
           align-items: center;
@@ -152,6 +153,7 @@
         height: auto;
         padding-top: 30px;
         padding-left: 30px;
+        padding-bottom: 45px;
 
         .bannerList {
           display: flex;
