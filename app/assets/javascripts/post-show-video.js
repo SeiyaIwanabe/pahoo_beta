@@ -9,6 +9,7 @@ $(document).ready(function() {
   
     // 動画の再生/停止
     function togglePlayPause() {
+      console.log('$btn', $btn);
       if($video.paused) {
         $btn.className = 'pause';
         $video.play();

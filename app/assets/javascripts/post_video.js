@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-  const video = document.querySelectorAll('.postVideo');
   const $btn = document.querySelectorAll('#playPause');
-  const juice = document.querySelector('.orange-juice');
-  
   
   // 最初の動画を自動再生
   // video.play();
@@ -30,11 +27,9 @@ $(document).ready(function() {
     const $target_video = $target_label.parentNode.firstElementChild;
     const $target_mute_btn = $target_label.nextElementSibling;
     const $target_video_bar = $target_video.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
+    
     console.log('$this', $this);
-    console.log('$target_label', $target_label);
-    console.log('$target_video', $target_video);
-    console.log('$target_mute_btn', $target_mute_btn);
-    console.log('$target_video_bar', $target_video_bar);
+    
 
 
     //動画の再生/停止
