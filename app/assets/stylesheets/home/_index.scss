@@ -188,6 +188,8 @@
               color: #fff;
               font-size: 10px;
               font-weight: bold;
+              text-shadow: black 1px 1px 10px, black -1px 1px 10px,
+          black 1px -1px 10px, black -1px -1px 10px;;
             }
           }
   
@@ -213,9 +215,9 @@
           flex-direction: column;
           align-items: center;
           justify-content: space-evenly;
-          background: -moz-linear-gradient(right, transparent, rgba(0,0,0,0.1));
-          background: -webkit-linear-gradient(right, transparent, rgba(0,0,0,0.6));
-          background: linear-gradient(to left, transparent, #000);
+          text-shadow: #F47837 1px 1px 8px, #222222 -1px 1px 8px,
+    #F47837  1px -1px 8px, #222222 -1px -1px 8px;;
+          
 
           .indexPostMenuLink {
             z-index: 10;

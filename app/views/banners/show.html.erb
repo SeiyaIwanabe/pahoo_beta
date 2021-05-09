@@ -4,9 +4,13 @@
     <%= link_to :back, class: "bannerBackLink" do %><button></button><% end %>
     <div class="bannerOwenerArea">
       <% if @banner.user.icon? %>
-        <%= image_tag @banner.user.icon.url, class: "bannerOwenerImage" %>
+        <%= link_to user_path(@banner.user) do %>
+          <%= image_tag @banner.user.icon.url, class: "bannerOwenerImage" %>
+        <% end %>
       <% else %>
-        <i class="fas fa-user-circle"></i>
+        <%= link_to user_path(@banner.user) do %>
+          <i class="fas fa-user-circle"></i>
+        <% end %>
       <% end %>
       <p><%= @banner.user.nickname %></p>
     </div>
