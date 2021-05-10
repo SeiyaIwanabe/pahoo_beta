@@ -41,6 +41,12 @@ class BannersController < ApplicationController
     @user = @banner.user
   end
 
+  def destroy
+    banner = Banner.find(params[:id])
+    banner.destroy
+    redirect_to root_path
+  end
+
   private
   def banner_params
     params.require(:banner).permit(:banner_name, :banner_image, :banner_details, :banner_tag_id).merge(user_id: current_user.id)

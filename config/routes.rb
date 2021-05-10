@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
-  resources :banners, only: [:index, :new, :create, :show]
+  resources :banners, only: [:index, :new, :create, :show, :destroy]
 
   resources :users, only: [:index, :new, :create, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
