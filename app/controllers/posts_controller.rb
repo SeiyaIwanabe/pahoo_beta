@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :move_to_login, only: [:new]
 
   def index
     if params[:tag_id].present?
@@ -61,6 +62,12 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:post_text, :post_video,  { post_tag_ids: [] } ).merge(user_id: current_user.id)
+  end
+
+  def move_to_login
+    unless user_signed_in?
+     redirect_to new_user_session_path
+    end
   end
 
 end

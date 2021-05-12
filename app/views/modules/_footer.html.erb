@@ -11,14 +11,18 @@
     <i class="fas fa-plus-circle"></i>
   <% end %>
 
-  <%= link_to notifications_path, class: "bottomNavLink" do %>
-    <% if unchecked_notifications.any? %>
-      <p class="notoficationCount"><%= @notifications.count %></p>
+  <% if user_signed_in? %>
+    <%= link_to notifications_path, class: "bottomNavLink" do %>
+      <% if unchecked_notifications.any? %>
+        <p class="notoficationCount"><%= @notifications.count %></p>
+      <% end %>
+      <i class="fas fa-heart"></i>
     <% end %>
-    <i class="fas fa-heart"></i>
   <% end %>
   
-  <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>
-    <i class="fas fa-user-circle"></i>
+  <% if user_signed_in? %>
+    <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>
+      <i class="fas fa-user-circle"></i>
+    <% end %>
   <% end %>
 </footer>

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :move_to_login
+  # before_action :move_to_login
 
 
   def index
@@ -10,16 +10,16 @@ class HomeController < ApplicationController
 
     # コメントナビゲーション
     @comment = Comment.new
-    # @comments = Comment.all
-
-    @notifications = current_user.passive_notifications
+    
+    # 通知一覧
+    @notifications = current_user.passive_notifications if user_signed_in?
   end
   
-  private
-  def move_to_login
-   unless user_signed_in?
-    redirect_to new_user_session_path
-   end
-  end
+  # private
+  # def move_to_login
+  #  unless user_signed_in?
+  #   redirect_to new_user_session_path
+  #  end
+  # end
 
 end

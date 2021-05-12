@@ -1,26 +1,20 @@
 <div class="outline">
 
-  <h1 class="resistrationTitle">Pahoo</h1>
+  <h1 class="resistrationTitle">Pahooに登録</h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="section">
-      <%= f.label :お名前 %>
-      <%= f.text_field :nickname %>
+    <div class="resistrationSection">
+      <%= f.text_field :nickname, placeholder: "お名前" %>
     </div>
 
-    <div class="section">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>文字以上)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="resistrationSection">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)" %>
     </div>
 
-    <div class="section">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="resistrationSection">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード"%>
     </div>
 
     <div class="checkArea">
@@ -32,9 +26,9 @@
       <% end %>
     </div>
 
-    <%= f.submit "さぁ、始めよう", class: "submitBtn" %>
+    <%= f.submit "新規登録", class: "submitBtn" %>
 
-    <%= link_to "ログインはこちら", new_user_session_path, class: "toLogin" %>
+    <%= link_to "ログインはこちら", new_user_session_path, class: "submitBtn" %>
   <% end %>
 
   

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :move_to_login, only: [:show, :follow, :unfollow]
+
 
   def index
     if params[:tag_id].present?
@@ -91,4 +93,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:nickname, :id_name, :password, :password_confirmation, :icon, { tag_ids: [] })
   end
+
+  def move_to_login
+    unless user_signed_in?
+     redirect_to new_user_session_path
+    end
+  end
+  
 end

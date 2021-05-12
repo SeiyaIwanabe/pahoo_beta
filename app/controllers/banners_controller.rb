@@ -1,4 +1,5 @@
 class BannersController < ApplicationController
+  before_action :move_to_login, only: [:new]
 
   def index
     if params[:tag_id].present?
@@ -50,6 +51,12 @@ class BannersController < ApplicationController
   private
   def banner_params
     params.require(:banner).permit(:banner_name, :banner_image, :banner_details, :banner_tag_id).merge(user_id: current_user.id)
+  end
+
+  def move_to_login
+    unless user_signed_in?
+     redirect_to new_user_session_path
+    end
   end
 
 end

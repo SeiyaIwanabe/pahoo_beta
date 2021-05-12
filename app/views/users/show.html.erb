@@ -1,31 +1,34 @@
 <label id="js-nav-close"></label>
 <nav id="menuNav">
   <li>
-    <% if current_user %>
+    <% if user_signed_in? && current_user %>
       <i class="fas fa-sign-out-alt"></i>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logoutLink" %>
+    <% else %>
+      <i class="fas fa-sign-out-alt"></i>
+      <%= link_to "ログイン", new_user_session_path, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
-    <% if current_user %>
+    <% if user_signed_in? && current_user %>
       <i class="fas fa-history"></i>
       <%= link_to "アーカイブ(仮)", "#", method: :delete, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
-    <% if current_user %>
+    <% if user_signed_in? && current_user %>
       <i class="fas fa-paperclip"></i>
       <%= link_to "保存済み(仮)", "#", method: :delete, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
-    <% if current_user %>
+    <% if user_signed_in? && current_user %>
       <i class="fas fa-infinity"></i>
       <%= link_to "Unity(仮)", "#", method: :delete, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
-    <% if current_user %>
+    <% if user_signed_in? && current_user %>
       <i class="fas fa-user-plus"></i>
       <%= link_to "ユーザーを探そう(仮)", "#", method: :delete, class: "logoutLink" %>
     <% end %>
@@ -43,8 +46,6 @@
   </div>
 </header>
 
-<!-- パソコン用ヘッダー  -->
-<%= render partial: 'modules/mobil-header' %>
 
 <div class="profileArea">
   <div class="profileTop">

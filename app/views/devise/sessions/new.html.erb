@@ -1,32 +1,21 @@
 <div class="outline">
-
-  <h1>Pahoo</h1>
-
+  <h1>Pahooにログイン</h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-    <div class="section">
-      <%= f.label :ID %>
-      <%= f.text_field :id_name %>
+    <div class="sessionSection">
+      <%= f.text_field :id_name, placeholder: "idを入力してください", class: "sessionInput" %>
     </div>
-
-    <div class="section">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+    <div class="sessionSection">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "sessionInput" %>
     </div>
-
     <!--<% if devise_mapping.rememberable? %>
       <div class="section">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>-->
-
     <div class="actions">
-      <%= f.submit "さぁ、始めよう", class: "submitBtn" %>
+      <%= f.submit "ログイン", class: "submitBtn" %>
     </div>
-
-    <%= link_to "新規登録はこちら", new_user_registration_path, class: "toLogin" %>
+    <%= link_to "新規登録はこちら", new_user_registration_path, class: "submitBtn" %>
   <% end %>
-
-
 </div>

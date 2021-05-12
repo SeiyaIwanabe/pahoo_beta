@@ -124,25 +124,6 @@
             height: 100px;
             color: #FFF;
           }
-          // .buttons button:before {
-          //   content: "▶";
-          //   width: 50px;
-          //   height: 50px;
-          //   display: inline-block;
-          //   font-size: 28px;
-          //   color: #fff;
-          // }
-          // .buttons button.play:before {
-          //   content: "▶";
-          // }
-          // .buttons button.pause:before {
-          //   content: "■";
-          //   width: 50px;
-          //   height: 50px;
-          //   display: inline-block;
-          //   font-size: 28px;
-          //   color: #fff;
-          // }
         }
         
         .muteBtn {
@@ -506,6 +487,39 @@
           margin-right: 30px;
           display: block;
           font-size: 25px;
+        }
+      }
+    }
+    .right-header {
+      position: fixed;
+      right: 20px;
+      width: 10%;
+      height: 90%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-left: 100px;
+  
+      .menu-wrapper {
+        cursor: pointer;
+  
+        .menu-item {
+          height: 5px;
+          width: 30px;
+          background-color: #000;
+          border-radius: 25%;
+          margin-bottom: 5px;
+          transition: all 0.3s ease;
+        }
+        .show-animate.line1 {
+          transform: translateY(10px) rotate(-45deg);
+        }
+        .show-animate.line2 {
+          opacity: 0;
+          transform: translateX(50%);
+        }
+        .show-animate.line3 {
+          transform: translateY(-10px) rotate(45deg);
         }
       }
     }
@@ -901,8 +915,6 @@
             flex-direction: column;
             justify-content: space-evenly;
           }
-
-         
           .postText {
             width: 50%;
             position: absolute;
@@ -918,4 +930,4 @@
       }
     }
   }
- }
+}

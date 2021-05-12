@@ -1,7 +1,7 @@
 .outline {
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 20px;
 
   h1 {
     text-align: center;
@@ -45,7 +45,7 @@
           width: 200px;
           height: 200px;
           border-radius: 50%;
-          margin-bottom: 20px;
+          margin-bottom: 50px;
         }
 
         i {
@@ -67,13 +67,13 @@
       }
 
       input {
-        font-size: 20px;
-        border: none;
-        outline: none;
-        width: 100%;
-        height: 30px;
-        background-color: #f8f8ff;
-        border-radius: 15px;
+        // font-size: 20px;
+        // border: none;
+        // outline: none;
+        // width: 100%;
+        // height: 30px;
+        // background-color: #f8f8ff;
+        // border-radius: 15px;
       }
     }
     .checkArea {
@@ -123,5 +123,11 @@
     .submitBtn:hover {
       opacity: 0.5;
     }
+  }
+}
+
+@media (min-width: 980px) {
+  .outline {
+    padding: 50px;
   }
 }

@@ -5,6 +5,53 @@
 </div>
 
 <label id="js-nav-close"></label>
+<nav id="userMenuNav">
+  <li>
+    <% if user_signed_in? && current_user %>
+      <i class="fas fa-sign-out-alt"></i>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logoutLink" %>
+    <% else %>
+      <i class="fas fa-sign-out-alt"></i>
+      <%= link_to "ログイン", new_user_session_path, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if user_signed_in? && current_user %>
+      <i class="fas fa-history"></i>
+      <%= link_to "アーカイブ(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% else %>
+      <i class="fas fa-history"></i>
+      <%= link_to "アーカイブ(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if user_signed_in? && current_user %>
+      <i class="fas fa-paperclip"></i>
+      <%= link_to "保存済み(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% else %>
+      <i class="fas fa-paperclip"></i>
+      <%= link_to "保存済み(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if user_signed_in? && current_user %>
+      <i class="fas fa-infinity"></i>
+      <%= link_to "Unity(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% else %>
+      <i class="fas fa-infinity"></i>
+      <%= link_to "Unity(仮)", "#", method: :delete, class: "logoutLink" %>
+    <% end %>
+  </li>
+  <li>
+    <% if user_signed_in? && current_user %>
+      <i class="fas fa-user-plus"></i>
+      <%= link_to "ユーザーを探そう(仮)", "#", class: "logoutLink" %>
+    <% else %>
+      <i class="fas fa-user-plus"></i>
+      <%= link_to "ユーザーを探そう(仮)", "#", class: "logoutLink" %>
+    <% end %>
+  </li>
+</nav>
 
 <header class="header">
   <p id="pahoo">Pahoo</p>
@@ -58,7 +105,7 @@
 
           <div class="homeguradationArea">
             <!-- メニューリンク -->
-            <% if post.user_id == current_user.id %>
+            <% if user_signed_in? && post.user_id == current_user.id %>
               <%= link_to "#", class: "indexPostMenuLink" do %>
                 <i class="fas fa-ellipsis-h"></i>
               <% end %>
@@ -67,13 +114,13 @@
             <!-- メニューナビゲーション -->
             <nav id="indexPostMenuNav">
               <li>
-                <% if current_user %>
+                <% if user_signed_in? && current_user %>
                   <i class="fas fa-edit"></i>
                   <%= link_to "編集", edit_post_path(post), class: "logoutLink" %>
                 <% end %>
               </li>
               <li>
-                <% if current_user %>
+                <% if user_signed_in? && current_user %>
                   <i class="fas fa-trash"></i>
                   <%= link_to "削除", post_path(post), method: :delete, class: "logoutLink" %>
                 <% end %>
@@ -180,3 +227,4 @@
 <%= javascript_include_tag 'post_video' %>
 <%= javascript_include_tag 'home-post-menu' %>
 <%= javascript_include_tag 'home-post-share' %>
+<%= javascript_include_tag 'menu' %>

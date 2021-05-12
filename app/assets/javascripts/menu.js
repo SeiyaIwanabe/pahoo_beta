@@ -10,7 +10,7 @@ $(document).ready(function() {
       $bars[index].classList.toggle('show-animate');
       index++;
     }
-    $('nav').animate({ "margin-bottom": 0 }, 200);
+    $('#userMenuNav').animate({ "margin-bottom": 0 }, 200);
     $('#js-nav-close').css('display', 'block');
   });
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
       $bars[index].classList.toggle('show-animate');
       index++;
     }
-    $('nav').animate({ "margin-bottom": -800 }, 200);
+    $('#userMenuNav').animate({ "margin-bottom": -800 }, 200);
     $(this).css('display', 'none');
   });
 });

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :move_to_login, only: [:create, :destroy]
 
   def create
     @comment = Comment.create(comment_params)
@@ -31,6 +32,12 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:content).merge(user_id: current_user.id, post_id: params[:post_id])
+  end
+
+  def move_to_login
+    unless user_signed_in?
+     redirect_to new_user_session_path
+    end
   end
   
 end
