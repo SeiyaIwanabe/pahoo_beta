@@ -222,7 +222,7 @@
           align-items: center;
           justify-content: space-evenly;
           text-shadow: #F47837 1px 1px 8px, #222222 -1px 1px 8px,
-    #F47837  1px -1px 8px, #222222 -1px -1px 8px;;
+          #F47837  1px -1px 8px, #222222 -1px -1px 8px;;
           
 
           .indexPostMenuLink {
@@ -465,6 +465,7 @@
 }
 
 
+
 /* レスポンシブデザイン */
 @media (min-width: 980px) {
   .header {
@@ -516,11 +517,16 @@
     padding-left: 300px;
     
     .mobilBannerArea {
+      display: block;
+      overflow-x: auto;
+      display: flex;
+      align-items: center;
       width: 50vw;
       height: 150px;
       border-radius: 10px;
       border: 1px solid lightgray;
       padding-top: 35px;
+
       
       .bannerContent {
         //横並びにする指定
@@ -566,7 +572,7 @@
     
             .bannerTitle {
               text-align: center;
-              font-size: 20px;
+              font-size: 10px;
               font-weight: bold;
             }
             .bannerTag {
@@ -575,7 +581,6 @@
               text-align: center;
             }
           }
-          
           .bannerPop:before {
             content: "";
             position: absolute;
@@ -598,9 +603,6 @@
             z-index: 1;
           }
         }
-      }
-      .bannerContent.show {
-        transform: scale( 1.4 );
       }
     }
   
@@ -704,6 +706,186 @@
               font-size: 40px;
             }
           }
+
+          .homeProfileArea {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+  
+            .profileLink {
+              text-decoration: none;
+              outline: none;
+              display: flex;
+              align-items: center;
+              z-index: 10;
+              margin-right: 10px;
+      
+              .user-icon {
+                display: block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 10px;
+              }
+              i {
+                color: #fff;
+                font-size: 40px;
+                margin-right: 10px;
+              }
+              .user-nickname {
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                text-shadow: black 1px 1px 10px, black -1px 1px 10px,
+            black 1px -1px 10px, black -1px -1px 10px;;
+              }
+            }
+    
+            .sending-area {
+              z-index: 10;
+              .sendingLink {
+                display: block;
+                text-decoration: none;
+                i {
+                  color: #F47837;
+                }
+              }
+            }
+          }
+
+          .homeguradationArea {
+            width: 50px;
+            height: calc(100% - 7px);
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-shadow: #F47837 1px 1px 8px, #222222 -1px 1px 8px,
+            #F47837  1px -1px 8px, #222222 -1px -1px 8px;;
+            
+  
+            .indexPostMenuLink {
+              z-index: 10;
+              i {
+                color: #fff;
+                font-size: 20px;
+              }
+            }
+            #indexPostMenuNav {
+              background-color: #fff;
+              width: 100vw;
+              height: 200px;
+              // margin: 0 auto;
+              border-radius: 20px;
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              z-index: 200; /*最前面に*/
+              margin-bottom: -200px;  
+            
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+            
+              li {
+                height: 100px;
+                list-style: none;
+                border-bottom: 1px solid lightgray;
+                padding-left: 50px;
+                display: flex;
+                align-items: center;
+            
+                i {
+                  font-size: 20px;
+                  margin-right: 20px;
+                }
+            
+                .logoutLink {
+                  text-decoration: none;
+                  color: #000;
+                  font-size: 10px;
+                  font-weight: bold;
+                  text-align: center;
+                }
+              }
+            }
+    
+            .favoriteArea {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              z-index: 10;
+          
+              .goodLink {
+                display: block;
+                position: relative;
+                .far {
+                  font-size: 20px;
+                  color: #FFF;
+                }
+                .fas {
+                  color: orangered;
+                  font-size: 20px;
+                }
+              }
+              .favoriteCount {
+                font-size: 10px;
+                font-weight: bold;
+                color: #FFF;
+              }
+            }
+  
+            .shareLink {
+              z-index: 10;
+              i {
+                color: #fff;
+                font-size: 20px;
+              }
+            }
+            #shareNav {
+              background-color: #fff;
+              width: 100vw;
+              height: 200px;
+              // margin: 0 auto;
+              border-radius: 20px;
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              z-index: 200; /*最前面に*/
+              margin-bottom: -200px;
+      
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+    
+              .listLink {
+                text-decoration: none;
+                color: #222222;
+                font-weight: bold;
+                font-size: 10px;
+              }
+            }
+    
+            .commentLink {
+              z-index: 10;
+              i {
+                color: #fff;
+                font-size: 20px;
+              }
+              .commentCount {
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                text-align: center;
+              }
+            }
+          }
     
           #shareNav {
             background-color: #fff;
@@ -719,91 +901,8 @@
             flex-direction: column;
             justify-content: space-evenly;
           }
-          
-          .menuLink {
-            position: absolute;
-            right: 40px;
-            bottom: 450px;
-            i {
-              color: #fff;
-              font-size: 60px;
-            }
-          }
-          .profileLink {
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            text-decoration: none;
-            outline: none;
-            display: flex;
-            align-items: center;
-            z-index: 10;
-    
-            .user-icon {
-              display: block;
-              width: 80px;
-              height: 80px;
-              border-radius: 50%;
-              object-fit: cover;
-              margin-right: 20px;
-            }
-            i {
-              color: #fff;
-              font-size: 60px;
-              margin-right: 20px;
-            }
-            .user-nickname {
-              color: #fff;
-              font-size: 20px;
-              font-weight: bold;
-            }
-          }
-          .favoriteArea {
-            position: absolute;
-            right: 40px;
-            bottom: 220px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        
-            .goodLink {
-              display: block;
-              position: relative;
-              z-index: 10;
-              .far {
-                font-size: 40px;
-                color: #FFF;
-              }
-              .fas {
-                color: orangered;
-                font-size: 40px;
-              }
-            }
-            .favoriteCount {
-              font-size: 15px;
-              font-weight: bold;
-              color: #FFF;
-            }
-          }
-          .commentLink {
-            position: absolute;
-            right: 40px;
-            bottom: 150px;
-            z-index: 10;
-            i {
-              color: #fff;
-              font-size: 40px;
-            }
-          }
-          .shareLink {
-            position: absolute;
-            right: 40px;
-            bottom: 50px;
-            i {
-              color: #fff;
-              font-size: 40px;
-            }
-          }
+
+         
           .postText {
             width: 50%;
             position: absolute;
@@ -811,18 +910,6 @@
             left: 5%;
             color: #FFF;
             font-size: 20px;
-          }
-          .postDeleteBtn {
-            display: block;
-            width: 400px;
-            height: 50px;
-            background-color: #e4e6ea;
-            border-radius: 10px;
-            border: none;
-            color: #65676b;
-            cursor: pointer;
-            font-weight: bold;
-            text-align: center;
           }
         }
       }

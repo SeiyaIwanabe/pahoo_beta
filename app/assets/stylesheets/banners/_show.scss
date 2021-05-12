@@ -113,3 +113,64 @@
     }
   }
 }
+
+/* レスポンシブデザイン */
+@media (min-width: 980px) {
+  .bannerShowArea {
+    .bannerShowHeader {
+      height: 80px;
+
+      .bannerBackLink {
+        top: 30px;
+      }
+
+      .bannerOwenerArea {
+        position: absolute;
+        left: 50%;
+  
+        .bannerOwenerImage {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .bannerDetailsArea {
+        height: 100%;
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        z-index: 10;
+        overflow: scroll;
+        padding-top: 50px;
+    
+        h1 {
+          color: #FFF;
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        h2{
+          color: #FFF;
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        p {
+          color: #FFF;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          font-size: 12px;
+        }
+        .bannerDeletebtn {
+          color: #FFF;
+          text-decoration: none;
+          display: block;
+          border: 1px solid #FFF;
+          width: 60px;
+          height: 30px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
