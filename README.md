@@ -69,6 +69,7 @@ Ruby on RailsでCRUD処理を実装した、ダンサーにフォーカスした
 **インフラ**
 
 - AWS(VPC,EC2,IAM,Route53)
+- Docker(ローカル環境)
 
 **その他のツール**
 
@@ -77,4 +78,11 @@ Ruby on RailsでCRUD処理を実装した、ダンサーにフォーカスした
 - Lucidchart
 - DeepL
 - Responsively
+
+# インフラ構成図
+![インフラ構成図](https://user-images.githubusercontent.com/67876040/118015001-c2365280-b38e-11eb-812d-afebc19542dc.png)
+
+# DB設計図
+<img width="875" alt="スクリーンショット 2021-04-29 15 41 54" src="https://user-images.githubusercontent.com/67876040/118015294-15100a00-b38f-11eb-81e3-f39177accab0.png">
+
 
