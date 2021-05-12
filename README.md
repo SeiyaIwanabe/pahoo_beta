@@ -1,24 +1,8 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# アプリケーション概要
+ダンサーにフォーカスしたSNSマッチングアプリです。
+<br>
+10代~20代中盤の学生ダンサーや社会人ダンサーをメインターゲットとして、サービスを設計しました。
+<br>
+僕自身、大学からダンスを始めましたが、外部のつながりを作りにくいという課題を感じていました。
+<br>
+この課題を解決できないかと考え、アプリケーション制作に取り組みました。
