@@ -40,3 +40,41 @@ Ruby on RailsでCRUD処理を実装した、ダンサーにフォーカスした
 - Ruby 2.6.5
 - Ruby on Rails 5.2
 
+**テスト**
+
+- Rspec
+
+**自動デプロイ**
+
+- Capistrano
+
+**Linter/Fomatter**
+
+- Prettier
+- Rubocop
+
+**データベース**
+
+- ローカル環境: Mysql 5.6
+- 本番環境: MariaDB
+
+**アプリケーションサーバー**
+
+- Unicorn
+
+**Webサーバー**
+
+- Nginx
+
+**インフラ**
+
+- AWS(VPC,EC2,IAM,Route53)
+
+**その他のツール**
+
+- Visual Studio Code
+- Trello
+- Lucidchart
+- DeepL
+- Responsively
+
