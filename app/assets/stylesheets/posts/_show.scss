@@ -54,28 +54,29 @@
     min-height: 220px;
     background-color: black;
     object-fit: contain;
+  }
 
-    .show-controls {
-      display: flex;
-      position: absolute;
-      bottom: 0;
+  .show-controls {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(100%);
+    transition: all 0.2s;
+    display: none;
+
+    .show-orange-bar {
+      height: 3px;
+      top: 0;
+      left: 0;
       width: 100%;
-      flex-wrap: wrap;
-      background: rgba(0, 0, 0, 0.7);
-      transform: translateY(100%);
-      transition: all 0.2s;
-  
-      .show-orange-bar {
+      background-color: #FFF;
+
+      .show-orange-juice {
         height: 3px;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #FFF;
-  
-        .show-orange-juice {
-          display: block;
-          background-color: #F47837;
-        }
+        background-color: #F47837;
       }
     }
   }

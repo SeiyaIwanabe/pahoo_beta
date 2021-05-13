@@ -9,13 +9,14 @@ $(document).ready(function() {
   
     // 動画の再生/停止
     function togglePlayPause() {
-      console.log('$btn', $btn);
       if($video.paused) {
         $btn.className = 'pause';
         $video.play();
+        document.querySelector('.show-controls').style.display = 'flex'
       } else {
         $btn.className = 'play';
         $video.pause();
+        document.querySelector('.show-controls').style.display = 'none'
       }
     }
 
@@ -25,7 +26,6 @@ $(document).ready(function() {
 
     // progressBar
     $video.addEventListener("timeupdate", () => {
-      console.log('テスト');
       let juicePos = $video.currentTime / $video.duration;
       $juice.style.width = juicePos * 100 + "%";
       if($video.ended) {
