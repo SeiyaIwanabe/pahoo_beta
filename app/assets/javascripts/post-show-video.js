@@ -25,6 +25,7 @@ $(document).ready(function() {
 
     // progressBar
     $video.addEventListener("timeupdate", () => {
+      console.log('テスト');
       let juicePos = $video.currentTime / $video.duration;
       $juice.style.width = juicePos * 100 + "%";
       if($video.ended) {

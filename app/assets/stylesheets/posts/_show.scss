@@ -58,7 +58,7 @@
     .show-controls {
       display: flex;
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
       width: 100%;
       flex-wrap: wrap;
       background: rgba(0, 0, 0, 0.7);
@@ -73,8 +73,8 @@
         background-color: #FFF;
   
         .show-orange-juice {
-          height: 3px;
-          background-color: orangered;
+          display: block;
+          background-color: #F47837;
         }
       }
     }
@@ -93,8 +93,8 @@
     justify-content: center;
 
     .showButtons {
-      // padding: 10px;
-      // display: none;
+      width: 100%;
+      height: 100%;
     }
 
     .showButtons button{
@@ -102,36 +102,10 @@
       border: 0;
       outline: 0;
       cursor: pointer;
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: 100%;
       color: #FFF;
     }
-    // .showButtons button:before {
-    //   content: "▶";
-    //   width: 40px;
-    //   height: 40px;
-    //   display: inline-block;
-    //   font-size: 20px;
-    //   color: #fff;
-    //   border: 2px solid #FFF;
-    //   border-radius: 50%;
-    //   line-height: 40px;
-
-    // }
-    // .showButtons button.play:before {
-    //   content: "▶";
-    // }
-    // .showButtons button.pause:before {
-    //   content: "■";
-    //   width: 40px;
-    //   height: 40px;
-    //   display: inline-block;
-    //   font-size: 20px;
-    //   color: #fff;
-    //   border: 3px solid #FFF;
-    //   border-radius: 50%;
-    //   line-height: 40px;
-    // }
   }
 
   .showMuteBtn {
@@ -489,13 +463,13 @@
   }
 }
 
-
 .userOthersPosted {
   margin-top: 50px;
   padding: 10px;
 
   p {
     font-size: 10px;
+    font-weight: bold;
   }
 
   .postScallLink {
@@ -543,5 +517,4 @@
       }
     }
   }
-
 }

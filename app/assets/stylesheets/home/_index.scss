@@ -266,7 +266,7 @@
                 color: #FFF;
               }
               .fas {
-                color: orangered;
+                color: #F47837;
                 font-size: 20px;
               }
             }
@@ -654,15 +654,15 @@
             transition: all 0.2s;
       
             .orange-bar {
-              height: 7px;
+              height: 3px;
               top: 0;
               left: 0;
               width: 100%;
               background-color: #FFF;
       
               .orange-juice {
-                height: 7px;
-                background-color: orangered;
+                height: 3px;
+                background-color: #F47837;
               }
             }
           }
@@ -687,25 +687,6 @@
               border: 0;
               outline: 0;
               cursor: pointer;
-            }
-            .buttons button:before {
-              content: "▶";
-              width: 50px;
-              height: 50px;
-              display: inline-block;
-              font-size: 28px;
-              color: #fff;
-            }
-            .buttons button.play:before {
-              content: "▶";
-            }
-            .buttons button.pause:before {
-              content: "■";
-              width: 50px;
-              height: 50px;
-              display: inline-block;
-              font-size: 28px;
-              color: #fff;
             }
           }
           
