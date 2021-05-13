@@ -106,5 +106,7 @@ Ruby on RailsでCRUD処理を実装した、ダンサーにフォーカスした
 <br>
 
 **イメージ動画**
+<br>
+
 ![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/67876040/118081524-7d460680-b3f6-11eb-9c2c-4f31f24f5b4d.gif)
 
