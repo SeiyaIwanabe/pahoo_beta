@@ -110,3 +110,15 @@ Ruby on RailsでCRUD処理を実装した、ダンサーにフォーカスした
 
 ![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/67876040/118081524-7d460680-b3f6-11eb-9c2c-4f31f24f5b4d.gif)
 
+## 2. ユーザーが相互フォロー時にダイレクトメッセージ機能が開放される
+ユーザーが相互フォロー状態になった場合にダイレクトメッセージを送れるようになります。ユーザーのマッチングを図る目的で実装しました。
+
+<br>
+
+**イメージ動画**
+<br>
+
+![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/67876040/118083174-6d7bf180-b3f9-11eb-9737-8b2c0e3213b5.gif)
+
+
+
