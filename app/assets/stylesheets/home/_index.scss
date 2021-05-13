@@ -63,7 +63,6 @@
   
       .post-content {
         position: relative;
-        height: auto;
   
         .postVideo {
           width: 100vw;
@@ -91,6 +90,7 @@
             background-color: #FFF;
     
             .orange-juice {
+              display: none;
               height: 3px;
               background-color: #F47837;
             }
@@ -628,7 +628,6 @@
       .post-contents {
         width: 100%;
         height: auto;
-        // margin-bottom: 50px;
         position: relative;
         overflow: hidden;
     
@@ -640,7 +639,7 @@
             max-height: 600px;
             background-color: black;
             object-fit: contain;
-            // min-height: 700px;
+            min-height: 500px;
           }
     
           .controls {
