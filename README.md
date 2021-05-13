@@ -91,6 +91,9 @@ Ruby on RailsでCRUD処理を実装した、ダンサーにフォーカスした
 # DB設計図
 <img width="875" alt="スクリーンショット 2021-04-29 15 41 54" src="https://user-images.githubusercontent.com/67876040/118015294-15100a00-b38f-11eb-81e3-f39177accab0.png">
 
+<br>
+<br>
+
 # こだわりポイント
 
 1. **ユーザーによる動画のコントロール機能(再生/停止,音声のon/off,プログレスバー)**
