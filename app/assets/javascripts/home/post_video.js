@@ -39,12 +39,12 @@ $(document).ready(function() {
           $this.className = "pause";
           $target_video.play();
           console.log('$target_video_bar', $target_video_bar);
-          // $($target_video_bar).style.display = 'flex';
+          $target_video_bar.style.display = 'block';
         }
         else {
           $this.className = "play";
           $target_video.pause();
-          // $($target_video_bar).style.display = 'none';
+          $target_video_bar.style.display = 'none';
         }
   
         // 音声のon/off

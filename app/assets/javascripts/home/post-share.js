@@ -2,13 +2,11 @@ $(document).ready(function() {
   (() => {
 
     const $home_post_share_link = document.querySelectorAll('.shareLink');
-    console.log($home_post_share_link);
 
     const handleClick = (e) => {
       e.preventDefault();
       const $this = e.target;
       const $target_share_nav = $this.parentElement.nextElementSibling;
-      console.log($target_share_nav);
 
       // ボトムからシェアナビゲーション出現
       $this.addEventListener('click', () => {
