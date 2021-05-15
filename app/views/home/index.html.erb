@@ -90,7 +90,7 @@
     <ul class="post-contents">
       <% @posts.each do |post| %>
         <li class="post-content">
-          <%= video_tag(post.post_video.to_s, playsinline: true, autobuffer: true, class: "postVideo") %>
+          <%= video_tag(post.post_video.url, playsinline: true, autobuffer: true, class: "postVideo") %>
 
           <!-- プロフィールエリア -->
           <div class="homeProfileArea">
@@ -185,7 +185,6 @@
             </nav>
           </div>
 
-
            <!-- プログレスバー -->
           <div class="controls">
             <div class="orange-bar">
@@ -196,7 +195,7 @@
           <!-- 投稿本文 -->
           <div class="postText"><%= post.post_text %></div>
 
-          <!-- 動画の再生/停止ラベル -->
+          <!-- 動画の再生/停止ボタン -->
           <button id="playPause"></button>
 
           <!-- 動画の音声on/off -->
