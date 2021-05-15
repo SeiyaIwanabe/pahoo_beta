@@ -90,7 +90,7 @@
     <ul class="post-contents">
       <% @posts.each do |post| %>
         <li class="post-content">
-          <%= video_tag(post.post_video.to_s, controls: true, playsinline: true, class: "postVideo") %>
+          <%= video_tag(post.post_video.to_s, playsinline: true, class: "postVideo") %>
 
           <!-- プロフィールエリア -->
           <div class="homeProfileArea">
@@ -228,10 +228,10 @@
 <%= render partial: "modules/footer" %>
 
 <!-- JSファイル読み込み -->
-<%= javascript_include_tag 'flashMessage' %>
-<%= javascript_include_tag 'banner' %>
-<%= javascript_include_tag 'home-post-comment' %>
-<%= javascript_include_tag 'post_video' %>
-<%= javascript_include_tag 'home-post-menu' %>
-<%= javascript_include_tag 'home-post-share' %>
+<%= javascript_include_tag 'home/flashMessage' %>
+<%= javascript_include_tag 'home/post_video' %>
+<%= javascript_include_tag 'home/banner' %>
+<%= javascript_include_tag 'home/post-comment' %>
+<%= javascript_include_tag 'home/post-menu' %>
+<%= javascript_include_tag 'home/post-share' %>
 <%= javascript_include_tag 'menu' %>

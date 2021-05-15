@@ -30,18 +30,21 @@ $(document).ready(function() {
       const $target_video_bar = $target_video.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
       
       console.log('$this', $this);
+      console.log('$target_video_bar', $target_video_bar);
+
       
       //動画の再生/停止
       function togglePlayPause() {
         if($target_video.paused) {
           $this.className = "pause";
           $target_video.play();
-          $($target_video_bar).style.display = 'flex';
+          console.log('$target_video_bar', $target_video_bar);
+          // $($target_video_bar).style.display = 'flex';
         }
         else {
           $this.className = "play";
           $target_video.pause();
-          $($target_video_bar).style.display = 'none';
+          // $($target_video_bar).style.display = 'none';
         }
   
         // 音声のon/off
