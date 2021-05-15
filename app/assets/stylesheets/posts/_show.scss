@@ -80,34 +80,20 @@
       }
     }
   }
-
-  .showBtnLabel {
-    width: 100%;
-    height: 100%;
+  
+  #showPlayPause {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     -webkit-transform:translateY(-50%) translateX(-50%);
+    background: none;
+    border: 0;
+    outline: 0;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .showButtons {
-      width: 100%;
-      height: 100%;
-    }
-
-    .showButtons button{
-      background: none;
-      border: 0;
-      outline: 0;
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
-      color: #FFF;
-    }
+    width: 100%;
+    height: 100%;
+    color: #FFF;
   }
 
   .showMuteBtn {

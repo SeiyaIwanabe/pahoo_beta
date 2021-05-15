@@ -116,30 +116,19 @@
           }
         }
   
-        .btnLabel {
+        #playPause {
           display: block;
-          width: 100px;
-          height: 100px;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translateY(-50%) translateX(-50%);
           -webkit-transform:translateY(-50%) translateX(-50%);
-          cursor: pointer;
-          z-index: 10;
-  
-          .buttons {
-            width: 100px;
-            height: 100px;
-          }
-          .buttons button{
-            background: none;
-            border: 0;
-            outline: 0;
-            width: 100px;
-            height: 100px;
-            color: #FFF;
-          }
+          background: none;
+          border: 0;
+          outline: 0;
+          width: 100px;
+          height: 100px;
+          color: #FFF;
         }
         
         .muteBtn {
