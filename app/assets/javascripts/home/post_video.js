@@ -24,15 +24,15 @@ $(document).ready(function() {
   
     const handleClick = (e) => {
       const $this = e.target;
-      const $target_label = $this.closest('.btnLabel');
+      const $target_label = $this.parentNode.parentNode;
       const $target_video = $target_label.parentNode.firstElementChild;
       const $target_mute_btn = $target_label.nextElementSibling;
       const $target_video_bar = $target_video.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
       
       console.log('$this', $this);
-      console.log('$target_video_bar', $target_video_bar);
+      console.log('$target_label', $target_label);
 
-      
+
       //動画の再生/停止
       function togglePlayPause() {
         if($target_video.paused) {
