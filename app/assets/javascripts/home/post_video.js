@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).on('load', function() {
   (() => {
 
     const $btn = document.querySelectorAll('#playPause');
