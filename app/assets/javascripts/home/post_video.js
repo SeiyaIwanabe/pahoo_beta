@@ -49,9 +49,8 @@ $(window).on('load', function() {
           $target_video.muted = !$target_video.muted;
         });
       }
-      $this.onclick = function() {
-        togglePlayPause();
-      };
+      
+      $this.addEventListener('click', togglePlayPause());
   
       // ProgressBarを表示
       $target_video.addEventListener('timeupdate', function() {
