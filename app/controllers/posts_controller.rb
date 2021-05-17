@@ -51,6 +51,15 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to root_path
+    # respond_to do |format|
+    #   if post.update(post_params) && post.video.recreate_versions!
+    #     format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: 'edit' }
+    #     format.json { render json: @article.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
   
   def destroy

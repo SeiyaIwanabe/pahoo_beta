@@ -79,9 +79,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-sass'
 gem "jquery-rails"
 
-# 画像アップロードと処理
+# 画像アップロードと処理/サムネイル
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+gem 'streamio-ffmpeg'
 
 # デバッグ
 gem 'pry-rails'
