@@ -79,6 +79,44 @@ body {
     }
   }
 
+  #createNav {
+    background-color: #fff;
+    width: 100vw;
+    height: 200px;
+    // margin: 0 auto;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 200; /*最前面に*/
+    margin-bottom: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  
+    li {
+      height: 100px;
+      list-style: none;
+      border-bottom: 1px solid lightgray;
+      padding-left: 50px;
+      display: flex;
+      align-items: center;
+  
+      i {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+  
+      .logoutLink {
+        text-decoration: none;
+        color: #000;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+
   .footer {
     width: 100%;
     height: 44px;

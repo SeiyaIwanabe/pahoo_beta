@@ -12,7 +12,20 @@
 
   <body>
     
+    <nav id="createNav">
+      <li>
+        <i class="fas fa-film"></i>
+        <%= link_to "投稿", new_post_path, class: "logoutLink" %>
+      </li>
+      <li>
+        <i class="fas fa-ad"></i>
+        <%= link_to "バナーを作成", new_banner_path, method: :delete, class: "logoutLink" %>
+      </li>
+    </nav>
+
+
     <%= yield %>
+    <%= javascript_include_tag 'create' %> 
 
   </body>
 </html>

@@ -2,8 +2,6 @@ $(document).ready(function() {
 
   const $share_link = document.querySelector('.shareLink');
   
-  console.log($share_link);
-
   //シェアリングを押したらイベント発火
   $share_link.addEventListener('click', (e) => {
     // e.preventDefault;
