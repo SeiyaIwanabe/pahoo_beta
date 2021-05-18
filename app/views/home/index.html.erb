@@ -84,7 +84,7 @@
     <ul class="post-contents">
       <% @posts.each do |post| %>
         <li class="post-content">
-          <%= video_tag(post.post_video.url, playsinline: true, class: "postVideo") %>
+          <%= video_tag(post.post_video.url, controls: false, playsinline: true, class: "postVideo") %>
 
           <!-- プロフィールエリア -->
           <div class="homeProfileArea">
