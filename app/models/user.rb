@@ -28,6 +28,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :community_users
   has_many :communities, through: :community_users
+  has_many :community_comments
 
   # DM機能
   has_many :entries, dependent: :destroy

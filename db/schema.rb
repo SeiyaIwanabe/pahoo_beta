@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_021546) do
+ActiveRecord::Schema.define(version: 2021_07_13_105158) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -44,7 +44,20 @@ ActiveRecord::Schema.define(version: 2021_07_12_021546) do
     t.string "community_title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "community_icon"
+    t.bigint "user_id"
     t.index ["community_title"], name: "index_communities_on_community_title", unique: true
+    t.index ["user_id"], name: "index_communities_on_user_id"
+  end
+
+  create_table "community_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "community_id"
+    t.bigint "user_id"
+    t.string "community_comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_community_comments_on_community_id"
+    t.index ["user_id"], name: "index_community_comments_on_user_id"
   end
 
   create_table "community_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -185,6 +198,9 @@ ActiveRecord::Schema.define(version: 2021_07_12_021546) do
   add_foreign_key "banners", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "communities", "users"
+  add_foreign_key "community_comments", "communities"
+  add_foreign_key "community_comments", "users"
   add_foreign_key "community_users", "communities"
   add_foreign_key "community_users", "users"
   add_foreign_key "connects", "post_tags"
