@@ -1,0 +1,3 @@
+$(".community__chatRoom").html("<%= j(render 'modules/community_comment', { community_comments: @community_comment.community.community_comments }) %>")
+<!-- inputエリアの値を空に -->
+$(".inputComment").val('');

@@ -1,0 +1,27 @@
+<div class="community__show">
+  <div class="community__top">
+    <%= image_tag @community.community_icon.url, class: "community__show--icon"%>
+    <h2 class="community__show--title"><%= @community.community_title %></h2>
+    <div class="community__details">
+      <p class="community__tag">#タグ</p>
+      <i class="fas fa-users"></i>
+      <p class="comunity__numbers"><%= @community.users.count%>人</p>
+    </div>
+  </p>
+
+
+  <div class="community__chatRoom">
+    <%= render partial: "modules/community_comment", locals: { community_comments: @community_comments } %>
+  </div>
+
+
+
+  <%= form_with model: [@community, @community_comment], local: true, class: "community__form" do |f| %>
+    <%= f.text_field :community_comment, class: "community__form--input" %>
+    <%= f.submit "送信", class: "community__form--submit" %>
+  <% end %>
+
+</div>
+
+
+<%= render partial: 'modules/footer' %>

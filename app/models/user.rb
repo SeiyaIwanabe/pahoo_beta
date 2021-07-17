@@ -26,6 +26,9 @@ class User < ApplicationRecord
   has_many :tags, through: :tag_maps
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :community_users
+  has_many :communities, through: :community_users
+  has_many :community_comments
 
   # DM機能
   has_many :entries, dependent: :destroy

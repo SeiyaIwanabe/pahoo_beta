@@ -1,0 +1,23 @@
+<label id="js-nav-close"></label>
+
+<div class="community-Area">
+  <div class="community__header">
+    <p class="community__header--text">人気</p>
+  </div>
+
+  <div class="community__index">
+    <% @communities.each do |community|%>
+      <li class="community__list">
+        <%= link_to community_path(community), class: "community__link" do%>
+          <%= image_tag community.community_icon.url, class: "community__icon"%>
+          <p class="community__title"><%= community.community_title %></p>
+        <% end%>
+      </li>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: 'modules/footer' %>
+
+    <%= javascript_include_tag 'create' %> 
+

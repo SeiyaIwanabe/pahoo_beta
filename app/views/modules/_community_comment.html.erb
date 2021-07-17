@@ -1,0 +1,26 @@
+<% if @community_comments.present? %>
+  <% @community_comments.each do |community_comment| %>
+    <% if community_comment.user_id == current_user.id %>
+      <li class="current_user">
+        <div class="textContentArea">
+          <p class="textContent"><%= community_comment.community_comment %></p>
+          <p class="textDatetime"><%= community_comment.created_at.strftime("%m月%d日 %H時%M分") %></p>
+        </div>
+      </li>
+    <% else %>
+      <li class="visited_user">
+        <%= link_to user_path(community_comment.user.id), class: "textUserLink" do %>
+          <% if community_comment.user.icon? %>
+            <%= image_tag community_comment.user.icon.url, class: "textUserIcon"%>
+          <% else %>
+            <i class="fas fa-user-circle"></i>
+          <% end %>
+        <% end %>
+        <div class="textContentArea">
+          <p class="textContent"><%= community_comment.community_comment %></p>
+          <p class="textDatetime"><%= community_comment.created_at.strftime("%m月%d日 %H時%M分") %></p>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
