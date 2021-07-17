@@ -1,5 +1,5 @@
-<% if @community_comments.present? %>
-  <% @community_comments.each do |community_comment| %>
+<% if community_comments.present? %>
+  <% community_comments.each do |community_comment| %>
     <% if community_comment.user_id == current_user.id %>
       <li class="current_user">
         <div class="textContentArea">
