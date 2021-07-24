@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 45px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -50,23 +50,23 @@
       cursor: pointer;
 
       .menu-item {
-        height: 5px;
-        width: 30px;
+        height: 3px;
+        width: 28px;
         background-color: #000;
         border-radius: 25%;
         margin-bottom: 5px;
         transition: all 0.3s ease;
       }
-      .show-animate.line1 {
-        transform: translateY(10px) rotate(-45deg);
-      }
-      .show-animate.line2 {
-        opacity: 0;
-        transform: translateX(50%);
-      }
-      .show-animate.line3 {
-        transform: translateY(-10px) rotate(45deg);
-      }
+      // .show-animate.line1 {
+      //   transform: translateY(8px) rotate(-45deg);
+      // }
+      // .show-animate.line2 {
+      //   opacity: 0;
+      //   transform: translateX(50%);
+      // }
+      // .show-animate.line3 {
+      //   transform: translateY(-8px) rotate(45deg);
+      // }
     }
   }
 }
@@ -212,15 +212,14 @@
       font-size: 30px;
       color: lightgray;
       text-align: center;
-      // border-bottom: 1px solid lightgray;
       position: relative;
       z-index: 2;
     }
     .tab-nav-item.is-active {
-      color: #000;
-      border-bottom: 1px solid lightgray;
       position: relative;
       z-index: 2;
+      color: #F47837;
+      border-bottom: 2px solid #F47837;
     }
   }
   .tab-contens {

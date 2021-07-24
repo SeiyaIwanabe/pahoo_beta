@@ -1,23 +1,61 @@
 <label id="js-nav-close"></label>
 
 <div class="community-Area">
-  <div class="community__header">
-    <p class="community__header--text">人気</p>
-  </div>
+  <div class="community-tab" id="js-community-tab">
+    <div class="tab-nav">
+      <%= link_to "所属", "#", class: "community-tab-nav-item is-active", data: {nav: '0'}%>
+      <%= link_to "一覧", "#", class: "community-tab-nav-item", data: {nav: '1'}%>
+    </div>
+    <div class="community-tab-contents">
+      <div class="community-tab-contents-item" data-content="0">
+        <div class="community__index">
+          <h2 class="community-title">あなたがホストのコミュニティ</h2>
+          <% @join_communities.each do |join_community|%>
+            <% if join_community %>
+              <li class="community__list">
+                <%= link_to community_path(join_community), class: "community__link" do%>
+                  <%= image_tag join_community.community_icon.url, class: "community__icon"%>
+                  <p class="community__title"><%= join_community.community_title %></p>
+                <% end %>
+              </li>
+            <% else %>
+              <h1>所属コミュニティはまだありません</h1>
+            <% end %>
+          <% end %>
 
-  <div class="community__index">
-    <% @communities.each do |community|%>
-      <li class="community__list">
-        <%= link_to community_path(community), class: "community__link" do%>
-          <%= image_tag community.community_icon.url, class: "community__icon"%>
-          <p class="community__title"><%= community.community_title %></p>
-        <% end%>
-      </li>
-    <% end %>
+          <h2 class="community-title">あなたが所属しているコミュニティ</h2>
+          <% current_user.communities.each do |community|%>
+            <li class="community__list">
+              <%= link_to community_path(community), class: "community__link" do%>
+                <%= image_tag community.community_icon.url, class: "community__icon"%>
+                <p class="community__title"><%= community.community_title %></p>
+              <% end %>
+            </li>
+          <% end %>
+        </div>
+      </div>
+      <div class="community-tab-contents-item" data-content="1">
+        <div class="community__index">
+          <% @communities.each do |community|%>
+            <li class="community__list">
+              <%= link_to community_path(community), class: "community__link" do%>
+                <%= image_tag community.community_icon.url, class: "community__icon"%>
+                <p class="community__title"><%= community.community_title %></p>
+              <% end %>
+            </li>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+ 
 </div>
 
 <%= render partial: 'modules/footer' %>
 
-    <%= javascript_include_tag 'create' %> 
+<%= javascript_include_tag 'create' %> 
+<%= javascript_include_tag 'community-tab' %> 
+
 

@@ -1,6 +1,7 @@
 class CommunitiesController < ApplicationController
   def index
-    @communities = Community.all
+    @communities = Community.where.not(user_id: current_user.id)
+    @join_communities = Community.where(user_id: current_user.id)
   end
 
   def show
@@ -23,7 +24,7 @@ class CommunitiesController < ApplicationController
     @community = Community.new(community_params)
     @community.user_id = current_user.id
     if @community.save
-      redirect_to root_path, notice: 'コミュニテイを作成しました'
+      redirect_to communities_path, notice: 'コミュニテイを作成しました'
     else
       render :new
     end

@@ -26,7 +26,7 @@
     </div>
 
      <div class="checkArea">
-      <p>興味のあるジャンルを選ぼう（複数選択できるヲ）</p>
+      <p>興味のあるジャンルを選ぼう</p>
       <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, include_hidden: false, class: "checkBox") do |tag| %>
         <label class="genreLabel">
           <%= tag.check_box + tag.text %>
@@ -35,7 +35,7 @@
     </div>
 
     <div>
-      <%= f.submit "プロフィールを更新", class: "submitBtn" %>
+      <%= f.submit "プロフィールを更新", class: "user-edit--button" %>
     </div>
 
   <% end %>
