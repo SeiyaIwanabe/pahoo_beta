@@ -68,16 +68,14 @@
       </div>
 
       <% unless @user.id == current_user.id %>
-        <% if (current_user.followed_by? @user) && (@user.followed_by? current_user)  %>
-          <% if @isRoom == true %>
-            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="toRoom">メッセージを贈る</a>
-          <% else %>
-            <%= form_for @room do |f| %>
-              <%= fields_for @entry do |e| %>
-                <%= e.hidden_field :user_id, value: @user.id %>
-              <% end %>
-              <%= f.submit "チャットを始める", class:"toRoom"%>
+        <% if @isRoom == true %>
+          <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="toRoom">メッセージを贈る</a>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, value: @user.id %>
             <% end %>
+            <%= f.submit "チャットを始める", class:"toRoom"%>
           <% end %>
         <% end %>
       <% end %>
@@ -89,15 +87,8 @@
     <div class="profileMiddle">
       <%= link_to "プロフィール編集", edit_user_path, class: "userEditLink" %>
     </div>
-  <% else %>
-     <% if @user.senderd_by?(current_user) %>
-      <%= link_to 'フォロー解除', user_relationships_path(@user.id), class: "followBtn", method: :delete, local: true %>
-    <% else %>
-      <%= link_to 'フォローする', user_relationships_path(@user.id), class: "followBtn", method: :post, local: true %>
-    <% end %>
-  <% end %> 
+  <% end %>
 
-  
   <div class="tagArea">
     <h2 class="tagTitle">興味のあるジャンル</h2>
     <div class="genre">

@@ -148,14 +148,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_105158) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sender_id", "recipient_id"], name: "index_relationships_on_sender_id_and_recipient_id", unique: true
-  end
-
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

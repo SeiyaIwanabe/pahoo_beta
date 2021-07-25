@@ -165,21 +165,6 @@
       border-radius: 5px;
     }
   }
-  .followBtn {
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    display: block;
-    font-size: 8px;
-    text-decoration: none;
-    width: 80px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    border: 1px solid #F47837;
-    color: #F47837;
-    margin-right: 10px;
-  }
 
   .tagArea {
     padding-left: 20px;
@@ -229,7 +214,6 @@
       .userPostedArea {
         height: auto;
         padding: 10px;
-        // width: 100%;
         overflow: scroll;
       
         h1 {
@@ -266,9 +250,6 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            // background-repeat: no-repeat;
-            // background-position: center;
-            // background-size: cover;
             object-fit: cover;
             border: 1px solid lightgray;
           }
