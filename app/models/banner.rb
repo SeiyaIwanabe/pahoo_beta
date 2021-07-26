@@ -9,6 +9,6 @@ class Banner < ApplicationRecord
 
 
   # アソシエーション
-  belongs_to :user
-  belongs_to :banner_tag
+  belongs_to :user, optional: true
+  belongs_to :banner_tag, optional: true
 end

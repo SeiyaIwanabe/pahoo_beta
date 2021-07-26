@@ -1,0 +1,31 @@
+.follow-area {
+  padding: 20px;
+
+  &__title {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .follow-list-section {
+    height: auto;
+
+    &__list {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      // padding-left: 30px;
+
+      .follow-user-link {
+        text-decoration: none;
+        display: block;
+        width: 50px;
+        display: flex;
+
+        i {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}

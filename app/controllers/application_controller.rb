@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     #新規登録時のストロングパラメータに「nicknameカラムとageカラム」の追加
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :tag_ids => []])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:nickname, :tag_ids => []])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :icon, :tag_ids => []])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :id_name, :icon, :tag_ids => []])
   end
 
 end 

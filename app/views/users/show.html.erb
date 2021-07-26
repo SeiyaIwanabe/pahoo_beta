@@ -12,13 +12,13 @@
   <li>
     <% if user_signed_in? && current_user %>
       <i class="fas fa-history"></i>
-      <%= link_to "アーカイブ(仮)", "#", method: :delete, class: "logoutLink" %>
+      <%= link_to "フォローリスト", {controller: :users, action: :follow_list, user_id: @user.id}, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
     <% if user_signed_in? && current_user %>
       <i class="fas fa-paperclip"></i>
-      <%= link_to "保存済み(仮)", "#", method: :delete, class: "logoutLink" %>
+      <%= link_to "フォロワーリスト", {controller: :users, action: :follower_list, user_id: @user.id}, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
@@ -59,10 +59,6 @@
     </div>
 
     <div class="rightArea">
-      <div class="userPostCountArea">
-        <p class="countTitle">投稿数</p>
-        <p><%= @user.posts.count %></p> 
-      </div>
       <div id="unityArea_<%= @user.id %>">
         <%= render partial: 'modules/follow', locals: { user: @user } %>
       </div>
@@ -134,4 +130,3 @@
 
 <%= javascript_include_tag 'user-show-tab' %>
 <%= javascript_include_tag 'menu' %>
-

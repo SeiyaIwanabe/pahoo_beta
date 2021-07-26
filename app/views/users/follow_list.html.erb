@@ -1,0 +1,25 @@
+<div class="follow-area">
+  <h2 class="follow-area__title">フォローリスト</h2>
+
+  <div class="follow-list-section">
+    <% @user.all_following.each do |following| %>
+      <li class="follow-list-section__list">
+        <%= link_to user_path(following), class: "follow-user-link" do %>
+          <% if following.icon? %>
+            <% image_tag following.icon.url, class: "follow-user-icon"%>
+          <% else %>
+            <i class="fas fa-user-circle"></i>
+          <% end %>
+        <% end %>
+        <%= following.nickname %>
+        <% if current_user.following? @user %>
+          <%= link_to "フォロー解除", {controller: :users, action: :unfollow, user_id: @user.id}, method: :put, class: "match-btn"%>
+        <% else %>
+          <%= link_to "フォローする", {controller: :users, action: :follow, user_id: @user.id}, method: :put ,class: "match-btn" %>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
+</div>
+
+<%= render partial: "modules/footer" %>

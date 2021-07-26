@@ -71,9 +71,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to action: :show, notice: "プロフィールを更新しました！"
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    if @user.update(user_params)
+      redirect_to action: :show, notice: "プロフィールを更新しました！"
+    else
+      render :edit
+    end
   end
 
   def follow
@@ -99,7 +103,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :id_name, :password, :password_confirmation, :icon, { tag_ids: [] })
+    params.require(:user).permit(:nickname, :id_name, :icon, { tag_ids: [] })
   end
 
   def move_to_login

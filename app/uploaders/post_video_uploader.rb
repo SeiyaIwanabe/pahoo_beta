@@ -2,7 +2,7 @@ class PostVideoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  require 'streamio-ffmpeg'
+  # require 'streamio-ffmpeg'
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -33,24 +33,24 @@ class PostVideoUploader < CarrierWave::Uploader::Base
   # version :thumb do
   # process resize_and_pad: [600, 700, "#000000", "Center"]
   # end
-  version :screenshot do
-    process :screenshot
-    def full_filename (for_file = model.logo.file)
-      "screenshot.jpg"
-    end
-  end
+  # version :screenshot do
+  #   process :screenshot
+  #   def full_filename (for_file = model.logo.file)
+  #     "screenshot.jpg"
+  #   end
+  # end
 
-  def screenshot
-    tmpfile = File.join(File.dirname(current_path), "tmpfile")
+  # def screenshot
+  #   tmpfile = File.join(File.dirname(current_path), "tmpfile")
 
-    File.rename(current_path, tmpfile)
+  #   File.rename(current_path, tmpfile)
 
-    movie = FFMPEG::Movie.new(tmpfile)
-    movie.screenshot(current_path + ".jpg", {resolution: '512x312' }, preserve_aspect_ratio: :width)
-    File.rename(current_path + ".jpg", current_path)
+  #   movie = FFMPEG::Movie.new(tmpfile)
+  #   movie.screenshot(current_path + ".jpg", {resolution: '512x312' }, preserve_aspect_ratio: :width)
+  #   File.rename(current_path + ".jpg", current_path)
 
-    File.delete(tmpfile)
-  end
+  #   File.delete(tmpfile)
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

@@ -15,8 +15,8 @@ class User < ApplicationRecord
   # CarrierWaveでアイコンをアップロード
   mount_uploader :icon, UserIconUploader
 
-  # マッチング
-  acts_as_followable 
+  # フォロー関連
+  acts_as_followable
   acts_as_follower
 
   # アソシエーション
@@ -38,25 +38,11 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
-  # ====================自分がフォローしているユーザーとの関連 ===================================
-  #フォローする側のUserから見て、フォローされる側のUserを(中間テーブルを介して)集める。なので親はsender_id(フォローする側)
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :sender_id, dependent: :destroy
-  # 中間テーブルを介して「follower」モデルのUser(フォローされた側)を集めることを「senders」と定義
-  has_many :senders, through: :active_relationships, source: :recipient
-  # ========================================================================================
-
-  # ====================自分がフォローされるユーザーとの関連 ===================================
-  #フォローされる側のUserから見て、フォローしてくる側のUserを(中間テーブルを介して)集める。なので親はrecipient_id(フォローされる側)
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :recipient_id, dependent: :destroy
-  # 中間テーブルを介して「following」モデルのUser(フォローする側)を集めることを「recipients」と定義
-  has_many :recipients, through: :passive_relationships, source: :sender
-  # =======================================================================================
 
   # バリデーション
   validates :nickname, presence: true,  length: { in: 2..10 }
-  validates :password, presence: true,  length: { minimum: 6 }
-  validates :password, presence: true,  length: { minimum: 6 }
-  # validates :tag_ids, presence: true
+  # validates :password, presence: true,  length: { minimum: 6 }
+  # validates :password, presence: true,  length: { minimum: 6 }
 
 
   #登録時にメールアドレスを不要とする
