@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :notifications, only: :index
 
   # コミュニティ機能
-  resources :communities, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :communities, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :community_comments, only: [:create, :destroy]
   end
 

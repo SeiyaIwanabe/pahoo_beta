@@ -30,6 +30,14 @@ class CommunitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @community = Community.find_by(id: params[:id])
+    if @community.users.include?(current_user)
+      @community.users.delete(current_user)
+    end
+    redirect_to root_path
+  end
+
   private
   def community_params
     params.require(:community).permit(:community_title, :community_icon, user_ids: [] )

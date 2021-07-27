@@ -23,9 +23,22 @@
     <h1><%= @banner.banner_name %></h1>
     <h2>詳細説明</h1>
     <p><%= @banner.banner_details %></p>
-    <% if @banner.user_id == current_user.id %>
-      <%= link_to '削除', banner_path(@banner), method: :delete, class: "bannerDeletebtn"%>
-    <% end %>
+    <div class="banner-action-area">
+      <% if @banner.user_id == current_user.id %>
+        <%= link_to '削除する', banner_path(@banner), method: :delete, class: "bannerDeletebtn"%>
+      <% else %>
+        <% if @isRoom == true %>
+          <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="toRoom">メッセージを贈る</a>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <%= f.submit "メッセージを贈る", class:"toRoom"%>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <%= render partial: 'modules/footer' %>
