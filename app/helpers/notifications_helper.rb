@@ -6,7 +6,7 @@ module NotificationsHelper
     your_post = link_to "あなたの投稿", notification.post, class: "visitedPostLink"
     case notification.action
       when "follow" then
-        "#{visitor}さんがあなたにマッチング申請をしました！プロフィールを覗いてみましょう"
+        "#{visitor}さんがあなたをフォローをしました！プロフィールを覗いてみましょう"
       when "favorite" then
         "#{visitor}さんが#{your_post}にいいね！しました"
       when "comment" then

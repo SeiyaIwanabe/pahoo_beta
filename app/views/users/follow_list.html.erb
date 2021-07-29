@@ -1,3 +1,5 @@
+<label id="js-nav-close"></label>
+
 <div class="follow-area">
   <h2 class="follow-area__title">フォローリスト</h2>
 
@@ -11,15 +13,20 @@
             <i class="fas fa-user-circle"></i>
           <% end %>
         <% end %>
-        <%= following.nickname %>
-        <% if current_user.following? @user %>
-          <%= link_to "フォロー解除", {controller: :users, action: :unfollow, user_id: @user.id}, method: :put, class: "match-btn"%>
-        <% else %>
-          <%= link_to "フォローする", {controller: :users, action: :follow, user_id: @user.id}, method: :put ,class: "match-btn" %>
-        <% end %>
+        <p class="following-user-name"><%= following.nickname %></p>
+        <div id="follow_form">
+          <% if current_user.following? @user %>
+            <%= link_to "フォロー解除", {controller: :users, action: :unfollow, user_id: @user.id}, method: :put, class: "match-btn"%>
+          <% else %>
+            <%= link_to "フォローする", {controller: :users, action: :follow, user_id: @user.id}, method: :put ,class: "match-btn" %>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </div>
 </div>
 
 <%= render partial: "modules/footer" %>
+
+<%= javascript_include_tag 'create' %>
+

@@ -34,8 +34,22 @@
           font-size: 50px;
         }
       }
-      .follow-user-name {
+      .following-user-name {
         margin-left: 30px;
+      }
+
+      .match-btn {
+        margin-left: 40px;
+        display: block;
+        font-size: 8px;
+        text-decoration: none;
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: 1px solid #F47837;
+        color: #F47837;
+        margin-right: 10px;
       }
     }
   }
