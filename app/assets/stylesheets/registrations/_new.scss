@@ -25,9 +25,14 @@
     .resistrationSection {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       width: 100%;
       margin-bottom: 30px;
+
+      &__title {
+        color: #65676b;
+        font-weight: bold;
+      }
       
       input {
         width: 100%;

@@ -103,7 +103,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :id_name, :icon, { tag_ids: [] })
+    params.require(:user).permit(:nickname, :email, :icon, { tag_ids: [] })
   end
 
   def move_to_login

@@ -6,7 +6,13 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="resistrationSection">
+      <p class="resistrationSection__title">ニックネーム（後で編集可能です）</p>
       <%= f.text_field :nickname, placeholder: "お名前" %>
+    </div>
+
+    <div class="resistrationSection">
+      <p class="resistrationSection__title">メールアドレス</p>
+      <%= f.text_field :email, placeholder: "XXX@XXX" %>
     </div>
 
     <div class="resistrationSection">
