@@ -4,14 +4,11 @@ class MessagesController < ApplicationController
   def create
     if Entry.where(user_id: current_user.id, room_id: params[:message][:room_id]).present?
       @message = Message.new(message_params)
-      # ここから
-      @room=@message.room
-      # ここまでを追加
-      if @message.save
+      @room = @message.room
 
-        # ここから
-        @roommembernotme=Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
-        @theid=@roommembernotme.find_by(room_id: @room.id)
+      if @message.save
+        @roommembernotme = Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
+        @theid = @roommembernotme.find_by(room_id: @room.id)
         notification = current_user.active_notifications.new(
             room_id: @room.id,
             message_id: @message.id,

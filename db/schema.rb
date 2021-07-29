@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_105158) do
+ActiveRecord::Schema.define(version: 2021_07_28_121447) do
 
   create_table "banner_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "banner_tag_name"
@@ -131,6 +131,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_105158) do
     t.datetime "updated_at", null: false
     t.integer "room_id"
     t.integer "message_id"
+    t.integer "community_id"
+    t.integer "community_comment_id"
   end
 
   create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

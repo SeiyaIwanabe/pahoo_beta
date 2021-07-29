@@ -2,7 +2,7 @@
   <h1>Pahooにログイン</h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="sessionSection">
-      <%= f.text_field :id_name, placeholder: "idを入力してください", class: "sessionInput" %>
+      <%= f.text_field :public_uid, placeholder: "idを入力してください", class: "sessionInput" %>
     </div>
     <div class="sessionSection">
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "sessionInput" %>

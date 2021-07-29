@@ -15,6 +15,9 @@ module NotificationsHelper
       when "DM" then
         @message = Message.find_by(id: notification.message_id)&.text
         "#{visitor}さんがあなたにメッセージを贈りました!"
+      when "CommunityComment" then
+        @community_comment = CommunityComment.find_by(id: notification.community_comment_id)&.community_comment
+        "#{visitor}さんがあなたのコミュニティにメッセージを贈りました！"
     end
   end
 

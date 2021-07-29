@@ -4,6 +4,9 @@ class Community < ApplicationRecord
   has_many :community_comments
   # accepts_nested_attributes_for :community_users
 
+  # 通知機能
+  has_many :notifications, dependent: :destroy
+
    # バリデーション
    validates :community_title, presence: true
 
