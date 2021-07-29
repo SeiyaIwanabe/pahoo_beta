@@ -1,9 +1,19 @@
+<label id="js-nav-close"></label>
+
+<div class="postNewHeader">
+  <%= link_to :back, class: "backLink" do %><button></button><% end %>
+  <p>新規コミュニティ作成</p>
+</div>
+
 <div class="createBannerArea">
-  <%= form_with(model: @community,  local: true) do |f| %>
+  <%= form_with(model: @community,  local: true, class: "banner-create__form") do |f| %>
 
     <div class="bannerSection">
       <%= f.label :community_icon, "コミュニティのイメージ画像を選択" %>
-      <%= f.file_field :community_icon %>
+      <label class="banner-image__label">
+        <i class="far fa-image"></i>
+        <%= f.file_field :community_icon, class: "banner-image__file"%>
+      </label>
     </div>
 
     <div class="bannerSection">
@@ -16,3 +26,5 @@
   <% end %>
   <%= render partial: 'modules/footer' %>
 </div>
+
+<%= javascript_include_tag 'create' %>

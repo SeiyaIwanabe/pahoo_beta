@@ -1,3 +1,5 @@
+<label id="js-nav-close"></label>
+
 <div class="postNewHeader">
   <%= link_to :back, class: "backLink" do %><button></button><% end %>
   <p>新規投稿</p>
@@ -33,4 +35,7 @@
   <% end %>
 </div>
 
+ <%= render partial: 'modules/footer' %>
+
+<%= javascript_include_tag 'create' %>
 <%= javascript_include_tag 'genre-label' %>

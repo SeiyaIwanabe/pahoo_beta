@@ -46,7 +46,7 @@
   .post-create__form {
     background-color: white;
     width: 90vw;
-    height: auto;
+    height: 550px;
     margin: 40px auto 0 auto;
     border: 1px solid white;
     border-radius: 10px;
@@ -57,7 +57,7 @@
     .PostSection {
       display: flex;
       flex-direction: column;
-      margin-bottom: 50px;
+      margin-bottom: 25px;
 
       label {
         color: #65676b;
@@ -121,15 +121,6 @@
 
     .submitBtn {
       margin: 0 auto;
-      // width: 100px;
-      // height: 30px;
-      // background-color: #e4e6ea;
-      // border-radius: 10px;
-      // border: none;
-      // color: #65676b;
-      // cursor: pointer;
-      // font-weight: bold;
-
       display: block;
       background-color: #3ccace;
       color: #ffffff;

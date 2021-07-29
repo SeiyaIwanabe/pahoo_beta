@@ -1,9 +1,19 @@
+<label id="js-nav-close"></label>
+
+<div class="postNewHeader">
+  <%= link_to :back, class: "backLink" do %><button></button><% end %>
+  <p>新規バナー作成</p>
+</div>
+
 <div class="createBannerArea">
-  <%= form_with(model: @banner,  local: true) do |f| %>
+  <%= form_with(model: @banner,  local: true, class: "banner-create__form") do |f| %>
 
     <div class="bannerSection">
       <%= f.label :banner_image, "バナーのイメージ画像を選択" %>
-      <%= f.file_field :banner_image %>
+      <label class="banner-image__label">
+        <i class="far fa-image"></i>
+        <%= f.file_field :banner_image, class: "banner-image__file"%>
+      </label>
     </div>
 
     <div class="bannerSection">
@@ -22,7 +32,9 @@
     </div>
 
     <%= f.submit "バナーを作成", class: "submitBtn" %>
-
   <% end %>
-  <%= render partial: 'modules/footer' %>
 </div>
+
+ <%= render partial: 'modules/footer' %>
+
+<%= javascript_include_tag 'create' %>
