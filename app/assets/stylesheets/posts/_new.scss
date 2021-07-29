@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   background-color: #fff;
+  border-bottom: 1px solid lightgray;
 
   .backLink {
     text-decoration: none;
@@ -33,22 +34,22 @@
     padding-top: 10px;
   }
 }
+
 .postCreateArea {
   width: 100vw;
   height: 100vh;
   background-color: #f0f2f5;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   align-items: center;
 
-  form {
+  .post-create__form {
     background-color: white;
-    width: 80vw;
+    width: 90vw;
     height: auto;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
     border: 1px solid white;
     border-radius: 10px;
-    box-shadow: 0 0 8px gray;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -61,7 +62,7 @@
       label {
         color: #65676b;
         font-weight: bold;
-        font-size: 15px;
+        font-size: 18px;
       }
 
       .videoLabel {
@@ -81,27 +82,32 @@
         font-size: 15px;
       }
     }
+
+    .genre-tag__title {
+      color: #65676b;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
     .checkArea {
       margin-bottom: 30px;
       height: 100px;
-      
-
-      p {
-        color: #65676b;
-        font-weight: bold;
-        font-size: 15px;
-        margin-bottom: 10px;
-      }
+      display: flex;
+      flex-wrap: wrap;
       
       .genreLabel {
+        text-align: center;
+        box-sizing: border-box;
         margin-right: 10px;
         margin-bottom: 10px;
         border: 2px solid lightskyblue;
-        width: 40px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         padding: 6px;
         border-radius: 10px;
         color: lightskyblue;
+        font-size: 11px;
+        line-height: 12px;
   
         input {
           display: none;
@@ -114,16 +120,30 @@
     }
 
     .submitBtn {
-      display: block;
       margin: 0 auto;
-      width: 100px;
-      height: 30px;
-      background-color: #e4e6ea;
-      border-radius: 10px;
-      border: none;
-      color: #65676b;
+      // width: 100px;
+      // height: 30px;
+      // background-color: #e4e6ea;
+      // border-radius: 10px;
+      // border: none;
+      // color: #65676b;
+      // cursor: pointer;
+      // font-weight: bold;
+
+      display: block;
+      background-color: #3ccace;
+      color: #ffffff;
+      width: 200px;
+      height: 40px;
+      font-size: 18px;
+      border-radius: 100px;
+      font-weight: 600;
+      border: 1px solid transparent;
       cursor: pointer;
-      font-weight: bold;
+      margin-top: 100px auto;
+      text-decoration: none;
+      text-align: center;
+      line-height: 40px;
     }
   }
 }

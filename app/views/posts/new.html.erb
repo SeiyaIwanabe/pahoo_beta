@@ -3,12 +3,7 @@
   <p>新規投稿</p>
 </div>
 <div class="postCreateArea">
-  <%= form_with(model: @post, local: true) do |f| %>
-    <div class="PostSection">
-      <%= f.label :post_text, "本文入力" %>
-      <%= f.text_area :post_text, class: "postText"%>
-    </div>
-
+  <%= form_with(model: @post, local: true, class: "post-create__form") do |f| %>
     <div class="PostSection">
       <%= f.label "動画のアップロード" %>
       <label class="videoLabel">
@@ -17,14 +12,21 @@
       </label>
     </div>
 
+    <p class="genre-tag__title">タグ付け(複数選択可)</p>
     <div class="checkArea">
-      <p>タグ付け</p>
       <%= f.collection_check_boxes(:post_tag_ids, PostTag.all, :id, :post_tag_name, include_hidden: false, class: "checkBox") do |tag| %>
         <label class="genreLabel">
           <%= tag.check_box + tag.text %>
         </label>
       <% end %>
     </div>
+
+    <div class="PostSection">
+      <%= f.label :post_text, "投稿文" %>
+      <%= f.text_area :post_text, class: "postText"%>
+    </div>
+
+
 
     <%= f.submit "投稿", class: "submitBtn" %>
 
