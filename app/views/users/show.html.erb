@@ -23,14 +23,14 @@
   </li>
   <li>
     <% if user_signed_in? && current_user %>
-      <i class="fas fa-infinity"></i>
-      <%= link_to "Unity(仮)", "#", method: :delete, class: "logoutLink" %>
+      <i class="fab fa-unity"></i>
+      <%= link_to "コミュニティを探そう", communities_path, class: "logoutLink" %>
     <% end %>
   </li>
   <li>
     <% if user_signed_in? && current_user %>
       <i class="fas fa-user-plus"></i>
-      <%= link_to "ユーザーを探そう(仮)", "#", method: :delete, class: "logoutLink" %>
+      <%= link_to "ユーザーを探そう", users_path, class: "logoutLink" %>
     <% end %>
   </li>
 </nav>
