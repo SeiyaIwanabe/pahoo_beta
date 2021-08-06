@@ -52,16 +52,17 @@
       <%= render partial: "modules/favorite", locals: { post: @post } %>
     </div>
     
+    <!--シェアリンク -->
+    <%= link_to "#", class: "shareLink" do%>
+      <i class="fas fa-share"></i>
+    <% end %>
+
     <!--コメントリンク -->
     <%= link_to "#", class: "commentLink" do%>
       <i class="far fa-comment-dots"></i>
       <p class="commentCount"><%= @comments.count %></p>
     <% end %>
 
-    <!--シェアリンク -->
-    <%= link_to "#", class: "shareLink" do%>
-      <i class="fas fa-share"></i>
-    <% end %>
   </div>
   
   <div class="postText"><%= @post.post_text %></div>
@@ -74,15 +75,6 @@
   <li>
     <i class="fab fa-twitter"></i>
     <%= link_to 'Twitterで共有', "https://twitter.com/share?url=#{request.url}", title: @post.post_text, target: '_blank', class: "postShareLink" %>
-  </li>
-  <li>
-    <i class="fab fa-facebook"></i>
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&width=79&height=28&appId" width="79" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    <!--<%= link_to 'FaceBookで共有(仮)', class: "postShareLink" %>-->
-  </li>
-  <li>
-    <i class="fab fa-line"></i> 
-    <%= link_to 'Lineで共有(仮)', "#" , class: "postShareLink" %>
   </li>
 </nav>
 
