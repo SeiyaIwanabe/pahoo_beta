@@ -370,12 +370,12 @@
   background: linear-gradient(to bottom, transparent, #000);
   scroll-snap-type: x mandatory;
   z-index: 10;
-  padding-top: 50px;
+  padding-top: 10px;
 
 
   .bannerContent {
     //横並びにする指定
-    display: inline-block;  
+    display: inline-block;
     list-style: none;
     margin-right: 20px;
     margin-left: 20px;
@@ -395,7 +395,6 @@
         object-fit: cover;
       }
       .bannerPop {
-        padding-top: 5px;
         position: absolute;
         top: -20px;
         left: -2px;
@@ -455,8 +454,6 @@
     transform: scale( 1.4 );
   }
 }
-
-
 
 /* レスポンシブデザイン */
 @media (min-width: 980px) {
