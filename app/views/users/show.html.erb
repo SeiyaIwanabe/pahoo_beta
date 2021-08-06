@@ -36,8 +36,7 @@
 </nav>
 
 <header class="mypage-header">
-  <h1><%= @user.public_uid %></h1>
-  <div class="right-header">
+  <div class="inner__header">
     <label class="menu-wrapper">
       <div class="menu-item line1"></div>
       <div class="menu-item line2"></div>
@@ -48,7 +47,6 @@
 
 <div class="profileArea">
   <div class="profileTop">
-
     <div class="leftArea">
       <% if @user.icon? %>
         <%= image_tag @user.icon.url, class: "profileIcon" %>
