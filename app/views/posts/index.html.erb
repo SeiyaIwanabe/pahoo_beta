@@ -16,17 +16,21 @@
       <% if params[:post_tag_id] %>
         <div class="defaultPostedArea">
           <% @connect_posts.each do |post| %>
-            <%= link_to post_path(post.id), class: "postScallLink" do %>
-              <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
-            <% end %>
+            <li class="post-list">
+              <%= link_to post_path(post.id), class: "postScallLink" do %>
+                <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+              <% end %>
+            </li>
           <% end %>
         </div>
       <% else %>
         <div class="defaultPostedArea">
           <% @posts.each do |post| %>
-            <%= link_to post_path(post.id), class: "postScallLink" do %>
-              <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
-            <% end %>
+            <li class="post-list">
+              <%= link_to post_path(post.id), class: "postScallLink" do %>
+                <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+              <% end %>
+            </li>
           <% end %>
         </div>
       <% end %>

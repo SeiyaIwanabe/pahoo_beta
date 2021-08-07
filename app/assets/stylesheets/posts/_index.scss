@@ -80,17 +80,27 @@
         height: auto;
         padding: 10px;
         overflow: scroll;
-        
-        .postScallLink {
-          text-decoration: none;
-        
-          .defaultContent {
-            width: 112px;
-            height: 112px;
-            object-fit: cover;
-            background-color: #000;
+        display: flex;
+        flex-wrap: wrap;
+
+        .post-list {
+          list-style: none;
+          .postScallLink {
+            text-decoration: none;
+          
+            .defaultContent {
+              width: 112px;
+              height: 112px;
+              object-fit: cover;
+              background-color: #000;
+              margin-left: 5px;
+            }
           }
-        } 
+        }
+        .post-list:nth-child(1),
+        .post-list:nth-child(3n + 4) {
+          margin-left: 0;
+        }
       }
       
       .usersIndex {
