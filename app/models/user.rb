@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :public_uid, presence: true, on: :update
   validates :public_uid, format: { with: /\A[a-z0-9]+\z/i }, on: :update
   validates :public_uid, length: { minimum: 5, maximum: 12 }, on: :update
+  validates :email, uniqueness: true
 
   # CarrierWaveでアイコンをアップロード
   mount_uploader :icon, UserIconUploader

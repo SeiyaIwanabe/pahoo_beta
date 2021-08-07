@@ -67,7 +67,6 @@
   height: auto;
   padding-top: 60px;
 
-
   .profileTop {
     height: 120px;
     display: flex;
@@ -101,6 +100,7 @@
         text-align: center;
       }
     }
+
     .rightArea {
       display: flex;
       align-items: center;
@@ -167,6 +167,8 @@
   .tab-nav {
     display: flex;
     justify-content: space-evenly;
+    position: relative;
+    z-index: 2;
     .tab-nav-item {
       display: block;
       width: 50%;
@@ -212,7 +214,7 @@
 
       .userBannerArea {
         height: auto;
-        padding: 40px;
+        padding: 20px 0 0px 60px;
         display: flex;
         flex-wrap: wrap;
 
@@ -220,22 +222,22 @@
           display: block;
           text-decoration: none;
           position: relative;
-          margin-right: 30px;
-          margin-bottom: 30px;
+          margin-left: 60px;
+          margin-top: 30px;
 
           .userBannerImage {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid lightgray;
+            border: 1px solid rgb(119, 95, 95);
           }
           .bannerPop {
             padding-top: 5px;
             position: absolute;
             top: -20px;
-            left: -8px;
-            min-width: 100px;
+            left: -20px;
+            min-width: 150px;
             color: #555;
             background: #FFF;
             border: solid 3px #555;
@@ -282,6 +284,12 @@
             z-index: 1;
           }
         }
+        .userBannerLink:nth-child(2n + 1) {
+          margin-left: 0;
+        }
+        // .userBannerLink:nth-child(-n + 2) {
+        //   margin-top: 0;
+        // }
       }
     }
   }

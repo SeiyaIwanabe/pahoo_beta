@@ -20,7 +20,7 @@
     </div>
 
     <div class="resistrationSection">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード"%>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード(確認用)"%>
     </div>
 
     <div class="checkArea">
@@ -31,13 +31,9 @@
         </label>
       <% end %>
     </div>
-
     <%= f.submit "新規登録", class: "submitBtn" %>
-
     <%= link_to "ログインはこちら", new_user_session_path, class: "submitBtn" %>
   <% end %>
-
-  
 </div>
 
 <%= javascript_include_tag 'genre-label' %>
