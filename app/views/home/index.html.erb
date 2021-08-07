@@ -114,14 +114,18 @@
             <nav id="indexPostMenuNav">
               <li>
                 <% if user_signed_in? && current_user %>
-                  <i class="fas fa-edit"></i>
-                  <%= link_to "編集", edit_post_path(post), class: "logoutLink" %>
+                  <%= link_to edit_post_path(post), class: "menuLink" do%>
+                    <i class="fas fa-edit"></i>
+                    <p class="menu__text">編集</p>
+                  <% end %>
                 <% end %>
               </li>
               <li>
                 <% if user_signed_in? && current_user %>
-                  <i class="fas fa-trash"></i>
-                  <%= link_to "削除", post_path(post), method: :delete, class: "logoutLink" %>
+                  <%= link_to post_path(post), method: :delete, class: "menuLink" do%>
+                    <i class="fas fa-trash"></i>
+                    <p class="menu__text">削除</p>
+                  <% end %>
                 <% end %>
               </li>
             </nav>
