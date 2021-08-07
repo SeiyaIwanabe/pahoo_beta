@@ -126,17 +126,20 @@
   }
 
   .community__form {
+    margin: 0 auto;
+    width: 100%;
     position: fixed;
+    left: 0;
     bottom: 44px;
     display: flex;
     justify-content: center;
-    margin-left: 20px;
+    padding: 10px;
 
     &--input {
       padding: 5px;
       font-size: 10px;
       height: 30px;
-      width: 200px;
+      width: 65%;
       outline: none;
       border-radius: 15px;
       margin-right: 20px;
@@ -145,16 +148,29 @@
     }
     &--submit {
       display: block;
+      width: 35%;
       height: 30px;
-      width: 80px;
-      font-size: 8px;
-      text-decoration: none;
+      font-size: 10px;
+
+      // text-decoration: none;
+      // text-align: center;
+      // line-height: 30px;
+      // border: 1px solid #F47837;
+      // color: #F47837;
+      // background-color: #FFF;
+      // border-radius: 15px;
+      // width: 100px;
+      // height: 30px;
+      // font-size: 10px;
+
+      background-color: #F47837;
+      color: #ffffff;
+      border-radius: 100px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
       text-align: center;
       line-height: 30px;
-      border: 1px solid #F47837;
-      color: #F47837;
-      background-color: #FFF;
-      border-radius: 15px;
     }
   }
 }

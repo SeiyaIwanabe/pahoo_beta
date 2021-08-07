@@ -1,5 +1,6 @@
-<div class="notificationArea">
+<label id="js-nav-close"></label>
 
+<div class="notificationArea">
   <div class="notificationHeader">
     <%= link_to :back, class: "backLink" do %><button></button><% end %>
     <h4 class="sub-title">通知</h4>
@@ -13,6 +14,7 @@
       <p>通知はありません</p>
     <% end %>
   </div>
-
   <%= render partial: "modules/footer" %>
 </div>
+
+<%= javascript_include_tag 'create' %>
