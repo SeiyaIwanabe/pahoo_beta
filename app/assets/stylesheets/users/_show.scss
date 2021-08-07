@@ -192,8 +192,10 @@
 
       .userPostedArea {
         height: auto;
-        padding: 10px;
+        padding: 10px 0 0 13px;
         overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
       
         h1 {
           font-size: 30px;
@@ -201,14 +203,23 @@
           font-weight: bold;
         }
 
-        .postScallLink {
-          text-decoration: none;
-          
-          .myPostesContent {
-            width: 110px;
-            height: 110px;
-            object-fit: cover;
+        .user-post-list {
+          list-style: none;
+          margin-left: 10px;
+
+          .postScallLink {
+            text-decoration: none;
+            
+            .myPostesContent {
+              width: 110px;
+              height: 110px;
+              object-fit: cover;
+            }
           }
+        }
+        .user-post-list:nth-child(1),
+        .user-post-list:nth-child(3n + 4) {
+          margin-left: 0;
         }
       }
 

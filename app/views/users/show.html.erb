@@ -102,9 +102,11 @@
     <div class="tab-contents-item" data-content="0">
       <div class="userPostedArea">
         <% @posts.each do |post| %>
-          <%= link_to post_path(post.id), class: "postScallLink" do %>
-            <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "myPostesContent") %>
-          <% end %>
+          <li class="user-post-list">
+            <%= link_to post_path(post.id), class: "postScallLink" do %>
+              <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "myPostesContent") %>
+            <% end %>
+          </li>
         <% end %>
       </div>
     </div>
@@ -123,6 +125,7 @@
   </div>
 </div>
 
+<%= render partial: "modules/create" %>
 <%= render partial: "modules/footer" %>
 
 <%= javascript_include_tag 'user-show-tab' %>
