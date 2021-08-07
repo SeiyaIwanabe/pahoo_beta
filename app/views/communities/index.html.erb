@@ -9,9 +9,9 @@
     <div class="community-tab-contents">
       <div class="community-tab-contents-item" data-content="0">
         <div class="community__index">
-          <h2 class="community-title">あなたがホストのコミュニティ</h2>
           <% @join_communities.each do |join_community|%>
             <% if join_community %>
+              <h2 class="community-title">あなたがホストのコミュニティ</h2>
               <li class="community__list">
                 <%= link_to community_path(join_community), class: "community__link" do%>
                   <%= image_tag join_community.community_icon.url, class: "community__icon"%>
@@ -23,14 +23,17 @@
             <% end %>
           <% end %>
 
-          <h2 class="community-title">あなたが所属しているコミュニティ</h2>
+          
           <% current_user.communities.each do |community|%>
-            <li class="community__list">
-              <%= link_to community_path(community), class: "community__link" do%>
-                <%= image_tag community.community_icon.url, class: "community__icon"%>
-                <p class="community__title"><%= community.community_title %></p>
-              <% end %>
-            </li>
+            <% if community %>
+              <h2 class="community-title">あなたが所属しているコミュニティ</h2>
+              <li class="community__list">
+                <%= link_to community_path(community), class: "community__link" do%>
+                  <%= image_tag community.community_icon.url, class: "community__icon"%>
+                  <p class="community__title"><%= community.community_title %></p>
+                <% end %>
+              </li>
+            <% end %>
           <% end %>
         </div>
       </div>

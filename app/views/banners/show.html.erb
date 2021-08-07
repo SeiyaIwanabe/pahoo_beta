@@ -1,7 +1,6 @@
 <label id="js-nav-close"></label>
 
 <div class="bannerShowArea">
-
   <div class="bannerShowHeader">
     <%= link_to :back, class: "bannerBackLink" do %><button></button><% end %>
     <div class="bannerOwenerArea">
@@ -36,13 +35,12 @@
             <%= fields_for @entry do |e| %>
               <%= e.hidden_field :user_id, value: @user.id %>
             <% end %>
-            <%= f.submit "メッセージを贈る", class:"toRoom"%>
+            <%= f.submit "メッセージを贈る", class: "toRoom"%>
           <% end %>
         <% end %>
       <% end %>
     </div>
   </div>
-
   <%= render partial: 'modules/footer' %>
 </div>
 
