@@ -14,16 +14,22 @@
     
     <nav id="createNav">
       <li>
-        <i class="fas fa-film"></i>
-        <%= link_to "投稿", new_post_path, class: "logoutLink" %>
+        <%= link_to new_post_path, class: "logoutLink" do%>
+          <i class="fas fa-film"></i>
+          <p>投稿</p>
+        <% end %>
       </li>
       <li>
-        <i class="fas fa-ad"></i>
-        <%= link_to "バナーを作成", new_banner_path, class: "logoutLink" %>
+        <%= link_to new_banner_path, class: "logoutLink" do%>
+          <i class="fas fa-ad"></i>
+          <p>バナーを作成</p>
+        <% end %>
       </li>
        <li>
-        <i class="fab fa-unity"></i>
-        <%= link_to "コミュニティを作成", new_community_path, class: "logoutLink" %>
+        <%= link_to new_community_path, class: "logoutLink" do%>
+          <i class="fab fa-unity"></i>
+          <p>コミュニティを作成</p>
+        <% end %>
       </li>
     </nav>
 

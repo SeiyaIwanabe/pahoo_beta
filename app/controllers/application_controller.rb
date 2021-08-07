@@ -9,5 +9,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in, keys: [:nickname, :email, :tag_ids => []])
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :email, :icon, :tag_ids => []])
   end
-
 end 

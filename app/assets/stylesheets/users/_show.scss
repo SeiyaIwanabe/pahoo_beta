@@ -27,9 +27,6 @@
   .inner__header {
     width: 97%;
     padding-right: 10px;
-    // height: 90%;
-    // margin-left: 100px;
-    // margin-right: 20px;
 
     .CreateBannerLink {
       text-decoration: none;
@@ -121,6 +118,8 @@
         border: 1px solid #F47837;
         color: #F47837;
         background-color: #FFF;
+        border-radius: 100px;
+        // padding: 5px;
       }
     }
   }

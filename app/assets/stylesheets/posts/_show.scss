@@ -329,7 +329,6 @@
   background-color: #fff;
   width: 100vw;
   height: 400px;
-  // margin: 0 auto;
   border-radius: 20px;
   position: fixed;
   bottom: 0;
@@ -337,13 +336,13 @@
   z-index: 200; /*最前面に*/
   margin-bottom: -400px;
   // overflow: scroll;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-shadow: none;
   
-  .commentOutline { 
+  .commentOutline {
     overflow: scroll;
     height: 700px;
     
@@ -423,18 +422,23 @@
       display: flex;
       height: 100%;
       align-items: center;
+      justify-content: center;
 
       .inputComment {
         height: 30px;
         margin-right: 20px;
-        width: 40%;
+        width: 65%;
         border-radius: 15px;
         outline: none;
+        font-size: 10px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
       }
       .submitComment {
+        width: 35%;
         text-decoration: none;
         display: block;
-        background-color: #3ccace;
+        background-color: #F47837;
         color: #ffffff;
         width: 100px;
         height: 30px;
