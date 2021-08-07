@@ -1,9 +1,4 @@
-<!-- <header class="header">
-  <p id="pahoo">Pahoo</p>
-  <%= link_to new_banner_path, class: "CreateBannerLink" do %>
-    <i class="fas fa-plus-square"></i>
-  <% end %>
-</header>-->
+<label id="js-nav-close"></label>
 
 <div class="search-tab" id="js-tab">
   <div class="search-tab-nav">
@@ -70,20 +65,25 @@
           <%= link_to post_list.post_tag_name, posts_path(post_tag_id: post_list.id), class: "user-post-list-link" %>
         <% end %>
       </div>
+
       <% if params[:post_tag_id] %>
         <div class="defaultPostedArea">
           <% @connect_posts.each do |post| %>
-            <%= link_to post_path(post.id), class: "postScallLink" do %>
-              <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
-            <% end %>
+            <li class="post-list">
+              <%= link_to post_path(post.id), class: "postScallLink" do %>
+                <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+              <% end %>
+            </li>
           <% end %>
         </div>
       <% else %>
         <div class="defaultPostedArea">
           <% @posts.each do |post| %>
-            <%= link_to post_path(post.id), class: "postScallLink" do %>
-              <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
-            <% end %>
+            <li class="post-list">
+              <%= link_to post_path(post.id), class: "postScallLink" do %>
+                <%= video_tag(post.post_video.to_s, autoplay: true, muted: true, loop: true, playsinline: true, class: "defaultContent") %>
+              <% end %>
+            </li>
           <% end %>
         </div>
       <% end %>
@@ -130,6 +130,7 @@
   </div>
 </div>
 
+<%= render partial: "modules/create" %>
 <%= render partial: "modules/footer" %>
 
 <%= javascript_include_tag 'search-tab' %>

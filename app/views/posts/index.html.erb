@@ -1,3 +1,5 @@
+<label id="js-nav-close"></label>
+
 <div class="search-tab" id="js-tab">
   <div class="search-tab-nav">
     <%= link_to "投稿", "#", class: "search-tab-nav-item is-active", data: {nav: '0'} %>
@@ -127,6 +129,7 @@
   </div>
 </div>
 
+<%= render partial: "modules/create" %>
 <%= render partial: "modules/footer" %>
 
 <%= javascript_include_tag 'search-tab' %>
