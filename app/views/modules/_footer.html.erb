@@ -1,14 +1,14 @@
 <footer class="footer">
   <%= link_to root_path, class: "bottomNavLink" do%>
-    <i class="fas fa-home"></i>
+    <i class="bottom-icon fas fa-home"></i>
   <% end %>
 
   <%= link_to communities_path, class: "bottomNavLink" do%>
-    <i class="fab fa-unity"></i>
+    <i class="bottom-icon fab fa-unity"></i>
   <% end %>
 
   <%= link_to "#", class: "bottomNavLink" , id: "createLink" do%>
-    <i class="fas fa-plus-circle"></i>
+    <i class="bottom-icon fas fa-plus-circle"></i>
   <% end %>
 
   <% if user_signed_in? %>
@@ -16,13 +16,13 @@
       <% if unchecked_notifications.any? %>
         <p class="notoficationCount"><%= @notifications.count %></p>
       <% end %>
-      <i class="fas fa-heart"></i>
+      <i class="bottom-icon fas fa-heart"></i>
     <% end %>
   <% end %>
   
   <% if user_signed_in? %>
     <%= link_to user_path(current_user.id), class: "bottomNavLink" do%>
-      <i class="fas fa-user-circle"></i>
+      <i class="bottom-icon fas fa-user-circle"></i>
     <% end %>
   <% end %>
 </footer>

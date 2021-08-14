@@ -35,7 +35,7 @@ class CommunitiesController < ApplicationController
     if @community.users.include?(current_user)
       @community.users.delete(current_user)
     end
-    redirect_to root_path
+    redirect_to communities_path, notice: 'コミュニティから退会しました'
   end
 
   private
