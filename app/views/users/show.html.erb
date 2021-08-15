@@ -95,8 +95,8 @@
 
 <div class="tab" id="js-tab">
   <div class="tab-nav">
-    <%= link_to "#", class: "tab-nav-item is-active", data: {nav: '0'} do %><i class="fas fa-film"></i><% end %>
-    <%= link_to "#", class: "tab-nav-item", data: {nav: '1'} do %><i class="fas fa-ad"></i><% end %>
+    <%= link_to "#", class: "tab-nav-item is-active", data: {nav: '0'} do %><i class=" user-show-tab-icon fas fa-film"></i><% end %>
+    <%= link_to "#", class: "tab-nav-item", data: {nav: '1'} do %><i class="user-show-tab-icon fas fa-ad"></i><% end %>
   </div>
   <div class="tab-contens">
     <div class="tab-contents-item" data-content="0">
@@ -125,7 +125,6 @@
   </div>
 </div>
 
-<%= render partial: "modules/create" %>
 <%= render partial: "modules/footer" %>
 
 <%= javascript_include_tag 'user-show-tab' %>

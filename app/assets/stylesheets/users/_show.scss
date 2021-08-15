@@ -178,6 +178,11 @@
       text-align: center;
       position: relative;
       z-index: 2;
+
+      .user-show-tab-icon {
+        position: relative;
+        z-index: -1;
+      }
     }
     .tab-nav-item.is-active {
       position: relative;
