@@ -11,7 +11,7 @@
         <div class="community__index">
           <% @join_communities.each do |join_community|%>
             <% if join_community %>
-              <h2 class="community-title">あなたがホストのコミュニティ</h2>
+              <h2 class="community-title">あなたが主催のコミュニティ</h2>
               <li class="community__list">
                 <%= link_to community_path(join_community), class: "community__link" do%>
                   <%= image_tag join_community.community_icon.url, class: "community__icon"%>
@@ -19,7 +19,7 @@
                 <% end %>
               </li>
             <% else %>
-              <h1>所属コミュニティはまだありません</h1>
+              <h2>所属コミュニティはまだありません</h2>
             <% end %>
           <% end %>
 
