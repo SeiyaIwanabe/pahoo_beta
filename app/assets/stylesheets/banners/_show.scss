@@ -111,6 +111,8 @@
       .user-show-room {
       }
       .form-message__btn {
+        appearance: none;
+        -webkit-appearance: none;
         margin: 0 auto;
         text-decoration: none;
         display: block;
@@ -128,6 +130,8 @@
       }
 
       .bannerDeletebtn {
+        appearance: none;
+        -webkit-appearance: none;
         text-decoration: none;
         margin: 0 auto;
         display: block;

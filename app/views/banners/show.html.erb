@@ -29,7 +29,7 @@
         <%= link_to '削除する', banner_path(@banner), method: :delete, class: "bannerDeletebtn"%>
       <% else %>
         <% if @isRoom == true %>
-          <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="toRoom">メッセージを贈る</a>
+          <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="form-message__btn">メッセージを贈る</a>
         <% else %>
           <%= form_for @room do |f| %>
             <%= fields_for @entry do |e| %>

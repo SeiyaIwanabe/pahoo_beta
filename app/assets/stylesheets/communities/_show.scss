@@ -90,6 +90,7 @@
           word-wrap: break-word;
           font-size: 10px;
           border-radius: 15px;
+          padding: 5px;
         }
         .textDatetime {
           font-size: 5px;
@@ -134,6 +135,7 @@
         margin-left: 10px;
 
         .textContent {
+          padding: 5px;
           max-width: 200px;
           background-color: lightgray;
           white-space: pre-wrap;
@@ -153,7 +155,7 @@
     width: 100%;
     position: fixed;
     left: 0;
-    bottom: 44px;
+    bottom: 50px;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -170,6 +172,8 @@
       word-wrap: break-word;
     }
     &--submit {
+      appearance: none;
+      -webkit-appearance: none;
       display: block;
       width: 35%;
       height: 30px;

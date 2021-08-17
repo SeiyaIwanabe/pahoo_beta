@@ -116,6 +116,8 @@
       }
     }
     .user-edit--button {
+      appearance: none;
+      -webkit-appearance:none;
       display: block;
       background-color: #F47837;
       color: #ffffff;

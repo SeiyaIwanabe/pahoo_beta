@@ -21,6 +21,7 @@
     left: 60px;
 
     button {
+      appearance: none;
       -webkit-appearance:none;
       display: block;
       outline: none;
@@ -34,14 +35,14 @@
     }
   }
   .postOwnerName {
-    color: gray;
+    color: #F47837;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
   }
 
   h1 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -436,6 +437,8 @@
         word-wrap: break-word;
       }
       .submitComment {
+        appearance: none;
+        -webkit-appearance:none;
         width: 35%;
         text-decoration: none;
         display: block;
