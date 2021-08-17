@@ -11,7 +11,7 @@
   </li>
   <li>
     <% if user_signed_in? && current_user %>
-      <i class="fas fa-history"></i>
+      <i class="fas fa-paperclip"></i>
       <%= link_to "フォローリスト", {controller: :users, action: :follow_list, user_id: @user.id}, class: "logoutLink" %>
     <% end %>
   </li>

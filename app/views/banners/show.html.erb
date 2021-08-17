@@ -35,14 +35,13 @@
             <%= fields_for @entry do |e| %>
               <%= e.hidden_field :user_id, value: @user.id %>
             <% end %>
-            <%= f.submit "メッセージを贈る", class: "toRoom"%>
+            <%= f.submit "メッセージを贈る", class: "form-message__btn"%>
           <% end %>
         <% end %>
       <% end %>
     </div>
   </div>
   
-  <%= render partial: "modules/create" %>
   <%= render partial: 'modules/footer' %>
 </div>
 

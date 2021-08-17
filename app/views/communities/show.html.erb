@@ -8,9 +8,9 @@
       <p class="community__tag">#タグ</p>
       <i class="fas fa-users"></i>
       <p class="comunity__numbers"><%= @community.users.count%>人</p>
+      <%= link_to "退会する", community_path(@community), method: :delete, class: "community-delete__btn"%>
     </div>
-    <%= link_to "退会", community_path(@community), method: :delete%>
-  </p>
+  </div>
 
   <div class="community__chatRoom">
     <%= render partial: "modules/community_comment", locals: { community_comments: @community_comments } %>
@@ -23,7 +23,6 @@
 
 </div>
 
-<%= render partial: "modules/create" %>
 <%= render partial: 'modules/footer' %>
 
 <%= javascript_include_tag 'create' %>
